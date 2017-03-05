@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" 
+    android:orientation="vertical"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+   <RelativeLayout
+       android:id="@+id/linearLayout33"
+       android:layout_width="match_parent"
+       android:layout_height="match_parent"
+       android:layout_weight="0.1"
+       android:background="@color/headergray"
+       android:padding="10dp" >
+
+        <TextView
+            android:id="@+id/numberofjobsdialog"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:layout_gravity="right"
+            android:gravity="right|bottom"
+            android:shadowColor="@color/TransparentGrey"
+            android:shadowDx="2"
+            android:shadowDy="2"
+            android:shadowRadius="2"
+            android:text=""
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="@color/headerblue"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            android:typeface="serif" />
+
+        <TextView
+            android:id="@+id/jobstitledialog"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignBaseline="@+id/numberofjobsdialog"
+            android:layout_toLeftOf="@+id/numberofjobsdialog"
+            android:gravity="right|bottom"
+            android:shadowColor="@color/TransparentGrey"
+            android:shadowDx="2"
+            android:shadowDy="2"
+            android:shadowRadius="2"
+            android:text="@string/jobsinthislocation"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="@color/headergraysubtitle"
+            android:typeface="serif" />
+    </RelativeLayout>
+
+    <ListView
+        android:id="@+id/lv5"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_weight="0.8" />
+
+    <Button
+        android:id="@+id/closebutton"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_weight="0.1"
+        android:background="@drawable/simplebutton"
+        android:text="Button" />
+
+</LinearLayout>

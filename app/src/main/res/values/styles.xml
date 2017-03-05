@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+
+    <style name="LoginFormContainer">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:padding">16dp</item>
+    </style>
+
+
+
+<style name="MyBorderlessButton">
+    <!-- Set background drawable and text size of the buttons here -->
+    <item name="android:background">@drawable/rect_inside_rect</item>
+    <item name="android:textSize">22sp</item>
+        <item name="android:paddingRight">15dp</item>
+            <item name="android:paddingLeft">15dp</item>
+        
+    <item name="android:textColor">@android:color/white</item>
+</style>
+
+<style name="MyButtonBar">
+    <!-- Define a background for the button bar and a divider between the buttons here -->
+  
+    <item name="android:background">@android:color/white</item>
+    <item name="android:paddingRight">10dp</item>
+    <item name="android:paddingLeft">10dp</item>
+        <item name="android:paddingTop">1dp</item>
+            <item name="android:paddingBottom">1dp</item>
+                
+            
+        
+</style>
+
+<style name="MyAlertDialogTitle">
+    <item name="android:maxLines">1</item>
+    <item name="android:scrollHorizontally">true</item>
+    <item name="android:background">@color/headergray</item>
+        <item name="android:textColor">@color/headerblue</item>
+    
+</style>
+    <style name="listMenuViewStyle">
+        <item name="android:textColor">@android:color/black</item>
+    </style>
+<style name="MyAlertTextAppearance">
+    <item name="android:textColor">@android:color/black</item>
+</style>
+
+<style name="MyAlertDialogTheme">
+    <item name="android:windowBackground">@android:color/transparent</item>
+    <item name="android:windowTitleStyle">@style/MyAlertDialogTitle</item>
+    <item name="android:windowContentOverlay">@null</item>
+    <item name="android:windowMinWidthMajor">@android:dimen/dialog_min_width_major</item>
+    <item name="android:windowMinWidthMinor">@android:dimen/dialog_min_width_minor</item>
+    <item name="android:windowIsFloating">true</item>
+    <item name="android:textAppearanceMedium">@style/MyAlertTextAppearance</item>
+    <!-- If you don't want your own button bar style use
+            @android:style/Holo.Light.ButtonBar.AlertDialog
+            and
+            ?android:attr/borderlessButtonStyle
+         instead of @style/MyButtonBar and @style/MyBorderlessButton -->
+    <item name="android:buttonBarStyle">@style/MyButtonBar</item>
+    <item name="android:buttonBarButtonStyle">@style/MyBorderlessButton</item>
+            <item name="android:textColor">@color/headerblue</item>
+                <item name="android:textColorPrimary">@color/headerblue</item>
+            
+    
+</style>
+<style name="MyAlertDialogStyle">
+    <!-- Define background colors of title, message, buttons, etc. here -->
+    <item name="android:fullDark">@android:color/white</item>
+    <item name="android:topDark">@drawable/rectangle_border_below</item>
+    <item name="android:centerDark">@android:color/white</item>
+    <item name="android:bottomDark">@android:color/white</item>
+    <item name="android:fullBright">@android:color/white</item>
+    <item name="android:topBright">@drawable/rectangle_border_below</item>
+    <item name="android:centerBright">@android:color/white</item>
+    <item name="android:bottomBright">@android:color/white</item>
+    <item name="android:bottomMedium">@android:color/white</item>
+    <item name="android:centerMedium">@android:color/white</item>
+</style>
+<style name="FacebookLoginButton">
+    <item name="android:textSize">20sp</item>
+        <item name="android:textColor">@android:color/white</item>
+            <item name="android:drawablePadding">5dp</item>
+            <item name="android:paddingRight">5dp</item>
+            
+            <item name="android:drawableRight">@drawable/facebookicon</item>
+            
+    <item name="android:background">@color/blueregisterbutton</item>
+    <item name="android:layout_gravity">center_horizontal</item>
+</style>
+<style name="MyMaterialTheme" parent="MyMaterialTheme.Base">
+ 
+    </style>
+ 
+    <style name="MyMaterialTheme.Base" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="windowNoTitle">true</item>
+        <item name="windowActionBar">false</item>
+        <item name="colorPrimary">@color/TransparentGrey</item>
+        <item name="colorPrimaryDark">@color/graybasic</item>
+        <item name="colorAccent">@color/orangebasic</item>
+    </style>
+</resources>

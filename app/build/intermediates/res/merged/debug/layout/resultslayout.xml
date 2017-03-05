@@ -1,0 +1,334 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout 
+	xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:weightSum="1" android:orientation="vertical" android:id="@+id/llresults">
+
+    <LinearLayout
+        android:id="@+id/linearLayoutres13"
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.1"
+        android:background="@android:color/white">
+
+        
+    
+
+        <Button
+            android:id="@+id/buttoninfo"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="2dp"
+            android:layout_marginRight="2dp"
+            android:layout_weight="0.25"
+            android:background="@android:color/transparent"
+            android:drawableRight="@drawable/ic_more"
+            android:paddingRight="20dp"
+            android:text="@string/more"
+            android:gravity="center" />
+<Button
+            android:id="@+id/buttonmap"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="2dp"
+            android:layout_marginRight="2dp"
+            android:layout_weight="0.25"
+            android:background="@android:color/transparent"
+            android:drawableRight="@drawable/ic_map"
+            android:paddingRight="20dp"
+            android:text="@string/mapa"            
+            android:gravity="center" />
+        <Button
+            android:id="@+id/buttoncontact"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="2dp"
+            android:layout_marginRight="2dp"
+            android:layout_weight="0.5"
+            android:background="@android:color/transparent"
+			android:drawableRight="@drawable/iconplus"
+            android:text="@string/cvbuttontext"
+            android:paddingRight="20dp"
+            android:textColor="@color/greenbuttonrect" />
+    </LinearLayout>
+
+   <RelativeLayout
+       android:id="@+id/linearLayoutres12"
+       android:layout_width="fill_parent"
+       android:layout_height="wrap_content"
+       android:layout_weight="0.01"
+       android:orientation="horizontal"
+       android:weightSum="7" >
+
+  <CheckBox
+      android:id="@+id/starresult"
+      style="?android:attr/starStyle"
+      android:layout_width="30dp"
+      android:layout_height="30dp"
+      android:layout_alignParentLeft="true"
+      android:layout_centerVertical="true"
+      android:layout_gravity="center"
+      android:layout_weight="1"
+      android:button="@drawable/checkbox" />
+
+  <LinearLayout
+      android:id="@+id/linearLayoutres11"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_alignParentLeft="true"
+      android:layout_gravity="center"
+      android:layout_marginRight="70dp"
+      android:orientation="vertical" >
+
+     <TextView
+     android:id="@+id/tvname"
+                      android:singleLine="false"
+                      android:layout_width="wrap_content"
+                      android:layout_height="wrap_content"
+                      android:layout_gravity="right"
+                      android:text=""
+                      android:textColor="@android:color/black"
+					android:textAppearance="?android:attr/textAppearanceLarge"
+                      android:typeface="serif" />
+
+            <TextView android:singleLine="true" android:textColor="@android:color/black" android:layout_gravity="right" android:text="" android:layout_height="wrap_content" android:typeface="serif" android:textAppearance="?android:attr/textAppearanceMedium" android:layout_width="wrap_content" android:id="@+id/tvcompany"></TextView>
+            <TextView android:singleLine="false" android:textColor="@android:color/black" android:layout_gravity="right" android:text="" android:layout_height="wrap_content" android:typeface="serif" android:textAppearance="?android:attr/textAppearanceMedium" android:layout_width="wrap_content" android:id="@+id/tvarea"></TextView>
+            
+            </LinearLayout>
+
+  <ImageView
+      android:id="@+id/openerImage"
+      android:layout_width="65dp"
+      android:layout_height="65dp"
+      android:layout_alignParentRight="true"
+      android:layout_centerVertical="true"
+      android:layout_gravity="center"
+      android:layout_margin="5dp"
+      android:layout_weight="1"
+      android:src="@drawable/iconbig" />
+
+            </RelativeLayout>   
+
+            <View   android:layout_width="match_parent"
+                 android:layout_height="1dp" android:background="@color/graydivider"/>
+
+    <ScrollView
+        android:id="@+id/scrollView1"
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_gravity="right"
+        android:layout_marginTop="5dp"
+        android:layout_weight="0.9"
+        android:paddingBottom="10dp" >
+
+        <LinearLayout android:layout_height="wrap_content" android:id="@+id/linearLayout3" android:layout_width="fill_parent" android:orientation="vertical" android:weightSum="1">
+
+            <TextView
+                android:id="@+id/textViewarrivalTime"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:layout_weight="0.6"
+                android:text="@string/arrivaltitle"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textColor="@android:color/black"
+                android:textStyle="bold" 
+                android:layout_marginRight="10dp"/>
+
+            <RelativeLayout
+                android:id="@+id/relativelayoutresult"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.6" >
+
+                <ImageView
+                    android:id="@+id/arrivalimage"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/arrivalbg" />
+
+                <TextView
+                    android:id="@+id/textViewArrival1"
+                    android:layout_width="105dp"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="45dp"
+                    android:gravity="right"
+                    android:lines="2"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:textColor="@color/headerblue" />
+
+                <TextView
+                    android:id="@+id/textViewArrival2"
+                    android:layout_width="105dp"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="170dp"
+                    android:gravity="right"
+                    android:lines="2"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:textColor="@color/headerblue" />
+
+                <TextView
+                    android:id="@+id/textViewArrival3"
+                    android:layout_width="105dp"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="292dp"
+                    android:gravity="right"
+                    android:lines="2"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:textColor="@color/headerblue" />
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/tvemail"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.6"
+                android:autoLink="email"
+                android:gravity="right"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:textColor="@android:color/white"
+                android:textColorLink="@android:color/black"
+                android:typeface="serif"
+                android:visibility="gone"
+                android:layout_marginRight="10dp" />
+
+            <TextView
+                android:id="@+id/textView111"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:layout_weight="0.3"
+                android:text="@string/aboutjob"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textColor="@android:color/black"
+                android:textStyle="bold" 
+                android:layout_marginRight="10dp">
+</TextView>
+            <TextView android:textColor="@android:color/black"
+                android:layout_marginRight="10dp" 
+                android:layout_height="wrap_content" android:typeface="serif" android:layout_gravity="right" android:textAppearance="?android:attr/textAppearanceMedium" android:layout_weight="0.05" android:id="@+id/tvdetails" android:gravity="right" android:layout_width="fill_parent"></TextView>
+
+            <TextView
+                android:id="@+id/tvrequirestitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:layout_weight="0.3"
+                android:text="@string/require"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textColor="@android:color/black"
+                android:textStyle="bold" 
+                android:layout_marginRight="10dp">
+</TextView>
+            <TextView  android:textColor="@android:color/black" 
+                android:layout_marginRight="10dp"
+                android:layout_height="wrap_content" android:typeface="serif" android:layout_gravity="right" android:gravity="right" android:textAppearance="?android:attr/textAppearanceMedium" android:layout_weight="0.05" android:id="@+id/tvrequires" android:layout_width="fill_parent"></TextView>
+
+             <TextView
+                 android:id="@+id/textView333"
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 android:layout_gravity="right"
+                 android:layout_weight="0.3"
+                 android:text="@string/additionaldetails"
+                 android:textAppearance="?android:attr/textAppearanceLarge"
+                 android:textColor="@android:color/black"
+                 android:visibility="gone"
+                 android:textStyle="bold" 
+                 android:layout_marginRight="10dp">
+
+</TextView>
+
+             <TextView
+                 android:id="@+id/tvarrivaltime"
+                 android:layout_width="fill_parent"
+                 android:layout_height="wrap_content"
+                 android:layout_marginRight="10dp"
+                 android:layout_weight="0.6"
+                 android:gravity="right"
+                 android:textAppearance="?android:attr/textAppearanceSmall"
+                 android:textColor="@android:color/black"
+                 android:typeface="serif" />
+
+             <LinearLayout
+                 android:layout_width="match_parent"
+                 android:layout_height="wrap_content"
+                 android:layout_weight="0.6"
+                 android:padding="10dp"
+                 android:orientation="horizontal" >
+
+                 
+                 <Button
+                     android:id="@+id/buttoncallnew"
+                     android:layout_width="match_parent"
+                     android:layout_height="wrap_content"
+                     android:textSize="17sp"
+                     android:textColor="@color/orangebasic"
+					android:background="@drawable/orangeborderbutton"
+					android:layout_marginLeft="5dp"
+					android:layout_marginRight="5dp"					
+					android:layout_weight="0.5"
+					android:drawableRight="@drawable/iconcall"
+					android:paddingRight="35dp"
+					android:paddingLeft="35dp"
+                     android:text="@string/call" />
+                 <Button
+                     android:id="@+id/buttonsendcvnew"
+                     android:layout_width="match_parent"
+                     android:layout_height="wrap_content"
+                     android:textSize="17sp"
+                     android:textColor="@android:color/white"
+					android:background="@drawable/orangefullbutton"
+					android:layout_marginLeft="5dp"
+					android:layout_weight="0.5"
+					android:drawableRight="@drawable/iconsendcv"	
+					android:paddingRight="30dp"
+					android:paddingLeft="30dp"				
+                     android:text="@string/sendcvshort" />
+                 </LinearLayout>
+                      <LinearLayout
+                 android:layout_width="match_parent"
+                 android:layout_height="wrap_content"
+                 android:layout_weight="0.6"
+                 android:padding="10dp"                 
+                 android:orientation="horizontal" >
+                 
+                   <Button
+                     android:id="@+id/buttonsharenew"
+                      android:layout_width="match_parent"
+                     android:layout_height="wrap_content"
+                     android:textSize="17sp"
+                     android:textColor="@color/orangebasic"
+					android:background="@drawable/orangeborderbutton"
+					android:layout_marginLeft="5dp"
+					android:layout_marginRight="5dp"					
+					android:layout_weight="0.5"
+					android:drawableRight="@drawable/iconshare2"					
+                     android:text="@string/share" />
+                  <Button
+                     android:id="@+id/buttonmorefromcompany"
+                     android:layout_width="match_parent"
+                     android:layout_height="wrap_content"
+                     android:textSize="17sp"
+                     android:textColor="@android:color/white"
+					android:background="@drawable/orangefullbutton"
+					android:layout_marginLeft="5dp"
+					android:layout_weight="0.5"
+					android:drawableRight="@drawable/iconmorefromcom"					
+                     android:text="@string/morefromcompany" />
+
+             </LinearLayout>
+       
+         </LinearLayout>
+    </ScrollView>
+              
+    	
+</LinearLayout>
+  

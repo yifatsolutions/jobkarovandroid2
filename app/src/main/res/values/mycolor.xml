@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="blue">#F37938</color>
+    <color name="blue1">#022F50</color>
+    <color name="blue2">#277D8E</color>
+    <color name="headerblue">#0f537d</color>
+    <color name="blueicon">#0082E6</color>
+    <color name="TransparentGrey">#c4c4c4</color>
+    <color name="seperatorgray">#dad2cf</color>
+    <color name="headergray">#f1f1f1</color>
+    <color name="headergraysubtitle">#b4b4b4</color>
+    <color name="greenbuttonrect">#F37938</color>
+    <color name="graydivider">#c7c7c7</color>
+    <color name="red">#EE0000</color>
+    <color name="blackregisterbutton">#444444</color>
+    <color name="blueregisterbutton">#2c539d</color>
+                     
+    <color name="orangebasic"> #F37938</color>
+    <color name="graybasic"> #646363</color>
+    <color name="greenbuttonrectold">#85b920</color>
+        <color name="blueold">#30ACE9</color>
+    <color name="yellow">#FFFF66</color>
+</resources>

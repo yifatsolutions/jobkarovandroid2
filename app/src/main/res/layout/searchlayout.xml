@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:weightSum="1">
+<RelativeLayout  android:id="@+id/linearLayout33"
+    android:layout_width="match_parent"
+    android:layout_height="60dp"
+        android:background="@color/headergray"
+    android:paddingRight="10dp" 
+    android:paddingTop="10dp" 
+    android:paddingBottom="10dp" >
+   
+    <Button
+        android:id="@+id/mapbutton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@android:color/transparent"
+        android:drawableRight="@drawable/map_icon"
+        android:paddingRight="20dp"
+        android:text=""
+        android:textColor="@android:color/white"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+         />
+		<TextView  android:shadowColor="@color/TransparentGrey"
+		    android:textSize="30sp"
+                  android:shadowDx="2"
+                  android:shadowDy="2"
+                  android:shadowRadius="2" 
+                  android:textAppearance="?android:attr/textAppearanceLarge" 
+                  android:layout_height="match_parent" 
+                  android:id="@+id/instructionTv" 
+                  android:typeface="serif" 
+                  android:textStyle="bold" 
+                  android:layout_gravity="right" 
+                  android:gravity="right|bottom" 
+                  android:layout_alignParentRight="true"
+             android:layout_alignParentBottom="true"
+                  android:text="@string/loadingshort" android:layout_width="wrap_content" android:textColor="@color/headerblue"></TextView>
+
+		<Button
+		    android:id="@+id/sortbutton"
+		    android:layout_width="wrap_content"
+		    android:layout_height="wrap_content"
+		    android:layout_alignParentTop="true"
+		    android:layout_toRightOf="@+id/mapbutton"
+		    android:background="@android:color/transparent"
+        	android:drawableRight="@drawable/sort_icon"
+        	android:paddingRight="20dp" />
+
+		<Button
+		    android:id="@+id/filterbutton"
+		    android:layout_width="wrap_content"
+		    android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+		    android:layout_toRightOf="@+id/sortbutton"
+		    android:background="@android:color/transparent"
+        	android:drawableRight="@drawable/filter_icon"
+        	android:paddingRight="20dp"
+        
+		    android:textColor="@android:color/white"
+		    android:textSize="16sp" />
+
+		<TextView
+		    android:id="@+id/jobstitle"
+		    android:layout_width="wrap_content"
+		    android:layout_height="match_parent"
+		    android:layout_alignTop="@+id/instructionTv"
+		    android:layout_toLeftOf="@+id/instructionTv"
+		    android:layout_marginRight="10dp"
+		    android:gravity="right|bottom"
+		    android:shadowColor="@color/TransparentGrey"
+		    android:shadowDx="2"
+		    android:shadowDy="2"
+		    android:shadowRadius="2"
+		    android:text="@string/jobstitle"
+		    android:textAppearance="?android:attr/textAppearanceSmall"
+		    android:textColor="@color/headergraysubtitle"
+		    android:visibility="invisible"
+		    android:typeface="serif" />
+    
+    </RelativeLayout>    
+
+    <ListView
+        android:id="@+id/list"
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_gravity="right"
+        android:layout_weight="0.95"
+        android:background="@android:color/transparent"
+        android:cacheColorHint="@android:color/transparent"
+        android:divider="@color/graydivider"
+        android:dividerHeight="2dp" >
+</ListView>
+    </LinearLayout>
+    

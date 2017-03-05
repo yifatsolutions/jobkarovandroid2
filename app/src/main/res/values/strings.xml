@@ -1,0 +1,1679 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="facebook_app_id">700352396677077</string>
+    <string name="app_name">Job Karov</string>
+    <string name="selectrange">תחום:</string>
+    <string name="selectrole">תפקיד:</string>
+    <string name="selectarea">באזור:</string>
+    <string name="selectradius">במרחק של:</string>
+    <string name="selecttype">סוג משרה:</string>
+    <string name="findnow">חפש משרה</string>
+    <string name="enablegpscommand">אשר הפעלת GPS במסך זה ולאחר מכן לחץ על לחצן חזור מימין למטה</string>
+    <string name="notgood"> GPS לא מדויק מספיק</string>
+    <string name="loading">מחפש. אנא המתן</string>
+    <string name="loadingshort">מחפש</string>
+    <string name="serverproblem">בעיה בשרת, נסה שוב מאוחר יותר</string>
+    <string name="netproblem">בעיה בחיבור לרשת.בדוק שיש גישה לאינטרנט</string>
+    <string name="about">חיפוש עבודה בקלות להגיע רחוק ולעבוד קרוב.
+JOBKAROV הינו אתר ייחודי בחיפוש עבודה סביבך ונוצר מתוך צורך בסיסי למציאת מקום עבודה 
+ סביב אזור המגורים, לימודים , הורים וכו.
+משתמשים ומעסיקים יוכלו ליהנות מפלטפורמה חדשה וייחודית מצד אחד -מציאת עבודה סביב 
+רדיוס מסוים אשר אותו מגדירים מראש – עד כמה זמן אתם מוכנים להשקיע בזמן נסיעה לעבודה או 
+בהליכה רגלית. מצד שני- מעסיקים יוכלו לקבל קו"ח של מועמדים שנמצאים סביב מקום העבודה 
+ולחסוך בעלויות נסיעה .
+האתר והאפליקציה מאפשרים מציאת עבודה קרובה על מנת לחסוך בזמן הנסיעה למקום העבודה 
+וזאת בכדי ליהנות מזמן איכות עם המשפחה , חברים ,תחביבים ועוד.
+משתמשים יקרים ניתן לקבל מגוון הצעות עבודה אשר מתעדכנות בכל יום.
+כדאי ורצוי להירשם לסוכן החכם על מנת לקבל משרות און ליין ישירות למייל או לסמארטפון.\n
+לשירות לקוחות ניתן לפנות במייל : support@jobkarov.com
+צוות החברה עומד לרשותכם בכל עת .</string>
+    <string name="aboutmenu">אודות</string>
+    <string name="close">חזור</string>
+    <string name="advancedsearch">חיפוש מתקדם</string>
+
+    <string-array name="menudelete">
+        <item>חזור</item>
+        <item>מחק</item>
+    </string-array>
+    <string-array name="specialities">
+        <item>הכל</item>
+        <item>אופטיקה</item>
+        <item>אופנה וטקסטיל</item>
+        <item>אחזקה ושירותי ניקיון</item>
+        <item>אינטרנט ומדיה</item>
+        <item>אלקטרוניקה וחשמל</item>
+        <item>בידור מדיה ואומנות</item>
+        <item>ביוטכנולוגיה</item>
+        <item>ביטוח</item>
+        <item>בינוי ותשתיות</item>
+        <item>הנדסאים</item>
+        <item>חומרה</item>
+        <item>חינוך והוראה</item>
+        <item>טיפוח ויופי</item>
+        <item>יצוא ויבוא</item>
+        <item>כלכלה כספים וחשבונאות</item>
+        <item>כללי</item>
+        <item>מדעי החברה</item>
+        <item>מדעי החיים</item>
+        <item>מדעים והנדסה</item>
+        <item>מהנדסים</item>
+        <item>מזון ומסעדנות</item>
+        <item>מזכירות ואדמיניסטרציה</item>
+        <item>מחשבים ותקשורת</item>
+        <item>מכירות</item>
+        <item>מלונאות ותיירות</item>
+        <item>מערכות מידע</item>
+        <item>משאבי אנוש</item>
+        <item>משפטים ועריכת דין</item>
+        <item>נדלן מכירה ותיווך</item>
+        <item>נהגים הפצה ושליחויות</item>
+        <item>ניהול בכיר</item>
+        <item>ניתוח מערכות</item>
+        <item>סטודנטים ונוער</item>
+        <item>ספורט ואימון</item>
+        <item>ספנות ותעופה</item>
+        <item>עיצוב</item>
+        <item>עריכה ותוכן</item>
+        <item>קמעונאות</item>
+        <item>רכב</item>
+        <item>רכש קניינות ולוגיסטיקה</item>
+        <item>רפואה ובריאות</item>
+        <item>רפואה משלימה</item>
+        <item>שירות לקוחות</item>
+        <item>שמירה וביטחון</item>
+        <item>תוכנה</item>
+        <item>תוכנה QA</item>
+        <item>תעשייה וייצור</item>
+    </string-array>
+    <string-array name="areas">
+        <item>סביבי</item>
+        <item>כל הארץ</item>
+        <item>מרכז</item>
+        <item>שרון</item>
+        <item>ירושלים והסביבה</item>
+        <item>שפלה</item>
+        <item>שומרון</item>
+        <item>חיפה</item>
+        <item>צפון</item>
+        <item>דרום</item>
+        <item>אילת וערבה</item>
+        <item>חו\"ל</item>
+    </string-array>
+    <string-array name="sizes">
+        <item>הכל</item>
+        <item>מלאה</item>
+        <item>חלקית</item>
+        <item>לפי שעות</item>
+        <item>פרילנס</item>
+        <item>משמרות</item>
+    </string-array>
+    <string-array name="areasbasic">
+        <item>סביבי</item>
+    </string-array>
+
+    <integer-array name="radiuses2">
+        <item>30000</item>
+        <item>15000</item>
+        <item>10000</item>
+        <item>5000</item>
+        <item>3000</item>
+        <item>2000</item>
+        <item>1000</item>
+        <item>800</item>
+        <item>500</item>
+    </integer-array>
+
+    <string name="gpsproblem">אין קליטת GPS. לא ניתן לקבוע מיקום</string>
+    <string name="noresults">לא נמצאו תוצאות. </string>
+    <string name="aboutjob">תיאור המשרה</string>
+    <string name="save">שמור</string>
+    <string name="sendtomail">שלח את המשרה למייל שלך</string>
+    <string name="call">התקשר</string>
+    <string name="require">דרישות התפקיד</string>
+    <string name="noentries">אין נתונים שמורים</string>
+    <string name="sentsuccesfull"> :נשלח בהצלחה למייל</string>
+    <string name="saved">נשמר בהצלחה</string>
+    <string name="favour">משרות שמורות</string>
+    <string name="mapa">מפה</string>
+    <string name="numfound"> משרות תואמות לחיפושך</string>
+    <string name="visited">נצפו לאחרונה</string>
+    <string name="orderbyname">לפי שם</string>
+    <string name="orderbydistance">לפי מרחק</string>
+    <string name="savetofav">שמור</string>
+
+    <string-array name="role">
+        <item>הכל</item>
+    </string-array>
+    <string-array name="role0">
+        <item>הכל</item>
+        <item>אופטומטריסט</item>
+        <item>אופטיקאי</item>
+    </string-array>
+    <string-array name="role1">
+        <item>הכל</item>
+        <item>ייצור טקסטיל</item>
+        <item>מעצב/ת</item>
+        <item>ניהול</item>
+        <item>תדמיתן/ית</item>
+    </string-array>
+    <string-array name="role2">
+        <item>הכל</item>
+        <item>אחזקה</item>
+        <item>אינסטלציה</item>
+        <item>גננות</item>
+        <item>ניקיון ומשק בית</item>
+    </string-array>
+    <string-array name="role3">
+        <item>הכל</item>
+        <item>Facebook Developer</item>
+        <item>Flash Flex - Action Script</item>
+        <item>HTML</item>
+        <item>JavaScript</item>
+        <item>SEM</item>
+        <item>SEO</item>
+        <item>Web designer</item>
+        <item>WebMaster</item>
+        <item>אינטראקטיב</item>
+        <item>הזנת תוכן</item>
+        <item>מהנדס אפליקציה</item>
+        <item>מכירות באינטרנט</item>
+        <item>מנהל אתר</item>
+        <item>מנהל מוצר - אינטרנט</item>
+        <item>מנהל פרוייקטים - אינטרנט</item>
+        <item>מנהל רשתות חברתיות</item>
+        <item>מנהל שיווק אינטרנט</item>
+        <item>מנהל שיתופי פעולה Affiliates</item>
+        <item>מנהל תוכן / עורך תוכן</item>
+        <item>מסחר אלקטרוני</item>
+        <item>מעצב UI / UX</item>
+        <item>מתכנת ASP</item>
+        <item>מתכנת ASP.NET</item>
+        <item>מתכנת JSP</item>
+        <item>מתכנת Moss</item>
+        <item>מתכנת PHP</item>
+        <item>מתכנת Python</item>
+        <item>מתכנת SharePoint</item>
+        <item>מתכנת WEB</item>
+        <item>ניהול אינטרנט</item>
+        <item>ניהול בכיר - אינטרנט</item>
+        <item>קידום אתרים</item>
+    </string-array>
+    <string-array name="role4">
+        <item>הכל</item>
+        <item>הנדסאי אלקטרוניקה</item>
+        <item>הנדסאי חשמל</item>
+        <item>הנדסת אלקטרוניקה</item>
+        <item>הנדסת חשמל</item>
+        <item>חיווט</item>
+        <item>חשמלאי</item>
+        <item>טכנאי אלקטרוניקה</item>
+        <item>טכנאי מכשירי חשמל</item>
+        <item>מהנדס מוצר</item>
+        <item>ניהול</item>
+        <item>ניהול פרוייקטים</item>
+    </string-array>
+    <string-array name="role5">
+        <item>הכל</item>
+        <item>הפקת אירועים</item>
+        <item>יחסי ציבור</item>
+        <item>מנהל עבודה</item>
+        <item>צילום</item>
+        <item>עורך/מנהל תוכן</item>
+        <item>עיתונאים ועורכים</item>
+        <item>פלנר</item>
+        <item>קופירייטר</item>
+        <item>קוריאייטיב</item>
+        <item>רכש מדיה</item>
+        <item>תקציבאות</item>
+    </string-array>
+    <string-array name="role6">
+        <item>הכל</item>
+        <item>טכנולוג מזון</item>
+        <item>מהנדס</item>
+        <item>מחקר ופיתוח</item>
+        <item>מנהל פרויקטים</item>
+        <item>מנכ\"ל</item>
+        <item>ניהול</item>
+        <item>סמנכ\"ל פיתוח</item>
+        <item>רגולציה</item>
+    </string-array>
+    <string-array name="role7">
+        <item>הכל</item>
+        <item>Back Office</item>
+        <item>אקטואריה ואנליזות</item>
+        <item>התמחות</item>
+        <item>חתמות</item>
+        <item>מפקח</item>
+        <item>ניהול</item>
+        <item>ניתוח סיכונים וביקורת</item>
+        <item>סוכן ביטוח</item>
+        <item>סילוק תביעות</item>
+        <item>קופות גמל</item>
+        <item>רכז/פקיד ביטוח</item>
+        <item>רפרנט ביטוח</item>
+        <item>שיווק פנסיוני</item>
+        <item>שירות שיווק ומכירות</item>
+        <item>שמאות</item>
+    </string-array>
+    <string-array name="role8">
+        <item>הכל</item>
+        <item>הנדסה אזרחית</item>
+        <item>הנדסת בניין</item>
+        <item>מתכננים ויועצים</item>
+        <item>קבלנים</item>
+        <item>שרטטים ומודדים</item>
+    </string-array>
+    <string-array name="role9">
+        <item>הכל</item>
+        <item>איש תפ\"י</item>
+        <item>הנדסאי בניין</item>
+        <item>הנדסאי חשמל</item>
+        <item>הנדסאי מכונות</item>
+        <item>הנדסאי תעשייה וניהול</item>
+        <item>הנדסאים כללי</item>
+    </string-array>
+    <string-array name="role10">
+        <item>הכל</item>
+        <item>BackEnd</item>
+        <item>אימות פיתוח</item>
+        <item>ארכיטקט מערכת</item>
+        <item>הנדסה אנלוגית</item>
+        <item>הנדסה דיגיטלית</item>
+        <item>הנדסת RF</item>
+        <item>הנדסת מיקרוגל</item>
+        <item>הנדסת רכיבים</item>
+        <item>הנדסת תקשורת</item>
+        <item>חומרה - וריפיקציה</item>
+        <item>חומרה - ניהול</item>
+        <item>כתב טכני חומרה</item>
+        <item>מהנדס חומרה</item>
+        <item>מכירות/שיווק חומרה</item>
+        <item>מלחימים</item>
+        <item>מנהל מוצר חומרה</item>
+        <item>מנהל מעבדה טכני</item>
+        <item>מנהל פרויקטים חומרה</item>
+        <item>פיתוח ותכנון חומרה</item>
+    </string-array>
+    <string-array name="role11">
+        <item>הכל</item>
+        <item>גננים/ות</item>
+        <item>הדרכה</item>
+        <item>חינוך מיוחד</item>
+        <item>טיפול ושמרטפות</item>
+        <item>ייעוץ ופסיכולוגיה</item>
+        <item>מורים/ות</item>
+        <item>מרצים</item>
+        <item>ניהול</item>
+        <item>סייעים/ות</item>
+        <item>עבודה סוציאלית</item>
+    </string-array>
+    <string-array name="role12">
+        <item>הכל</item>
+        <item>איפור</item>
+        <item>ייעוץ והדרכת קוסמטיקה</item>
+        <item>מניקור/פדיקור</item>
+        <item>עובדי ספא</item>
+        <item>עיסוי</item>
+        <item>עיצוב שיער</item>
+        <item>קוסמטיקה</item>
+    </string-array>
+    <string-array name="role13">
+        <item>הכל</item>
+        <item>יבוא יצוא - מכירות</item>
+        <item>יבוא יצוא - תפעול</item>
+        <item>מנהל יבוא יצוא</item>
+        <item>מתאם יבוא יצוא</item>
+        <item>עמילות מכס</item>
+        <item>פקיד יבוא יצוא</item>
+        <item>שילוח בינלאומי</item>
+    </string-array>
+    <string-array name="role14">
+        <item>הכל</item>
+        <item>אנליסטים</item>
+        <item>ביקורת פנים</item>
+        <item>בנקאות כללי</item>
+        <item>גבייה</item>
+        <item>גזבר</item>
+        <item>הנהלת חשבונות</item>
+        <item>חשב/ת שכר</item>
+        <item>טלר</item>
+        <item>יועץ משכנתאות</item>
+        <item>יועץ פיננסי</item>
+        <item>יועץ פנסיוני</item>
+        <item>יועץ השקעות</item>
+        <item>יועצי מס</item>
+        <item>כלכלנים</item>
+        <item>מנהל/ת השקעות/תיקים</item>
+        <item>מנהל כספים</item>
+        <item>מתמחה</item>
+        <item>ניהול סיכונים</item>
+        <item>סוחרים</item>
+        <item>רואה חשבון</item>
+        <item>רכש</item>
+    </string-array>
+    <string-array name="role15">
+        <item>הכל</item>
+        <item>אופר</item>
+        <item>בייביסטר / טיפול בילדים</item>
+        <item>כללי ללא ניסיון</item>
+        <item>מחלק</item>
+        <item>מחסנאי</item>
+        <item>מכירות ללא ניסיון</item>
+        <item>מלצרים</item>
+        <item>משגיחי בחינות</item>
+        <item>מתאים גם לחיילים משוחררים</item>
+        <item>מתדלקים</item>
+        <item>נהג</item>
+        <item>סבל</item>
+        <item>סדרן</item>
+        <item>סוקר</item>
+        <item>עבודה בבנק</item>
+        <item>עבודה כללית</item>
+        <item>עבודה מועדפת</item>
+        <item>עובדי מטבח</item>
+        <item>שירות לקוחות ללא ניסיון</item>
+        <item>שליח</item>
+    </string-array>
+    <string-array name="role16">
+        <item>הכל</item>
+        <item>גיוס כספים</item>
+        <item>יחסים בינלאומיים</item>
+        <item>מדע המדינה</item>
+        <item>מחקר</item>
+        <item>ניהול</item>
+        <item>סטודנטים ובוגרים</item>
+        <item>עבודה סוציאלית ורווחה</item>
+        <item>פסיכולוגיה/טיפול</item>
+        <item>קרימינולוגיה</item>
+    </string-array>
+    <string-array name="role17">
+        <item>הכל</item>
+        <item>בוגר/ת מדעי החיים</item>
+        <item>ביו-טכנולוגיה</item>
+        <item>אגרונום/ית</item>
+        <item>ביולוג/ית בוטנאי/ית</item>
+        <item>בקרת איכות במדעים</item>
+        <item>גיאולגיה</item>
+        <item>הנדסת מזון</item>
+        <item>מהנדס/ת חקלאות</item>
+        <item>מהנדס/ת סביבתי</item>
+        <item>מחקר במדעי החיים</item>
+        <item>מטאורולוגיה</item>
+        <item>עובדי חקלאות</item>
+        <item>עריכת פטנטים</item>
+    </string-array>
+    <string-array name="role18">
+        <item>הכל</item>
+        <item>אלקטרוכימיה</item>
+        <item>בוגרי מדעים מדוייקים</item>
+        <item>הנדסאי / טכנאי כימיה</item>
+        <item>הנדסת חומרים</item>
+        <item>כימאי</item>
+        <item>לבורנט</item>
+        <item>מהנדס כימיה</item>
+        <item>מהנדס פיזיקה</item>
+        <item>מחקר ופיתוח במדעים מדוייקים</item>
+        <item>מנהל פרוייקטים במדעים מדוייקים</item>
+        <item>מפתח אלגוריתמים</item>
+        <item>מתמטיקאים</item>
+        <item>ניהול מדעים מדוייקים</item>
+        <item>סטודנטים במדעים מדוייקים</item>
+        <item>סטטיסטיקאים</item>
+        <item>פיזיקאים</item>
+    </string-array>
+    <string-array name="role19">
+        <item>הכל</item>
+        <item>אדריכלות</item>
+        <item>הנדסה ניהול</item>
+        <item>מהנדס אווירונאוטיקה</item>
+        <item>מהנדס אזרחי</item>
+        <item>מהנדס איכות</item>
+        <item>מהנדס בניין</item>
+        <item>מהנדס חומרים</item>
+        <item>מהנדס חשמל</item>
+        <item>מהנדס כימיה</item>
+        <item>מהנדס מזון</item>
+        <item>מהנדס מכונות</item>
+        <item>מהנדס תעשיה וניעול</item>
+        <item>מהנדסים כללי</item>
+    </string-array>
+    <string-array name="role20">
+        <item>הכל</item>
+        <item>אופים</item>
+        <item>אירועים/קייטירינג</item>
+        <item>ברמנים</item>
+        <item>טבחים</item>
+        <item>מארחים</item>
+        <item>מלצרים/ות</item>
+        <item>מנהל מטבח</item>
+        <item>מנהל מסעדה</item>
+        <item>מנהל/אחראי משמרת</item>
+        <item>ניהול אירועים</item>
+        <item>ניהול קייטרינג</item>
+        <item>עובדי דלפק</item>
+        <item>עוזר טבח</item>
+        <item>עוזר קונדיטור</item>
+        <item>קונדיטור</item>
+        <item>שף/סו שף</item>
+    </string-array>
+    <string-array name="role21">
+        <item>הכל</item>
+        <item>בק אופיס</item>
+        <item>מזכיר/ה אנגלית</item>
+        <item>מזכיר/ה בכיר/ה</item>
+        <item>מזכיר/ה ערבית</item>
+        <item>מנהל/ת אדמינסטרטיבית</item>
+        <item>מנהל/ת משרד</item>
+        <item>מרכזן/ית</item>
+        <item>עוזר/ת אישי/ת</item>
+        <item>פקיד/ה</item>
+        <item>קלדן/ית</item>
+    </string-array>
+    <string-array name="role22">
+        <item>הכל</item>
+        <item>AS 400</item>
+        <item>Data Warehouse</item>
+        <item>Help Desk - מחשבים ורשתות</item>
+        <item>Mainframe</item>
+        <item>איש יוניקס Unix</item>
+        <item>איש לינוקס Linux</item>
+        <item>איש סיסטם</item>
+        <item>טכנאי PC / טכנאי מחשבים</item>
+        <item>טכנאי כבלים</item>
+        <item>טכנאי מרכזיות טלפוניה</item>
+        <item>טכנאי תקשורת ורשתות</item>
+        <item>מדריך מחשבים</item>
+        <item>מהנדס תקשורת</item>
+        <item>מומחה Storage</item>
+        <item>מומחה VMware</item>
+        <item>מומחה תקשורת</item>
+        <item>מומחה תשתיות</item>
+        <item>מכירות מחשבים</item>
+        <item>מנהל IT</item>
+        <item>מנהל פרויקטים במחשוב</item>
+        <item>מנהל רשת</item>
+        <item>מפעיל מחשב</item>
+        <item>ניהול - מחשבים ורשתות</item>
+        <item>ראש צוות תשתיות</item>
+        <item>שליטה ובקרה</item>
+        <item>תמיכה טכנית - מחשבים ורשתות</item>
+    </string-array>
+    <string-array name="role23">
+        <item>הכל</item>
+        <item>איש/ת מכירות</item>
+        <item>דיילי/ות מכירות</item>
+        <item>הדרכת מכירות</item>
+        <item>יועץ/ת לימודים</item>
+        <item>מהנדס/ת מכירות</item>
+        <item>מכירות אופנה</item>
+        <item>מכירות מזון</item>
+        <item>מכירות נדל\"ן</item>
+        <item>מכירות פרונטליות</item>
+        <item>מכירות פרסום</item>
+        <item>מכירות קוסמטיקה</item>
+        <item>מנהל/ת חנות</item>
+        <item>מנהל/ת מכירות</item>
+        <item>מנהל/ת תיקי לקוחות</item>
+        <item>מתאם/ת מכירות/פגישות</item>
+        <item>ניהול</item>
+        <item>סמנכ\"ל/ית מכירות</item>
+    </string-array>
+    <string-array name="role24">
+        <item>הכל</item>
+        <item>אופרציה</item>
+        <item>דיילות</item>
+        <item>הפעלת/הדרכת טיולים</item>
+        <item>כנסים ואירועים</item>
+        <item>מזון ומשקאות</item>
+        <item>משק ותחזוקה</item>
+        <item>ניהול</item>
+        <item>סוכן/מתאם נסיעות</item>
+        <item>עובדי בריכה</item>
+        <item>קבלה</item>
+        <item>שיווק/מכירות</item>
+    </string-array>
+    <string-array name="role25">
+        <item>הכל</item>
+        <item>Billing</item>
+        <item>Business Intelligence</item>
+        <item>CRM ERP</item>
+        <item>מבקר מערכות מידע CISA</item>
+        <item>מיישם מערכות מידע</item>
+        <item>מנהל מערכות מידע CIO</item>
+        <item>מתכנת מערכות מידע</item>
+        <item>ניהול פרויקט מערכות מידע</item>
+        <item>ניתוח מערכות מידע</item>
+    </string-array>
+    <string-array name="role26">
+        <item>הכל</item>
+        <item>אבחון</item>
+        <item>הכשרה והדרכה</item>
+        <item>יועץ ארגוני</item>
+        <item>מכירות ושיווק במשאבי אנוש</item>
+        <item>מנהל גיוס והשמה</item>
+        <item>מנהל משאבי אנוש</item>
+        <item>סמנכ\"ל משאבי אנוש</item>
+        <item>פסיכולוג תעסוקתי</item>
+        <item>רווחה</item>
+        <item>רכזי גיוס</item>
+        <item>רכזי משאבי אנוש</item>
+        <item>שכר והטבות</item>
+    </string-array>
+    <string-array name="role27">
+        <item>הכל</item>
+        <item>ביקורת פנים</item>
+        <item>הוצאה לפועל</item>
+        <item>יועץ משפטי/משפטן</item>
+        <item>מזכיר משפטי</item>
+        <item>מכרזים חוזים והתקשרויות</item>
+        <item>מתמחה</item>
+        <item>ניהול</item>
+        <item>סטודנטים/בוגרים</item>
+        <item>עורך דין</item>
+        <item>עריכת פטנטים</item>
+    </string-array>
+    <string-array name="role28">
+        <item>הכל</item>
+        <item>מכירות</item>
+        <item>ניהול</item>
+        <item>שמאי מקרקעים</item>
+        <item>תיווך</item>
+    </string-array>
+    <string-array name="role29">
+        <item>הכל</item>
+        <item>הפצה</item>
+        <item>מובילים</item>
+        <item>נהג ב</item>
+        <item>נהג ג</item>
+        <item>נהג מונית/אוטובוס/הסעות</item>
+        <item>נהל מעל 15 טון</item>
+        <item>נהגים כללי</item>
+        <item>שליחים/ות</item>
+    </string-array>
+    <string-array name="role30">
+        <item>הכל</item>
+        <item>בכירים כללי</item>
+        <item>מנהל פיתוח עסקי</item>
+        <item>מנהל/ת ייצור</item>
+        <item>מנהל/ת כספים</item>
+        <item>מנהל/ת מכירות</item>
+        <item>מנהל/ת רכש</item>
+        <item>מנהל/ת שיווק</item>
+        <item>מנהל/ת תפעול</item>
+        <item>מנכ\"ל</item>
+        <item>סמנכ\"ל כספים</item>
+        <item>סמנכ\"ל מכירות</item>
+        <item>סמנכ\"ל משאבי אנוש</item>
+        <item>סמנכ\"ל פיתוח</item>
+        <item>סמנכ\"ל פיתוח עסקי</item>
+        <item>סמנכ\"ל שיווק</item>
+        <item>סמנכ\"ל תפעול</item>
+    </string-array>
+    <string-array name="role31">
+        <item>הכל</item>
+        <item>מנתח מערכות BI / DWH</item>
+        <item>מנתח מערכות Dot.Net</item>
+        <item>מנתח מערכות Web</item>
+        <item>מנתח מערכות ביטוח</item>
+        <item>מנתח מערכות פיננסיות</item>
+    </string-array>
+    <string-array name="role32">
+        <item>הכל</item>
+        <item>כספים וכלכלה</item>
+        <item>מוביל</item>
+        <item>מחלק</item>
+        <item>מחסנאי</item>
+        <item>מלצרים</item>
+        <item>משגיחי בחינות</item>
+        <item>נהג</item>
+        <item>סדרן</item>
+        <item>סוקר</item>
+        <item>עבודה מועדפת</item>
+        <item>עובדי מבטח</item>
+        <item>עובדים כלליים</item>
+        <item>שליח</item>
+        <item>שמרטף</item>
+    </string-array>
+    <string-array name="role33">
+        <item>הכל</item>
+        <item>מאמן ספורט</item>
+        <item>מדריכי ספורט</item>
+        <item>מורה לחינוך גופני</item>
+        <item>מציל/מורה שחייה</item>
+        <item>ניהול</item>
+        <item>רופא ספורט</item>
+    </string-array>
+    <string-array name="role34">
+        <item>הכל</item>
+        <item>דיילות</item>
+        <item>הנדסת אווירונאוטיקה</item>
+        <item>טייס</item>
+        <item>מבנאי</item>
+        <item>מכונאות מטוסים</item>
+        <item>ניהול</item>
+        <item>ספנות</item>
+        <item>פיקוח ובקרת תעופה</item>
+    </string-array>
+    <string-array name="role35">
+        <item>הכל</item>
+        <item>אנימטור</item>
+        <item>ארט דירקטור</item>
+        <item>גרפיקאי / ביצועיסט</item>
+        <item>מאייר</item>
+        <item>מדריך תוכנות גרפיות</item>
+        <item>מכירות בתחום העיצוב</item>
+        <item>ממצב חנויות</item>
+        <item>מנהל פרוייקטים בעיצוב</item>
+        <item>מעצב פנים</item>
+        <item>ניהול עיצוב</item>
+        <item>סטודנטים לעיצוב</item>
+        <item>עיצוב אינטרנט</item>
+        <item>עיצוב אירועים</item>
+        <item>עיצוב חלונות ראווה</item>
+        <item>עיצוב טקסטיל</item>
+        <item>עיצוב לדפוס</item>
+        <item>עיצוב מולטימדיה</item>
+        <item>עיצוב מוצר</item>
+        <item>עיצוב מטבחים</item>
+        <item>עיצוב רהיטים</item>
+        <item>עיצוב תלת מימד</item>
+        <item>עיצוב תערוכות</item>
+        <item>עיצוב תעשייתי</item>
+        <item>עיצוב תפאורה</item>
+        <item>שוזר פרחים</item>
+        <item>תכשיטנות / צורפות</item>
+    </string-array>
+    <string-array name="role36">
+        <item>הכל</item>
+        <item>הגהה/שכתוב/תרגום</item>
+        <item>כתב/עיתונאי</item>
+        <item>מידען/ית</item>
+        <item>מכירות</item>
+        <item>מנהל/ת מידע</item>
+        <item>ניהול</item>
+        <item>ספרן</item>
+        <item>עורך/ת</item>
+        <item>תסריטאי/מחזאי</item>
+    </string-array>
+    <string-array name="role37">
+        <item>הכל</item>
+        <item>אחראי משמרת</item>
+        <item>אחראי פלנוגרמות</item>
+        <item>דייל מכירות</item>
+        <item>מוכרנות</item>
+        <item>מנהל אזור</item>
+        <item>מנהל הפצה</item>
+        <item>מנהל חנות</item>
+        <item>מנהל מותג</item>
+        <item>מנהל סלר</item>
+        <item>מנהל סניף</item>
+        <item>ניהול</item>
+        <item>סדרן</item>
+        <item>קופאי</item>
+        <item>קניין/מנהל רכש</item>
+        <item>שיווק</item>
+    </string-array>
+    <string-array name="role38">
+        <item>הכל</item>
+        <item>אנשי מקצוע ברכב ומכונאות</item>
+        <item>בוחן רכב</item>
+        <item>הנדסת תחבורה</item>
+        <item>חשמלאי רכב</item>
+        <item>יועץ שירות</item>
+        <item>מכונאי אופנועים</item>
+        <item>מכונאי רכב</item>
+        <item>מכירות רכב</item>
+        <item>מנהל מוסך</item>
+        <item>ניהול רכב ומכונאות</item>
+        <item>פחח</item>
+        <item>קצין בטיחות בתעבורה</item>
+    </string-array>
+    <string-array name="role39">
+        <item>הכל</item>
+        <item>איש רכש</item>
+        <item>איש תפעול לוגיסטיקה ומלאי</item>
+        <item>בקרת איכות</item>
+        <item>מחסנאות</item>
+        <item>מלגזן</item>
+        <item>מתאם רכש/לוגיסטיקה</item>
+        <item>ניהול רכש</item>
+        <item>ניהול-תפעול לוגיסטיקה ומחסנאות</item>
+        <item>עמילות מכס</item>
+        <item>קניינות</item>
+        <item>שיווק/מכירות</item>
+        <item>שילוח/שילוח בינלאומי</item>
+    </string-array>
+    <string-array name="role40">
+        <item>הכל</item>
+        <item>CRA</item>
+        <item>אחיות / אחים</item>
+        <item>דיאטנים</item>
+        <item>וטרינריה</item>
+        <item>חובש/פרמדיק/נהג אמבולנס</item>
+        <item>טכנאי שיניים</item>
+        <item>טכנאים מקצועיים</item>
+        <item>מזכירות רפואית</item>
+        <item>מחקר ברפואה</item>
+        <item>מכירות ציוד רפואי</item>
+        <item>מכשור רפואי</item>
+        <item>מנהל מוצר - רפואה ופארמה</item>
+        <item>מנהל פרוייקטים - רפואה ופארמה</item>
+        <item>מנהל צוות תועמלנים</item>
+        <item>מנהל רפואי</item>
+        <item>ניהול ברפואה</item>
+        <item>סטודנטים ברפואה</item>
+        <item>סייעות שיניים</item>
+        <item>סיעוד</item>
+        <item>עובדי מעבדה</item>
+        <item>פיזיותרפיסט</item>
+        <item>קלינאי תקשורת</item>
+        <item>רופאים ומנתחים</item>
+        <item>רוקחות ופארמה</item>
+        <item>ריפוי בעיסוק</item>
+        <item>רישום / רגולציה</item>
+        <item>רפואה משלימה</item>
+        <item>רפואת שיניים</item>
+        <item>שיננית</item>
+        <item>שיקום וטיפול</item>
+        <item>תועמלן רפואי</item>
+        <item>רופא עיניים</item>
+    </string-array>
+    <string-array name="role41">
+        <item>הכל</item>
+        <item>הומאופתיה</item>
+        <item>הילינג</item>
+        <item>מעסה</item>
+        <item>נטורופת</item>
+        <item>רייקי</item>
+        <item>רפואה סינית</item>
+        <item>רפלקסולוגיה</item>
+    </string-array>
+    <string-array name="role42">
+        <item>הכל</item>
+        <item>טלפונים</item>
+        <item>מוקדנים</item>
+        <item>מנהל מוקד</item>
+        <item>מנהל צוות/אחמ\"ש</item>
+        <item>נציגי מכירות</item>
+        <item>נציגי שימור לקוחות</item>
+        <item>נציגים פרונטליים</item>
+        <item>סוקרים</item>
+        <item>שירות לקוחות</item>
+        <item>תמיכה תכנית</item>
+    </string-array>
+    <string-array name="role43">
+        <item>הכל</item>
+        <item>אבטחה</item>
+        <item>אבטחה-ניול</item>
+        <item>חוקרים/ות</item>
+        <item>מאבטחים/ות שומרים/ות</item>
+        <item>משטרה</item>
+        <item>סיירים/ות</item>
+        <item>סלקטורים/ות</item>
+        <item>קציני/ות בטיחות</item>
+        <item>קציני/ות ביטחון</item>
+    </string-array>
+    <string-array name="role44">
+        <item>הכל</item>
+        <item>DBA</item>
+        <item>Help Desk - תוכנה</item>
+        <item>Presale - Post sale</item>
+        <item>Real Time</item>
+        <item>אינטגרטור תוכנה</item>
+        <item>ארכיטקט מערכת</item>
+        <item>בדיקות תוכנה</item>
+        <item>בוגרי מדעי המחשב</item>
+        <item>הטמעה הדרכה</item>
+        <item>הנדסאי מחשבים</item>
+        <item>הנדסאי תוכנה</item>
+        <item>הנדסת מחשבים</item>
+        <item>הנדסת תוכנה</item>
+        <item>יוצאי ממר\"ם - 8200</item>
+        <item>כתיבה טכנית</item>
+        <item>מדריך תוכנה</item>
+        <item>מהנדס DSP</item>
+        <item>מהנדס Kernel</item>
+        <item>מהנדס אפליקציה</item>
+        <item>מהנדס מערכת - תוכנה</item>
+        <item>מהנדס תוכנה Embedded</item>
+        <item>מהנדס תמיכה</item>
+        <item>מומחה BI</item>
+        <item>מיישם ERP</item>
+        <item>מיישם SAP</item>
+        <item>מיישם אורקל</item>
+        <item>מיישם</item>
+        <item>מכירות תוכנה</item>
+        <item>מנהל מוצר - תוכנה</item>
+        <item>מנהל מערכות מידע</item>
+        <item>מנהל פיתוח</item>
+        <item>מנהל פרויקטים - תוכנה</item>
+        <item>מנתח/מאפיין מערכת</item>
+        <item>מפתח כלי בדיקות</item>
+        <item>מתכנת C</item>
+        <item>מתכנת ++C</item>
+        <item>מתכנת - אחר</item>
+        <item>מתכנת ABAP</item>
+        <item>מתכנת Action Script</item>
+        <item>מתכנת C</item>
+        <item>מתכנת COBOL</item>
+        <item>מתכנת Delphi</item>
+        <item>מתכנת DOT.NET</item>
+        <item>מתכנת ETL</item>
+        <item>מתכנת GIS</item>
+        <item>מתכנת iPhone / מתכנת Android</item>
+        <item>מתכנת J2EE</item>
+        <item>מתכנת J2ME</item>
+        <item>מתכנת JAVA</item>
+        <item>מתכנת Magic</item>
+        <item>מתכנת Oracle / PL/SQL</item>
+        <item>מתכנת PERL</item>
+        <item>מתכנת Power Builder</item>
+        <item>מתכנת RPG</item>
+        <item>מתכנת VB</item>
+        <item>מתכנת VB.NET</item>
+        <item>מתכנת בכיר</item>
+        <item>ניהול תוכנה</item>
+        <item>ניהול תצורה</item>
+        <item>סטודנטים למדעי המחשב</item>
+        <item>סמנכ\"ל פיתוח</item>
+        <item>פיתוח אלגוריתמים</item>
+        <item>ראש צוות פיתוח</item>
+        <item>תמיכה טכנית - תוכנה</item>
+    </string-array>
+    <string-array name="role45">
+        <item>הכל</item>
+        <item>אחראי בקרת תצורה</item>
+        <item>איש QA</item>
+        <item>איש אימות פיתוח</item>
+        <item>בדיקות אוטומטיות</item>
+        <item>בדיקות ידניות</item>
+        <item>בודק CRM/ERP</item>
+        <item>מהנדס QA</item>
+        <item>מנהל QA</item>
+        <item>מנהל אבטחת איכות</item>
+        <item>ראש צוות QA</item>
+        <item>ראש צוות אימות פיתוח</item>
+        <item>ראש צוות בקרת תצורה</item>
+    </string-array>
+    <string-array name="role46">
+        <item>הכל</item>
+        <item>אבטחת איכות</item>
+        <item>אינטגרטור/ית</item>
+        <item>בוגר/ת תעשייה וניהול</item>
+        <item>בטיחות</item>
+        <item>בקרת איכות</item>
+        <item>הנדסאי/ת טכנאי/ת</item>
+        <item>ייצור טקסטיל</item>
+        <item>מהנדס ייצור</item>
+        <item>מחשוב ובקרה</item>
+        <item>מכירות</item>
+        <item>מנהל/ת טכני/ת</item>
+        <item>מנהל/ת ייצור</item>
+        <item>מנהל/ת מפעל</item>
+        <item>מנהל/ת פיתוח</item>
+        <item>מנהל/ת פרוייקטים</item>
+        <item>מנהל/ת תפעול</item>
+        <item>מנהל ייצור-כימיה</item>
+        <item>מנהל תפ\"י</item>
+        <item>מנהל תפעול-ייצור ותעשייה</item>
+        <item>מסגר/רתך</item>
+        <item>מפעילי/ות מכונות</item>
+        <item>מפקח/ת ייצור</item>
+        <item>מתכנן/ת מכני/ת</item>
+        <item>נגרות</item>
+        <item>ניהול</item>
+        <item>ניהול בכיר בייצור</item>
+        <item>סטודנטים/ות בתוע\"נ</item>
+        <item>סטודנטים בתעשייה</item>
+        <item>סמנכ\"ל ייצור</item>
+        <item>עובדי/ות דפוס</item>
+        <item>עובדי/ות ייצור</item>
+        <item>פלנר/ית</item>
+        <item>צבעי</item>
+        <item>רכש</item>
+        <item>שרטט/ת</item>
+        <item>תכנת/ת-CNC</item>
+        <item>תעשיית מזון</item>
+        <item>תפ\"י</item>
+    </string-array>
+
+    <string name="callnumber">להתקשר למעסיק?</string>
+    <string name="contact">צור קשר</string>
+    <string name="explain">הסבר</string>
+    <string name="takanon">תקנון</string>
+    <string name="contacttitle">פניה לאפליקציה.מלא את התוכן למטה</string>
+    <string name="orderstring">מיין</string>
+
+    <string-array name="sortby">
+        <item>לפי תאריך עדכון</item>
+        <item>לפי מרחק</item>
+        <item>לפי שם חברה</item>
+    </string-array>
+
+    <string name="done">שלח</string>
+    <string name="sendto">שולח משרה במייל ל:</string>
+    <string name="anothermail">שנה</string>
+    <string name="kmfromyou">ממיקומך</string>
+    <string name="meter">\u0020מטר\u0020</string>
+    <string name="km">\u0020ק\&quot;מ\u0020</string>
+    <string name="context">תוכן הפניה</string>
+    <string name="name">שם</string>
+    <string name="phonenumber">מספר טלפון</string>
+    <string name="mailback">מייל לחזרה</string>
+
+    <string-array name="contacttitle">
+        <item>בעיה</item>
+        <item>פרסום משרה</item>
+        <item>מחפש עבודה</item>
+    </string-array>
+
+    <string name="noinput">לא הוזן שום ערך</string>
+    <string name="noinput2">אנא הזן את תוכן הפניה ואת שמך</string>
+    <string name="noinput3">אנא הזן את כל השדות המסומנים באדום</string>
+    <string name="noinputpassword">אנא הזן סיסמה</string>
+    <string name="distanceof">\u0020 במרחק של\u0020</string>
+
+    <string-array name="city0">
+        <item>30 ק\&quot;מ</item>
+        <item>15 ק\&quot;מ</item>
+        <item>10 ק\&quot;מ</item>
+        <item>5 ק\&quot;מ</item>
+        <item>3 ק\&quot;מ</item>
+        <item>2 ק\&quot;מ</item>
+        <item>1 ק\&quot;מ</item>
+        <item>800 מטר</item>
+        <item>500 מטר</item>
+    </string-array>
+    <string-array name="city1">
+        <item>הכל</item>
+        <item>אופקים</item>
+        <item>אור יהודה</item>
+        <item>אור עקיבא</item>
+        <item>אזור</item>
+        <item>אילת</item>
+        <item>אלפי מנשה</item>
+        <item>אלקנה</item>
+        <item>אריאל</item>
+        <item>אשדוד</item>
+        <item>אשקלון</item>
+        <item>באר יעקב</item>
+        <item>באר שבע</item>
+        <item>בית שאן</item>
+        <item>בית שמש</item>
+        <item>בני ברק</item>
+        <item>בנימינה</item>
+        <item>בקעת אונו</item>
+        <item>בקעת הירדן</item>
+        <item>ברקן</item>
+        <item>בת ים</item>
+        <item>גבעת שמואל</item>
+        <item>גבעתיים</item>
+        <item>גדרה</item>
+        <item>גליל מערבי</item>
+        <item>גליל עליון</item>
+        <item>גליל תחתון</item>
+        <item>געש</item>
+        <item>דימונה</item>
+        <item>הוד השרון</item>
+        <item>הרי יהודה</item>
+        <item>הרצליה</item>
+        <item>זכרון יעקב</item>
+        <item>חדרה</item>
+        <item>חולון</item>
+        <item>חיפה</item>
+        <item>טבריה</item>
+        <item>יבנה</item>
+        <item>יהוד</item>
+        <item>ים המלח</item>
+        <item>יפו</item>
+        <item>יקום</item>
+        <item>יקנעם</item>
+        <item>ירושלים</item>
+        <item>כוכב יאיר</item>
+        <item>כפר סבא</item>
+        <item>כרכור</item>
+        <item>כרמיאל</item>
+        <item>כרמל</item>
+        <item>לב השרון / עמק חפר</item>
+        <item>לוד</item>
+        <item>מבשרת ציון</item>
+        <item>מגדל העמק</item>
+        <item>מודיעין</item>
+        <item>מעלה אדומים</item>
+        <item>מעלות</item>
+        <item>מצפה רמון</item>
+        <item>נגב</item>
+        <item>נהריה</item>
+        <item>נמל תעופה</item>
+        <item>נס ציונה</item>
+        <item>נצרת</item>
+        <item>נצרת עילית</item>
+        <item>נשר</item>
+        <item>נתיבות</item>
+        <item>נתניה</item>
+        <item>עכו</item>
+        <item>עמק הירדן / סובב כנרת</item>
+        <item>עמק יזרעאל</item>
+        <item>עפולה והעמקים</item>
+        <item>ערבה</item>
+        <item>ערד</item>
+        <item>פרדס חנה</item>
+        <item>פתח תקווה</item>
+        <item>צפת</item>
+        <item>קיסריה</item>
+        <item>קריות</item>
+        <item>קרית גת</item>
+        <item>קרית טבעון / טבעון</item>
+        <item>קרית מלאכי</item>
+        <item>קרית שמונה</item>
+        <item>קרני שומרון</item>
+        <item>ראש העין</item>
+        <item>ראשון לציון</item>
+        <item>רחובות</item>
+        <item>רמלה</item>
+        <item>רמת גן</item>
+        <item>רמת הגולן</item>
+        <item>רמת השרון</item>
+        <item>רמת חובב</item>
+        <item>רעננה</item>
+        <item>רשפון</item>
+        <item>שדרות</item>
+        <item>שוהם</item>
+        <item>שערי תקווה</item>
+        <item>שפיים</item>
+        <item>תל אביב</item>
+    </string-array>
+    <string-array name="city2">
+        <item>הכל</item>
+        <item>אור יהודה</item>
+        <item>אזור</item>
+        <item>בני ברק</item>
+        <item>בקעת אונו</item>
+        <item>בת ים</item>
+        <item>גבעת שמואל</item>
+        <item>גבעתיים</item>
+        <item>חולון</item>
+        <item>יהוד</item>
+        <item>יפו</item>
+        <item>לוד</item>
+        <item>נמל תעופה</item>
+        <item>פתח תקווה</item>
+        <item>ראש העין</item>
+        <item>ראשון לציון</item>
+        <item>רמלה</item>
+        <item>רמת גן</item>
+        <item>שוהם</item>
+        <item>תל אביב</item>
+    </string-array>
+    <string-array name="city3">
+        <item>הכל</item>
+        <item>אור עקיבא</item>
+        <item>געש</item>
+        <item>הוד השרון</item>
+        <item>הרצליה</item>
+        <item>חדרה</item>
+        <item>יקום</item>
+        <item>כוכב יאיר</item>
+        <item>כפר סבא</item>
+        <item>כרכור</item>
+        <item>לב השרון / עמק חפר</item>
+        <item>נתניה</item>
+        <item>פרדס חנה</item>
+        <item>קיסריה</item>
+        <item>רמת השרון</item>
+        <item>רעננה</item>
+        <item>רשפון</item>
+        <item>שפיים</item>
+    </string-array>
+    <string-array name="city4">
+        <item>הכל</item>
+        <item>בית שמש</item>
+        <item>הרי יהודה</item>
+        <item>ירושלים</item>
+        <item>מבשרת ציון</item>
+        <item>מודיעין</item>
+        <item>מעלה אדומים</item>
+    </string-array>
+    <string-array name="city5">
+        <item>הכל</item>
+        <item>באר יעקב</item>
+        <item>גדרה</item>
+        <item>יבנה</item>
+        <item>נס ציונה</item>
+        <item>רחובות</item>
+    </string-array>
+    <string-array name="city6">
+        <item>הכל</item>
+        <item>אלפי מנשה</item>
+        <item>אלקנה</item>
+        <item>אריאל</item>
+        <item>בקעת הירדן</item>
+        <item>ברקן</item>
+        <item>קרני שומרון</item>
+        <item>שערי תקווה</item>
+    </string-array>
+    <string-array name="city7">
+        <item>הכל</item>
+        <item>בנימינה</item>
+        <item>זכרון יעקב</item>
+        <item>חיפה</item>
+        <item>יקנעם</item>
+        <item>כרמל</item>
+        <item>נשר</item>
+        <item>קריות</item>
+    </string-array>
+    <string-array name="city8">
+        <item>הכל</item>
+        <item>בית שאן</item>
+        <item>גליל מערבי</item>
+        <item>גליל עליון</item>
+        <item>גליל תחתון</item>
+        <item>טבריה</item>
+        <item>כרמיאל</item>
+        <item>מגדל העמק</item>
+        <item>מעלות</item>
+        <item>נהריה</item>
+        <item>נצרת</item>
+        <item>נצרת עילית</item>
+        <item>עכו</item>
+        <item>עמק הירדן / סובב כנרת</item>
+        <item>עמק יזרעאל</item>
+        <item>עפולה והעמקים</item>
+        <item>צפת</item>
+        <item>קרית טבעון / טבעון</item>
+        <item>קרית שמונה</item>
+        <item>רמת הגולן</item>
+    </string-array>
+    <string-array name="city9">
+        <item>הכל</item>
+        <item>אופקים</item>
+        <item>אשדוד</item>
+        <item>אשקלון</item>
+        <item>באר שבע</item>
+        <item>דימונה</item>
+        <item>ים המלח</item>
+        <item>מצפה רמון</item>
+        <item>נגב</item>
+        <item>נתיבות</item>
+        <item>ערד</item>
+        <item>קרית גת</item>
+        <item>קרית מלאכי</item>
+        <item>רמת חובב</item>
+        <item>שדרות</item>
+    </string-array>
+    <string-array name="citya">
+        <item>הכל</item>
+        <item>אילת</item>
+        <item>ערבה</item>
+    </string-array>
+    <string-array name="cityb">
+        <item>הכל</item>
+        <item>אוסטרליה</item>
+        <item>אירופה</item>
+        <item>אנגליה</item>
+        <item>אסיה</item>
+        <item>אפריקה</item>
+        <item>ארה\"ב</item>
+        <item>דרום אמריקה</item>
+        <item>מזרח אירופה</item>
+        <item>מרכז אמריקה</item>
+        <item>קנדה</item>
+    </string-array>
+
+    <string name="selectcity">בחר עיר:</string>
+    <string name="numsave">\u0020משרות שמורות .\n למחיקה לחץ לחיצה ארוכה</string>
+    <string name="numagents">\u0020סוכנים  .\n למחיקה לחץ לחיצה ארוכה</string>
+    <string name="numviewed">\u0020משרות נצפו לאחרונה</string>
+    <string name="badmail">כתובת לא תקינה</string>
+    <string name="notrelevant">משרה לא אקטואלית</string>
+    <string name="delete">מחק משרה</string>
+    <string name="deleteyes">מחק </string>
+    <string name="deleteagent">מחיקת סוכן חכם</string>
+    <string name="tothesite2">מעבר לאתר</string>
+    <string name="tothesite">אפשרויות נוספות</string>
+    <string name="sendingnow">שולח נתונים...אנא המתן...</string>
+    <string name="succesfullcontact">הטופס נשלח בהצלחה</string>
+    <string name="supportEmail">support@jobkarov.com</string>
+    <string name="gpsquestion">התקן GPS אינו זמין</string>
+    <string name="yes">כן</string>
+    <string name="no">לא</string>
+    <string name="insertaddress">הכנס כתובת לחיפוש סביבה</string>
+    <string name="contacttype">סוג הפניה:</string>
+    <string name="insertemail">הזן כתובת מייל</string>
+    <string name="sendcv">שלח קורות חיים</string>
+    <string name="insertpassword">הכנס שם משתמש וסיסמא</string>
+    <string name="cvsent">קורות חיים נשלחו בהצלחה למעסיק</string>
+    <string name="username">שם משתמש</string>
+    <string name="password">סיסמא</string>
+    <string name="wrongpass">שם משתמש או סיסמא שגויים</string>
+    <string name="title_activity_explanations">ExplanationsActivity</string>
+    <string name="action_settings">Settings</string>
+    <string name="share">שתף</string>
+    <string name="sendsms">שלח SMS</string>
+    <string name="chooseShare">בחר אפליקציה לשיתוף:</string>
+    <string name="jobShared">גלשתי עכשיו בגוב קרוב ומצאתי משרה שתעניין אותך -</string>
+
+    <string-array name="mapaSubMenu">
+        <item>מפה רגילה</item>
+        <item>ניווט</item>
+        <item>תצוגת רחוב</item>
+    </string-array>
+
+    <string name="selectAction">בחר בפעולה הרצויה</string>
+    <string name="cancel">סגור</string>
+
+    <string-array name="contactSubMenu">
+        <item>שלח קורות חיים למעסיק</item>
+        <item>שלח פרטים למייל שלך</item>
+        <item>התקשר-רגיל</item>
+        <item>התקשר-וידאו</item>
+        <item>שלח מסרון</item>
+    </string-array>
+    <string-array name="contactSubMenuShort">
+        <item>שלח קורות חיים למעסיק</item>
+        <item>שלח פרטים למייל שלך</item>
+    </string-array>
+
+    <string name="askdetailsaboutjob">אבקש פרטים לגבי המשרה</string>
+    <string name="askdetailsaboutjob2">בהמשך להצעת העבודה שפורסמה ב-jobkarov :\n</string>
+    <string name="title_activity_social">SocialActivity</string>
+    <string name="sendtofriend">שתף את האפליקציה</string>
+    <string name="rateus">דרגו אותנו</string>
+    <string name="like">עשו לנו "לייק" בפייסבוק</string>
+    <string name="plusone">עשו לנו +1 בגוגל</string>
+    <string name="apptoshare">אפליקציה לחיפוש עבודה סביבך</string>
+    <string name="googleplay">Job Karov:חיפוש עבודה סביבך. להגיע רחוק ולעבוד קרוב \n http://www.jobkarov.com/shared</string>
+    <string name="googleplay2">http://www.jobkarov.com</string>
+    <string name="shareprejobfix">http://www.jobkarov.com/Search/Site/</string>
+    <string name="map">מפה</string>
+    <string name="googlePlus">עשו לנו +1 בגוגל</string>
+    <string name="title_activity_map">MapActivity</string>
+    <string name="rtlchange">היפוך עברית</string>
+    <string name="helpfind">עזרה במציאת תפקיד</string>
+    <string name="foundat">נמצא ב \n </string>
+    <string name="specialityequal">תחום = </string>
+    <string name="roleequal">\n תפקיד = </string>
+    <string name="operategps">המערכת זיהתה כי חיבור GPS אינו פעיל. האם תרצה להפעילו?</string>
+    <string name="all">הכל</string>
+    <string name="tryagain">נסה שוב</string>
+    <string name="search_hint">חיפוש חופשי</string>
+    <string name="shareby">שתף באמצעות</string>
+    <string name="navigateby">נווט באמצעות</string>
+    <string name="voicecontrol">שליטה קולית</string>
+    <string name="cantunderstand">לא מבין אותך. נסה שוב</string>
+    <string name="commandcall1">התקשר</string>
+    <string name="commandcall2">חייג</string>
+    <string name="commandsendtomail1">שלח למייל</string>
+    <string name="commandsendcv">שלח קורות חיים</string>
+
+    <string-array name="sidemenugroups">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+        <item>עזרה</item>
+        <item>אפשרויות נוספות</item>
+    </string-array>
+    <string-array name="sidemenugroupsloged">
+        <item>4</item>
+        <item>אזור אישי</item>
+        <item>5</item>
+        <item>עזרה</item>
+        <item>אפשרויות נוספות</item>
+    </string-array>
+    <string-array name="sidemenuitems0">
+        <item>חיפוש </item>
+        <item>חיפושים אחרונים</item>
+    </string-array>
+    <string-array name="sidemenuitems1loged">
+        <item>התנתקות</item>
+        <item>עדכון פרטים אישיים</item>
+        <item>סוכן חכם</item>
+    </string-array>
+    <string-array name="sidemenuitems1">
+        <item>התחברות</item>
+    </string-array>
+    <string-array name="sidemenuitems2">
+        <item>משרות שמורות</item>
+        <item>נצפו לאחרונה</item>
+        <item>שתף את האפליקציה</item>
+        <item>כניסה למעסיקים</item>
+    </string-array>
+    <string-array name="sidemenuitems3">
+        <item>עזרה במציאת תפקיד</item>
+        <item>צור קשר</item>
+        <item>אודות</item>
+        <item>הסבר</item>
+        <item>הסבר פקודות קוליות</item>
+        <item>תקנון</item>
+    </string-array>
+    <string-array name="sidemenuitems4">
+        <item>הרשמה</item>
+        <item>עשו לנו לייק בפייסבוק</item>
+        <item>עשו לנו 1+ בגוגל</item>
+        <item>מעבר לאתר</item>
+        <item>דרגו אותנו</item>
+        <item>חזון</item>
+    </string-array>
+
+    <string name="drawer_open">פתח תפריט</string>
+    <string name="drawer_close">סגור תפריט</string>
+    <string name="commandnavigate">נווט</string>
+    <string name="commandstreet">תצוגת רחוב</string>
+    <string name="commandvideocall">בשיחת</string>
+    <string name="commandsms1">שלח מסרון</string>
+    <string name="commandsms2">שלח הודעה</string>
+    <string name="commandnavigate2">סע</string>
+    <string name="commandmapa">מפה</string>
+    <string name="commandinfo">מידע נוסף</string>
+    <string name="dontshowagain">אל תציג שוב</string>
+    <string name="explainshowresult">        שלום, במסך משרה באפשרותך להפעיל פקודות קוליות,\n
+להפעלת הפקודות אנא לחץ על הסמל של המיקרופון בצד ימין למעלה של המסך,\n
+לאחר מכן יש באפשרותך להגיד את הדברים הבאים:\n
+התקשר - יבוצע התקשרות למעסיק\n
+התקשר בשיחת וידאו - יבוצע התקשרות בשיחת וידאו\n
+שלח מסרון / שלח הודעה - יבוצע שליחת הודעה\n
+שלח למייל - יבוצע שליחה של המשרה למייל שלך\n
+שלח קורות חיים - יבוצע שליחת קורות חיים\n
+נווט ליעד / סע ליעד- יבוצע הפעלת ניווט לעסק\n
+מפה - יוצג לך המפה עם הכתובת של העסק\n
+תצוגת רחוב - תוכל לראות איך נראה מקום העבודה\n
+מידע נוסף - תוכל לראות פרטים נוספים על מקום העבודה\n</string>
+    <string name="titleshowresult">פקודות קוליות</string>
+    <string name="arrivalat">זמן הגעה משוער:</string>
+    <string name="arrivalbycar">זמן הגעה משוער ברכב:</string>
+    <string name="arrivalbywalking">זמן הגעה משוער ברגל:</string>
+    <string name="arrivalbytransit">זמן הגעה משוער בתחבורה ציבורית:</string>
+    <string name="commandnavigate3">לבית</string>
+    <string name="commandnavigate4">נווה</string>
+    <string name="commandnavigate5">ליעד</string>
+    <string name="commandnavigate6">sa</string>
+    <string name="voiceexplain">הסבר פקודות קוליות</string>
+    <string name="register">הרשמה</string>
+    <string name="vision">חזון</string>
+    <string name="visionexplain">החזון שלנו הוא שכל אחד יוכל למצוא עבודה קרובה אליו</string>
+    <string name="jobsinthislocation">משרות בכתובת זו:</string>
+    <string name="arrivaltitle">זמני הגעה ליעד</string>
+    <string name="onehour">1 שעה</string>
+    <string name="hour">שעה ו-</string>
+    <string name="oneminute">1 דקה</string>
+    <string name="minute">דקה</string>
+    <string name="twohour">2 שעות</string>
+    <string name="twohours">שעתיים ו-</string>
+    <string name="hours">שעות</string>
+    <string name="hoursafter">שעות ו-</string>
+    <string name="wrongmail">אנא הזן מייל תקין</string>
+    <string name="donestring">אישור</string>
+    <string name="hiddenaddress">כתובת חסויה</string>
+    <string name="hiddenaddressmsg">הכתובת חסויה ולכן הכפתור לא פעיל</string>
+    <string name="hello">שלום, </string>
+    <string name="selectcityins">בחר עיר</string>
+    <string name="desc">לוגו של החברה</string>
+    <string name="smartagent">סוכן חכם</string>
+
+    <string-array name="infomenuitems">
+        <item>הוסף למועדפים</item>
+        <item>מידע נוסף על החברה</item>
+        <item>שיתוף המשרה</item>
+    </string-array>
+    <string-array name="infomenuitems2">
+        <item>הסר ממועדפים</item>
+        <item>מידע נוסף על החברה</item>
+        <item>שיתוף המשרה</item>
+    </string-array>
+
+    <string name="success">הפעולה הסתימה בהצלחה</string>
+    <string name="error">שגיאה</string>
+    <string name="signsuccessfull">נרשמת בהצלחה!</string>
+    <string name="signin">התחבר</string>
+    <string name="forgotpassword">שכחתי סיסמה</string>
+    <string name="title_activity_map_select">בחירת מיקום</string>
+    <string name="mapselectinstructions">לבחירת מיקום לחץ לחיצה ארוכה במיקום הנבחר</string>
+    <string name="mapselect">בחירת מיקום</string>
+    <string name="app_id">700352396677077</string>
+    <string name="cancelled">בוטל</string>
+    <string name="permission_not_granted">Unable to perform selected action because permissions were not granted.</string>
+    <string name="ok">OK</string>
+    <string name="hello_user">שלום %1$s!</string>
+    <string name="successfully_posted_post">Successfully posted \'%1$s\'.\nPost ID: %2$s</string>
+    <string name="status_update">Updating status for %1$s at %2$s</string>
+    <string name="photo_post">Photo Post</string>
+    <string name="you_picked">You picked:</string>
+    <string name="no_friends_selected">&lt;No friends selected&gt;</string>
+    <string name="no_place_selected">&lt;No place selected&gt;</string>
+    <string name="pick_seattle_place">Pick a Seattle Place</string>
+    <string name="exception">Exception: %1$s</string>
+    <string name="signinusingmail">התחברות רגילה</string>
+    <string name="login">התחברות</string>
+    <string name="skip">דלג</string>
+    <string name="invitefriends">הזמן חברים</string>
+    <string name="welcome">ברוך הבא</string>
+    <string name="passwordsent">הסיסמה נשלחה למייל</string>
+    <string name="logout">התנתק</string>
+    <string name="add">הוסף</string>
+    <string name="title_activity_details">DetailsActivity</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="aroundaddress">סביב כתובת</string>
+    <string name="insertagentname">שם סוכן חכם (לא חובה)</string>
+    <string name="agentnumber">סוכן חכם מספר</string>
+    <string name="select">&lt; בחר &gt;</string>
+    <string name="change">&lt; שנה &gt;</string>
+    <string name="change1">&lt; שנה תחום &gt;</string>
+    <string name="change2">&lt; שנה תפקיד &gt;</string>
+    <string name="change3">&lt; שנה סוג &gt;</string>
+    <string name="change4">&lt; שנה אזור &gt;</string>
+    <string name="select1">&lt;  בחר תחום &gt;</string>
+    <string name="select2">&lt;  בחר תפקיד &gt;</string>
+    <string name="select3">&lt;  בחר סוג &gt;</string>
+    <string name="select4">&lt;  בחר אזור &gt;</string>
+    <string name="select5">&lt;  בחר מרחק &gt;</string>
+    <string name="unknownlocation">מיקום לא ידוע. לחץ לשינוי כתובת</string>
+    <string name="presstochange">\nלחץ לחיפוש סביב כתובת אחרת</string>
+    <string name="currentlocation">מיקום נוכחי</string>
+    <string name="finish">סיום</string>
+    <string name="jobstitle">משרות</string>
+    <string name="jobshere">משרות בכתובת זאת</string>
+    <string name="cvbuttontext">הגש מועמדות</string>
+    <string name="additionaldetails">פרטים נוספים</string>
+    <string name="loginfacebook">התחברות עם פייסבוק</string>
+    <string name="title_activity_filter">סינונים</string>
+    <string name="bycity">לפי עיר</string>
+    <string name="bycompany">לפי חברה</string>
+    <string name="filter">סנן</string>
+    <string name="newagent">סוכן חדש</string>
+    <string name="astrix">*</string>
+    <string name="pleaseregister">הסוכן החכם דורש הרשמה</string>
+    <string name="title_activity_last_searches">LastSearchesActivity</string>
+    <string name="lastsearches">חיפושים אחרונים</string>
+    <string name="jobdetails">פרטי משרה</string>
+    <string name="takanondetails">תנאי שימוש – אתר ואפליקצייה\n
+1. מבוא\n
+1.1. השימוש בדף האינטרנט ובשירות הסלולרי "Job Karov" המהווים לוח פרסומי בלבד ופלטפורמה להעברת קובץ קורות החיים של מחפש העבודה למעסיקים פוטנציאליים לצורך מציאת עבודה בהתאם ובקרבת מקום מגוריו (להלן: "האתר" ו "האפליקציה") כפוף לתנאי השימוש המפורטים להלן (להלן: "תנאי השימוש") לרבות האמור במדיניות הפרטיות ובכפוף לכל דין. השימוש באתר או באפליקציה מהווה הסכמה מפורשת מצדך (להלן: "המשתמש") לתנאים כאמור.\n 
+1.2. מטרת תנאי השימוש היא להבהיר את היחסים בין מפעילת האפליקציה, חברת JobKarov\n
+1.3. (להלן: "המפעילה") לבין כל אדם ו/או גוף הנכנסים לאתר זה ו/או המשתמשים בשירותיה. גלישה ושימוש באתר או באפליקציה מהווה הסכמה מצדך להוראות ולתנאים אלה והתחייבותך לפעול לפיהם. אם אינך מסכים לכל תנאי השימוש אל תעשה שימוש באתר או באפליקציה. מפעילי האתר שומרים לעצמם את הזכות להפסיק את שימושך באתר או באפליקציה אם לא תעמוד באחד או יותר מתנאי השימוש.\n
+1.4. תנאי השימוש קובעים את הגישה שלך לאפליקציה ויחולו על כל שימוש שתעשה בה, לרבות במידע בתכנים ובשירותים המופיעים בה או בקישוריות למקורות מידע אחרים המסופקים בה או באמצעותה, וכן על כל מסירת מידע והם מהווים את הבסיס המשפטי לכל התקשרות או פעולה שתעשה במסגרת זו. \n
+1.5. בתנאי השימוש ובכל הטקסטים המופיעים באפליקציה, לשון יחיד משמעה גם לשון רבים ולהיפך, ולשון זכר משמעה לשון נקבה ולהיפך, הכל לפי ההקשר.  \n
+2. הגדרות\n
+"התוכן" האתר והאפליקציה, תכני המודעות, הדפים המקוונים הכלולים בהם, הסיווג, הסידור וההצגה של המידע וכל צורת המחשה אחרת הכלולים בהם, בדוורים ובמסרונים.\n
+"השירות" משמעותו האפליקציה והאתר, לרבות הוראות והנחיות נלוות, מוצרים ושירותים קשורים אחרים, שירותי תמיכה אישית נלווית, אם וככל שיינתנו, וכל שינוי ו/או תיקון של האמור לעיל כפי שעשויים להיות מושלמים על ידי המפעילה מעת לעת לפי שיקול דעתה הבלעדי.\n 
+"החשבון" משמעותו החשבון שנפתח במסגרת השירות על שמך כמנוי, או כל שימוש שנעשה בשירות שלנו ללא פתיחת חשבון.\n
+"שגיאות אפליקציה/אתר" משמעותן כל הפרעה בזמינות האפליקציה או האתר אשר נגרמה עקב סיבות שלא בשליטתה הישירה של המפעילה.\n
+"אתה" ו"משתמשים", לרבות, בין היתר, יחידים וישויות המורשים על ידינו לעשות שימוש בשירות וכן העובדים, היועצים, הקבלנים והסוכנים שלך; או צדדים שלישיים שעמם הנך מנהל עסקים.\n
+"הנתונים שלך" משמעותם כל הנתונים או המידע האלקטרוניים המוגשים על ידך או הנאספים על ידיי המפעילה באפליקציה במהלך השימוש באפליקציה. \n
+3. על תנאי השימוש\n
+3.1. תנאי שימוש אלה מהווים הסכם נפרד בין המשתמש לבין המפעילה. מוסכם ומובהר כי המפעילה לא תהא אחראית כלפי המשתמש במקרה של הפרת תנאים אלה על ידי משתמש אחר, וכי במקרה של הפרה כלשהי על ידי משתמש אחר יוכל המשתמש לתבוע אך ורק את הצד המפר ולא תהיה לו כל תביעה, טענה ו/או דרישה כלשהי כלפי המפעילה.\n 
+3.2. מובהר בזאת, כי רק האמור בהסכם זה יחייב את המפעילה. פרסום המודעות אינו מהווה המלצה או הבעת עמדה של המפעילה לגבי נכונות או כדאיות השירות, ולעניין השימוש בהם.\n 
+3.3. המפעילה מספקת את השירות ומנויי המשתמשים שלה כיום הם ללא עלות, אך היא שומרת לעצמה את הזכות לשלב מרכיבים נוספים באפליקציה, אשר עשויים להיות כפופים לתשלום מצד המשתמש.\n
+4. קניין רוחני\n
+4.1. כל זכויות הקניין הרוחני, לרבות הזכויות המוסריות, ביחס לאתר ולאפליקציה, תוכנם, עיצובם, עריכתם וסימניהם המסחריים וכן אופן הצגתו ועריכתו של המידע המופיע באתר או באפליקציה, שמורות באופן בלעדי למפעילה.\n 
+4.2. אין להעתיק, לשכפל ו/או להדפיס את התוכן באתר ובאפליקציה במלואו או בחלקו לצורך הפצה או פרסום ללא קבלת אישור בכתב ומראש מהמפעילה.\n
+4.3. אין לעשות בתוכן שימוש אלא למטרות לשמן נועדו לצרכיו הפרטיים והאישיים של המשתמש, להבדיל מצרכים מסחריים. מובהר כי משתמש רשאי לעשות שימוש בתוכן אך ורק לצורך חיפוש עבודה ורשאי לשלוח קורות חיים בלבד באמצעות הקישורים המופיעים באתר ובאפליקציה. חל איסור גורף לעשות שימוש בתוכן לכל צורך אחר, לרבות קידום, שיווק ופרסום של עסקים וגופים מסחריים.\n 
+4.4. המשתמש מתחייב כי לא יפרסם ברבים את התוכן ו/או חלק ממנו, אלא בתנאים המפורטים באתר ובאפליקציה. כמו כן, מתחייב המשתמש כי לא יפרסם ברבים כל מוצר ו/או פלט של המידע, בין שהוא מודפס ובים שהוא ניתן כקובץ על גבי אמצעים מגנטיים או בכל צורה אחרת וכי לא ישכפל, לא יצלם, לא יעתיק ולא ידפיס כל מוצר ו/או פלט כאמור לעיל מתוך התוכן באתר ובאפליקציה או כל חלק ממנו לצורך הפצה או פרסום בכל דרך שהיא.\n 
+4.5. המפעילה תהא רשאית להוסיף על כל קורות חיים שישלחו דרך האתר והאפליקציה את שמה, את הלוגו שלה, או כל כיתוב אחר שתמצא לנכון.\n
+5. אחריות ואי נטילת אחריות\n
+5.1. התוכן המוצג באתר ובאפליקציה נאסף ממקורות רבים. יחד עם זאת, אין למפעילה שליטה על מקורות המידע והתוכן ולפיכך המפעילה אינה נושאת באחריות כלשהי למידע ולתוכן המתפרסמים באתר ובאפליקציה ו/או ערבה לטיבם, נכונותכם, תקפותם, שלמותם, דיוקם או התאמתם לכל מטרה שהיא.\n 
+5.2. המפעילה לא תישא באחריות לכל נזק או פגיעה, ישירים או עקיפים, מכל סוג שהוא, שיגרמו למשתמש כתוצאה משימוש ומהסתמכות על התוכן והשירות המוצעים באתר ובאפליקציה. למשתמש לא תהיה כל טענה בגין הסתמכותו על המידע שפורסם באתר או באפליקציה ועל כך כי כפועל יוצא מכך לא עשה שימוש במקורות מידע אחרים. למשתמש לא תהיה כל טענה לגבי מידע שפורסם באתר, אך לא נשלח לו באמצעות הדוא"ל, דיוור או מסרון. המפעילה לא תישא באחריות כלפי המשתמש בנוגע למידע שפורסם באתר או באפליקציה ו/או הגיע לצד שלישי דרך האתר או האפליקציה.\n   
+5.3. המפעילה אינה מתחייבת כי הקישורים המצויים באתר ובאפליקציה ו/או במסגרת הדיוורים ו/או המסרונים יהיו תקינים ויובילו לאתר אינטרנט פעיל. הימצאותו של קישור לאתר מסוים באתר או באפליקציה אין משמעותה כי תוכן האתר והאפליקציה הינו מהימן ו/או מלא ו/או עדכני, והמפעילה לא תישא בכל אחריות בקשר לכך. מבלי לגרוע מהאמור לעיל, המפעילה אינה אחראית לכל נזק, עקיף או ישיר, שיגרם למשתמש ו/או לרכושו כתוצאה משימוש ו/או הסתמכות על המידע והתכנים המופיעים באתרים אליהם תגיע באמצעות או דרך שימוש או קישור הקיימים באתר ובאפליקציה.\n 
+5.4. יתכן כי השירותים באתר יופרעו ו/או ילוו בשגיאות ו/או לא יינתנו כסדרם ללא הפסקות והפרעות. המפעילה אינה מתחייבת לכך ש האתר והאפליקציה יהיו חסינים מפני גישה לא חוקית למחשבי המפעילה, נזקים, קלקולים, תקלות, כשלים בחומרה, תוכנה או בקווי התקשורת אצל המפעילה או מי מספקיה או ייפגעו מכל סיבה אחרת. המפעילה לא תישא בכל אחריות, מכל סוג, לכל נזק, ישיר או עקיף, שייגרמו למשתמש ו/או לצד שלישי כלשהו, או לרכושם עקב כך.\n
+5.5. המידע והשירותים הזמינים במסגרת השירות הניתן באתר ובאפליקציה, עשויים לכלול אי-דיוקים או טעויות סופר ואחרות. המפעילה אינה מתחייבת ואינה מצהירה כי השירות יהיה ללא הפרעות או ללא תקלות, או כי תקלות תתוקנה, או כי השירות או השרת המספק את השירות יהיו נקיים מווירוסים או מרכיבים מזיקים אחרים. המפעילה אינה מתחייבת ו/או מצהירה כי השימוש או תוצאות השימוש בשירות או בחומרים המסופקים באמצעות השירות יהיו מדויקים, נכונים, מהימנים או אמינים בכל דרך.\n 
+5.6. המשתמש מסכים באופן מפורש, כי המפעילה לא תהיה אחראית בכל דרך בשל גישה ללא הרשאה או שינויים שייערכו במידע או מסרים של המשתמש, בין אם נשלחו או נתקבלו על ידו ובין אם לאו.
+5.7. אין המפעילה אחראית על תוכנן של מודעות הפרסום או הצעות מסחריות של צדדים שלישיים המופיעים באתר ובאפליקציה. כל טענה, תביעה או דרישה מצד משתמש בגין הצעות, מוצרים או שירותים כאמור, קבלתם או תוצאותיהם, יופנו על ידו במישרין אל הצד השלישי, שממנו קיבל את ההצעה או קנה את השירות, ולא תהיה לו בגינן כל תביעה או דרישה כלפי המפעילה או מי מטעמה.
+6. התחייבויות המשתמש
+6.1. המשתמש מתחייב כלפי המפעילה כי לא יישלח דרך האתר והאפליקציה לכל צד ג' שפרטיו מופיעים באתר כל חומר פרסומי ו/או בעל אופי מסחרי ו/או כל תוכן הפוגע או מפר זכויות קנייניות של אחרים, לרבות זכויות יוצרים או סימני מסחר; כל תוכן פורנוגרפי או בעל אופי מיני בוטה; כל תוכן שפרסומו נאסר על פי הוראות כל דין, לרבות על פי צווי איסור פרסום של בית משפט; כל תוכן המהווה לשון הרע על אדם ו/או גוף כלשהו והפוגע בפרטיותו; כל תוכנת מחשב, קוד מחשב או יישום הכוללים נגיפי מחשב, וירוסים, תוכנות עוינות, יישומים מזיקים וכדומה; סיסמאות, שמות משתמש ופרטים מזהים אחרים, המאפשרים שימוש בתוכנות מחשב, קבצים דיגיטליים, אתרי אינטרנט ושירותים, הטעונים הרשמה או תשלום, בלא תשלום או הרשמה כאמור; כל מידע בעל אופי או תוכן טורדני, מעליב, עוין, מאיים, גס או גזעני; כל מידע העלול להטעות צד ג' כלשהו; כל מידע המנוגד לכללי השימוש המקובלים באינטרנט או העלול לגרום נזק או לפגוע במשתמשי אינטרנט בכלל, ובמשתמשי האתר והמעסיקים בפרט. 
+6.2. יובהר למפעילה אין כל יכולת לבחון את כל הקבצים המועלים במהלך תהליך העלאת הקובץ על ידי המשתמש, ולפיכך אין ביכולתה לבצע את הסינון ולהבטיח עמידה בתנאים אלה.
+6.3. במקרה של שימוש זדוני ו/או רשלני ו/או כל שימוש פוגע אחר של המשתמש ו/או מי מטעמו בשירות הניתן באתר ובאפליקציה, ו/או עקב הפרת תנאי שימוש אלה, יהיה על המשתמש לשפות את החברה, עובדיה, מנהליה, בעלי מניותיה או מי מטעמם בגין כל נזק, הפסד, אבדן רווח, תשלום או הוצאה שייגרמו להם - ובכלל זה שכ"ט עו"ד והוצאות משפט.
+6.4. כמו כן, המשתמש מתחייב כי תוכן מסמך קורות החיים הנשלח על ידו מוגבל אך ורק להצגת קורות חייו הפרטיים בלבד. 
+7. השימוש באפליקציה
+7.1. קבלת שירותי המפעילה באמצעות האפליקציה תלויים בכך שהמשתמש ו/או המכשיר הסלולרי שלו ו/או גוף שלישי כלשהו יאפשר את קיום השירות, לרבות אך לא רק: תקינות הרשת הסלולארית וזמינותה, תקינות רכיבי היישומים הדרושים, זמינות שירותי תוכן, קיום שירותי GPS והפעלת, הרשאה לקבלת מסרונים ועוד, מותנה בכך שמכשיר המשתמש ו/או המשתמש ו/או גוף שלישי כלשהו יאפשרו את קבלת השירות.
+7.2. המפעילה אינה גובה מהמשתמש כל תשלום בגין השימוש בשירות האינטרנט הסלולרי ממכשירו הסלולרי שברשות המשתמש לצורך הפעלת האפליקציה (להלן: "שירות הגלישה"). החיוב בגין שירות הגלישה ייגבה ישירות על ידי המפעיל הסלולרי אליו מנוי המשתמש ובהתאם להסכם ההתקשרות שבין המשתמש למפעיל הסלולרי אליו הוא מנוי. עבור התחברות לשרות זה אין דרישה מטעם המפעילה לחיבור לרשת אינטרנט סלולרית מטעם ספקי שרות או רשת WiFi זו או אחרת, על אחריות המשתמש לבחור את הרשת שבו הוא מקבל את נתוני השרות.
+7.3. המשתמש מצהיר בזאת כי הוא יודע ומסכים כי האפשרות לשלוח קורות חיים באמצעות האפליקציה, ישירות מהמכשיר הסלולרי מותנית בהזנת קורות חייו מראש באתר וזיהויו ע"י מספר סלולרי מתאים. בהתאם, מצהיר המשתמש כי הוא מודע לכך שמספר הטלפון הסלולרי אותו הזין באתר בעת הרישום לשירות הוא מספר הטלפון הסלולרי אליו יישלחו המסרונים במסגרת קבלת השירות וכל שירות סלולרי אחר אותו תפעיל המפעילה מעת לעת.
+7.4. השימוש בשירות הינו אישי והמשתמש מתחייב להימנע מהעברת מסרון שנתקבל במכשירו הסלולרי למכשירים סלולריים אחרים ו/או לצדדים שלישיים. המשתמש מצהיר כי ידוע לו, כי העברת מסרון שנתקבל במכשירו האישי למכשירים סלולריים אחרים ו/או לצדדים שלישיים עלולה להביא לזיהוי שגוי שלו במערכת ולחשוף את פרטיו האישיים וקורות החיים לגורמים אחרים.
+8. שירותי מיקום (GPS)
+על המשתמש לוודא כי מכשירו הסלולרי מחובר לשירותי המיקום (GPS), כי הם מופעלים ושהוא העניק אישור לאפליקציה לזהות את מיקומו. כמו כן, על המשתמש לוודא שה-GPS זיהה את מיקומו.
+להרחבה בעניין תנאי הפרטיות בכפוף לשימוש בשירותי המיקום, ראה מדיניות הפרטיות של האתר והאפליקציה. 
+9. שיפוי
+על המשתמש לשפות ולהגן על המפעילה ועל קודמיה, חליפיה, חברות הבת שלה, חברות האם שלה, גופים הקשורים אליה, נושאי המשרה בה, דירקטורים שלה, בעלי מניות שלה, משקיעים שלה, עובדים שלה, סוכנים שלה, נציגים שלה, ומיופי כוח שלה, מפני וכנגד כל הפסד, נזק, עלות והוצאה (לרבות שכ"ט עו"ד) עקב או בקשר עם: (1) רשלנות רבתי או פעילות בזדון מצד המשתמש; (2) שימוש בשירות על ידי המשתמש; (3) נתוני המשתמש;  (4) הפרת תנאי השימוש מצד המשתמש;  (5) שימוש על ידי המשתמש בקניין רוחני של צד שלישי, או כל מעשה או מחדל מצד המשתמש אשר מפר זכויות קניין רוחני של צד שלישי או מפר דין רלוונטי.
+10. שימוש במידע פרטי
+10.1. המפעילה מכבדת את פרטיות המשתמשים באתר ובאפליקציה. מידע בנוגע למדיניות הפרטיות ניתן למצוא במדיניות הפרטיות המופיעה באתר.
+10.2.  עם רישום המשתמש באתר או באפליקציה, יתבקש המשתמש לבחור שם משתמש וסיסמה, לספק פרטי התקשרות שונים וכן תשובות למספר שאלות לצורכי אבטחה. פרטים אלה נדרשים על מנת לאפשר למשתמש גישה לאזורים המוגבלים של האתר והאפליקציה. על אחריותו הבלעדית של המשתמש לשמור פרטים אלה בסודיות, ולדאוג לעדכן אותם מפעם לפעם, כך שרק המשתמש יוכל להשתמש בהם. המפעילה ו/או מי מטעמה לא יהיו אחראים לכל פעילות בחשבון המשתמש ו/או באזור האישי של המשתמש על ידי מי שהשתמש בפרטי הכניסה של המשתמש. 
+11. התקשרות עם צדדים שלישיים
+11.1. עסקה שתיעשה בעקבות פרסום מודעה באתר או באפליקציה ו/או בעקבות שימוש המשתמש באתר או באפליקציה, תסוכם ישירות בין המשתמש לצד השלישי, והיא אינה כוללת את המפעילה או מי מטעמה כצד בעסקה או כאחראית בגינה, אף אם מידע בין הצדדים יועבר דרך החברה עצמה. למען הסר ספק, יובהר כי המפעילה משמשת כלוח פרסומי וכצינור לשליחת קורות חיים בלבד. 
+11.2. המפעילה אינה אחראית על תוכנן של מודעות הפרסום או הצעות מסחריות של צדדים שלישיים המופיעים באתר ובאפליקציה. כל טענה, תביעה או דרישה שיהיו למשתמש בגין הצעות, מוצרים או שירותים כאמור, קבלתם או תוצאותיהם, יופנו על ידו במישרין אל הצד השלישי, שממנו קיבל את ההצעה או קנה את השירות, ולא תהיה לו בגינן כל תביעה או דרישה כלפי המפעילה.
+11.3. הבעלות וזכויות הקניין הרוחני בנתוני צדדים שלישיים אשר מקושרות או שניתן לצפות בהן בקשר לשירות, הינן הרכוש של בעלי הנתונים, ועשויות להיות כפופות לתנאי שימוש של צדדים שלישיים שהעניקו למפעילה רישיון כדין לגבי תוכן כאמור (להלן "הסכמי צדדים שלישיים"). המפעילה אינה טוענת לזכויות בעלות ואינה נוטלת כל אחריות לגבי כל סוג של מידע, הצעה והמלצה המוצגים באתר ובאפליקציה. המשתמש מאשר כי התנאים של הסכמי צדדים שלישיים כאמור יחייבו אותו בקשר עם שימוש שיעשה בשירות, לרבות כל שינויים עתידיים בהסכמי הצדדים השלישיים. 
+11.4. מאחר שהאפליקציה ניתנת להורדה באמצעות פלטפורמות, ספקי שירות או מפיצים שהינם צדדים שלישיים (להלן "ספקי הפלטפורמה"), שימוש באפליקציה עשוי להיות כפוף לתנאי שימוש של ספקי פלטפורמה וצדדים שלישיים אחרים. יש לשים לב, כי תנאי השימוש של ספקי הפלטפורמה עשויים לחול על שימוש מצד המשתמש ביישום, והוא מסכים בזאת כי באחריותו לקבוע אלו מתנאי השימוש האמורים הינם רלוונטיים וחלים עליו ולעיין ולקיים את ההוראות והתנאים הרלוונטיים.
+12. תקופה וסיום
+12.1. הסכם זה ייכנס לתוקף ביום בו יעשה המשתמש שימוש כלשהו באתר או באפליקציה, ויימשך עד שכל המינויים שניתנו בהתאם להסכם זה, יפקעו או יובאו לסיומם.
+12.2. המפעילה רשאית בכל עת לסיים הסכם זה במקרים הבאים: (1) המשתמש הפר הוראה מהוראות הסכם זה (או פעל באופן אשר מוכיח בבירור כי הוא מתכוון לעשות זאת או כי אינו מסוגל לקיים את הוראות ההסכם);  (2) המפעילה תידרש לעשות כן על פי דין (למשל, כאשר מתן השירות הינו או יהא בלתי חוקי); (3) מתן השירות אינו כדאי עוד מבחינה כלכלית. במקרים כאמור ב-(1) ו-(2) לעיל, המפעילה תמסור למשתמש, ככל הניתן, הודעה סבירה מראש אודות סיום ההסכם.
+12.3. המפעילה תוכל לשנות תנאים אלה מעת לעת על פי שיקול דעתה הבלעדי. האחריות להתעדכן בשינויים כאמור מוטלת על המשתמש באמצעות כניסה לתנאי שימוש אלה מפעם לפעם. שימוש בשירות בכל עת כמוהו כהסכמה לתנאים המעודכנים והמתוקנים, כפי שהיו באותה עת.
+12.4. המפעילה שומרת לעצמה את הזכות לשנות או להפסיק את השירות או חלק ממנו באתר ובאפליקציה, ללא מתן הודעה מראש. במקרה של הפסקת השירות, המפעילה לא תהא אחראית כלפי המשתמש או כלפי צד שלישי כלשהו בגין נזק או אובדן. 
+12.5. ההוראות בדבר קניין רוחני ואי נטילת אחריות, תוקפן יימשך לאחר סיום ההסכם. 
+13. כללי
+13.1. תנאי שימוש אלה, לרבות נספחיהם, מהווים את כלל ההסכם בין הצדדים וגוברים על כל הסכם, הצעה או מצג שנעשו בעבר, בכתב או בעל פה, בנוגע לנושאו. אף שינוי, תיקון או ויתור על הוראה בהסכם זה, לא יהא תקף, אלא אם נעשה בכתב ונחתם או אושר אלקטרונית על ידי הצד שכלפיו ייטען שינוי, תיקון או ויתור כאמור.
+13.2. מנוי המשתמש באתר ובאפליקציה הינו אישי ואינו ניתן להעברה.
+13.3. שאלות אודות תנאי השימוש הללו, יש לשלוח לכתובת: support@jobkarov.com.
+14. סמכות שיפוט
+על תנאי שימוש אלה יחולו אך ורק דיני מדינת ישראל. מקום השיפוט הבלעדי לכל עניין הנוגע לתנאי שימוש אלה והשימוש באתר ובאפליקציה הינו בבתי המשפט המוסמכים באזור תל אביב.
+
+מדיניות פרטיות – גוב קרוב:
+מדיניות פרטיות זו (להלן: "מדיניות הפרטיות") מהווה חלק בלתי נפרד מתנאי השימוש ויש לקוראה יחד עם תנאי השימוש, ולעשות שימוש בהגדרות המופיעות בתנאי השימוש. 
+חברת__close2 me (להלן: "המפעילה") מחויבת לכבד את פרטיות המשתמשים והמנויים (להלן: "המשתמשים") באתר האינטרנט ובאפליקציה "גוב קרוב" (להלן: "האתר" ו"האפליקציה). על מנת לשפר את ההגנה על פרטיות המשתמש מפרסמת המפעילה מדיניות פרטיות זו ומספקת את המידה המצוי בה אודות האפשרויות העומדות בפני המשתמש בעת שימושו באתר ובאפליקציה ובנוגע להתנהלות המפעילה בעניין איסוף מידע מהאתר ומהאפליקציה. 
+1. כללי
+1.1. כחלק מהשימוש בשירותי האתר והאפליקציה, נדרש המשתמש להעביר פרטים אישיים לידי המפעילה, כדוגמת: שם, כתובת דוא"ל וקובץ קורות חיים המכיל פרטים אישיים נוספים כגון ניסיונו המקצועי של המשתמש. 
+1.2. בעת השימוש באתר ובאפליקציה, יתכן ויצטברו נתונים אודות אופן השימוש של המשתמש באתר ובאפליקציה, בניהם: שירותים בהם התעניין המשתמש, עמודים בהם צפה וכדומה. זהו מידע סטטיסטי ואינו מזהה את המשתמש באופן אישי. 
+2. מאגר המידע והשימוש בו
+2.1. הנתונים הנאספים אודות המשתמש שצוינו לעיל נשמרים במאגר מידע של המפעילה. המפעילה מתחייבת לעשות שימוש במידע האמור על פי מדיניות פרטיות זו או על פי הוראות כל דין ולשם המטרות הבאות:
+- לאפשר שימוש יעיל ונוח למשתמש;
+- ניהול חשבון המשתמש;
+- לשפר ולהעשיר את השירותים והתכנים המוצעים באתר ובאפליקציה. 
+- לשנות או לבטל שירותים ותכנים קיימים;
+- לנתח ולמסור מידע סטטיסטי לצדדים שלישיים, לרבות מפרסמים (במקרה שיועבר מידע זה לצדדים שלישיים, לא יזהה את המשתמש אישית);
+- אכיפת תנאי השימוש של המפעילה;
+- ייעול ומקסום חשיפת המשתמש להצעות התעסוקה הזמינות;
+- התאמת המודעות שיוצגו באתר ובאפליקציה בעת שימוש המשתמש בהם לתחומי העניין של המשתמש;
+- לכל מטרה אחרת המפורטת בתנאי השימוש ובמדיניות פרטיות זו. 
+3. שירותי דיוור ישיר
+מדי פעם תהיה המפעילה מעוניינת לשלוח למשתמש בדוא"ל או באמצעות מסרון מידע בדבר שירותיה וכן מידע שיווקי ופרסומי. מידע כזה ישוגר למשתמש רק אם נתן הסכמתו המפורשת לכך. 
+4. מסירת מידע לצד שלישי
+4.1. מצבים בגינם עשויה המפעילה לחלוק את המידע של המשתמש עם צדדים שלישיים:
+- כאשר המשתמש אישר למפעילה להעביר את פרטיו האישיים לצדדים שלישיים, לרבות אך לא רק במקרה של הסכמת המשתמש להעברת קורות חייו למעסיקים;
+- במקרה בו יפר המשתמש את תנאי השימוש באתר או באפליקציה או ינסה לבצע דרכם פעולות המנוגדות לדין;
+- על מנת לאכוף את תנאי השימוש היישום או הסכמים אחרים או מדיניות אחרת;
+- בתגובה לזימון או דרישת חקירה אחרת, צו בימ"ש, או בקשה לשיתוף פעולה מאת רשות אכיפת גוף או רשות ממשלתית אחרת; 
+- על מנת לקבוע או לממש את זכויותיה המשפטיות של המפעילה; 
+- על מנת להתגונן מפני תביעות משפטיות כפי שיידרש אחרת לפי דין. במקרים כאמור, המפעילה עשויה להעלות או לוותר על התנגדות או זכות העומדת לרשותה, לפי שיקול דעתה הבלעדי;
+- כאשר מאמינה המפעילה כי גילוי הינו ראוי בקשר למאמצים לחקור, למנוע, לדווח או לנקוט בפעולה אחרת בנוגע לפעילות בלתי חוקית, חשד לתרמית או עוולה אחרת; 
+- על מנת להגן על הזכויות, הרכוש או הבטיחות של המפעילה, עובדיה, משתמשי האתר והאפליקציה או אחרים; 
+- בקשר לעסקה תאגידית מהותית, כגון מכירת עסקי המפעילה, הסרת השקעות, מיזוג, איחוד, או מכירת נכסים, או במקרה בלתי סביר של פירוק.
+5. מידע מצטבר ובלתי אישי
+המפעילה עשויה לעשות שימוש במידע מצטבר ובלתי אישי שהיא אספה בכל אחת מהנסיבות כאמור לעיל. המפעילה עשויה לשלב מידע בלתי-אישי שהיא אספה, עם מידע בלתי אישי נוסף שנאסף ממקורות אחרים. כמו כן, המפעילה רשאית לחלוק מידע מצטבר עם צדדים שלישיים, לרבות יועצים, מפרסמים ומשקיעים, למטרת ביצוע ניתוח עסקי כללי. למשל, המפעילה רשאית לדווח למפרסמים שלה אודות מספר המבקרים באתר ובאפליקציה, והמאפיינים או השירות הפופולאריים ביותר. מידע כאמור אינו כולל כל מידע אישי וניתן יהא לעשות בו שימוש על מנת לפתח תוכן ושירות שיסייעו למשתמש ועל מנת להתאים תוכן ופרסום.
+6. צדדים שלישיים
+6.1. ישנם מספר מקומות באתר ובאפליקציה, שבהם יכול המשתמש להקליק על קישור לשם גישה לאתרים אחרים שאינם כפופים למדיניות פרטיות זו. למשל, אם הקלקה על פרסומת או תוצאת חיפוש באפליקציה, ייתכן ויועבר המשתמש לאתר שלגביו אין לנו שליטה. האתרים הללו עשויים לבקש ולאסוף מידע באופן עצמאי, לרבות מידע אישי מהמשתמש ובמקרים מסוימים, לספק למפעילה מידע אודות פעילות המשתמש באתרים הללו.
+6.2. כל צד שלישי אשר עשוי המפעילה לגלות לו מידע אישי, עשוי להיות בעל מדיניות פרטיות משלו, אשר מתארת כיצד הינו עושה שימוש ומגלה מידע אישי. המדיניות כאמור תסדיר את השימוש, הטיפול והגילוי של המידע האישי של המשתמש לאחר שהמפעילה חלקה אותו עם צדדים שלישיים כאמור במדיניות פרטיות זו. אם ברצונך לקבל מידע נוסף אודות מדיניות הפרטיות של אותם צדדים שלישיים, המפעילה מעודדת אותך לבקר באתרים של צדדים שלישיים כאמור.
+6.3. המפעילה עשויה להרשות לצדדים שלישיים, לרבות ספקי השירות המורשים שלה, חברות פרסום ורשתות פרסום להציג פרסומות ביישום. החברות הללו עשויות לעשות שימוש בטכנולוגיות מעקב, כגון "Cookies" (ראה/י להלן), על מנת לאסוף מידע אודות משתמשים אשר צופים או מבצעים אינטראקציה עם הפרסומות שלהן. השימוש שחברות אלו עושות ב"Cookies" כפוף למדיניות הפרטיות שלהן ולא למדיניות הפרטיות של המפעילה.
+7. בחירות המשתמש אודות איסוף ושימוש במידע
+7.1. המשתמש רשאי לבחור שלא לספק למפעילה מידע מסוים, אולם הדבר עשוי לגרום לכך שלא יוכל לעשות שימוש במאפיינים מסוימים באתר ובאפליקציה מכיוון שמידע כאמור נדרש על מנת שירשם כחבר.
+7.2. כאשר המשתמש נרשם לשירות, תוכל המפעילה לשלוח לו הודעות דוא"ל ו/או עלונים אודות עדכוני שירות, שיפורים, הצעות מיוחדות, או תוכן מיוחד. המפעילה עשויה לשלוח למשתמש סוגים אחרים של הודעות דוא"ל, כגון הודעות שירות, הודעות פרסום, וסקרים. אם כבר מסרה המפעילה את המידע אודות המשתמש לצד שלישי לפני ששינה את ההעדפות שלו או עדכן את המידע שלו, ייתכן ויהא המשתמש מחויב לשנות את ההעדפות שלו במישרין מול צד שלישי כאמור. 
+8. שימוש ב""Cookies
+8.1. המפעילה עושה שימוש בטכנולוגיות שונות על מנת לאסוף מידע מהמכשיר הנייד ו/או המחשב שלך ואודות פעילות המשתמש באפליקציה.
+8.2. המפעילה אוספת מידע באופן אוטומטי מהמכשיר הנייד או הדפדפן של המשתמש כאשר הוא עושה שימוש באפליקציה או מבקר באתר. מידע כאמור כולל אינטרנט סלולארי, כתובת IP, סוג הדפדפן ושפת הדפדפן, זמני גישה, התוכן של "עוגיות" (cookies) שלא נמחק, אשר הדפדפן שלך קיבל מהמפעילה בעבר וכתובת האתר המפנה.
+8.3. עוגיות(Cookies) . כאשר משתמש המשתמש באפליקציה, המפעילה עשויה להקצות למכשיר הנייד או למחשב המשתמש עוגייה (cookie) אחת או יותר, על מנת לאפשר גישה ליישום ועל מנת להתאים למשתמש את החוויה המקוונת. באמצעות שימוש בעוגייה (cookie), עשויה המפעילה גם לאסוף מידע באופן אוטומטי אודות הפעילות המקוונת של המשתמש באפליקציה או באתר, כגון דפי אינטרנט בהם הנו מבקר, הקישורים עליהם הוא מקליק והחיפושים שהוא מבצע באפליקציה או באתר. רוב הדפדפנים מקבלים עוגיות (cookies)  באופן אוטומטי, אולם בדרך כלל יכול המשתמש לשנות את הגדרות הדפדפן שלו על מנת לסרב לעוגיות (cookies). אם יבחר המשתמש לסרב לעוגיות (cookies), עליו לשים לב כי לא יוכל להיכנס או לעשות שימוש בחלק מהמאפיינים המוצעים במסגרת האתר או האפליקציה. 
+8.4. המפעילה עשויה לעשות שימוש בטכנולוגיית אינטרנט סטנדרטית, כגון אלומות אינטרנט (web beacons), אנאליטיקס וטכנולוגיות דומות, על מנת לעקוב אחר שימוש המשתמש באתר או באפליקציה. כמו כן, המפעילה עשויה לכלול בהודעות דוא"ל או עלונים לקידום מכירות, על מנת לקבוע האם ההודעות נפתחו והאם ננקטה פעולה בעקבותיהם. המידע שתשיג המפעילה באופן זה, יאפשר לה להתאים את השירותים שהיא מציעה למשתמש, על מנת לפרסם פרסומים מותאמים אישית ולמדוד את האפקטיביות הכוללת של פרסום מקוון, תוכן, תכנות או פעילויות אחרות שלה.
+9. שירותי מיקום (GPS)
+9.1. על מנת לעשות שימוש באפליקציה, נדרש המשתמש לספק את נתוני ה-GPS אשר נצברים במהלך השימוש בשירות והנאגרים באתר ובאפליקציה (להלן: "נתוני ה-GPS"). 
+9.2. שימוש בשירות כרוך באיסוף נתוני ה-GPS אשר נוצרים בעת השימוש באפליקציה. ואגירתם באתר לצורך השבחת תכני המפה, מציאת מעסיקים פוטנציאליים בקרבת המשתמש וכל מידע אחר אשר מיוצר על ידי המפעילה הצורה אגרגטיבית. 
+10. אבטחת מידע
+10.1. המפעילה מיישמת באתר ובאפליקציה מערכות ונהלים עדכניים לאבטחת מידע. מערכות ונהלים אלה מצמצמים את הסיכונים לחדירה בלתי מורשית, אך אין הם מעניקים ביטחון מוחלט. המפעילה אינה מתחייבת ששירותיה יהיו חסינים באופן מוחלט מפני גישה בלתי מורשית למידע המאוחסן באתר ובאפליקציה.   
+10.2. המפעילה בוחנת מעת לעת את אבטחת המידע של האתר ומבצעת שינויים ושדרוגים בהתאם לצורך, על מנת לשמור על רמת אבטחת המידע של האתר. 
+10.3. עם זאת, המפעילה לא תהא אחראית לכל נזק, ישיר או עקיף, אשר יגרם למשתמש במקרה של חשיפת המידע עקב חדירה בלתי מורשית של צדדים שלישיים או כתוצאה ממעשה או מחדל שאינם בשליטת המפעילה.
+11. כשרות משפטית
+האתר והאפליקציה מיועדים לגילאי 18 ומעלה.
+12. זכות לעיין במידע ולעדכנו
+12.1. על פי חוק הגנת הפרטיות, התשמ"א-1981, לכל אדם הזכות לעיין במידע המוחזק עליו במאגר מידע. משתמש שעיין במידע עליו ומצא שהמידע אינו נכון, שלם, ברור או מעודכן, רשאי לפנות לבעל מאגר המידע בבקשה לתקן את המידע או למוחקו.
+פנייה כזאת יש להפנות לכתובת הדוא"ל:_support@jobkarov.com.
+12.2. אם המידע שבמאגרי המפעילה משמש לצורך פניה אישית למשתמש, הוא רשאי על פי חוק לדרוש בכתב כי המידע המתייחס אליו יימחק ממאגר המידע. 
+13. שינויים במדיניות הפרטיות
+המפעילה רשאית לשנות מעת לעת את הוראות מדיניות פרטיות זו. אם יבוצעו שינויים מהותיים בהוראות שעניינן השימוש במידע אישי שמסר המשתמש, תפורסם על כך הודעה באתר ובאפליקציה.</string>
+    <string name="title_activity_registration">הרשמה לשירות</string>
+    <string name="fullname">שם פרטי ומשפחה</string>
+    <string name="emailaddress">כתובת מייל</string>
+    <string name="aboutme">קצת על עצמי</string>
+    <string name="addcv">צרף קובץ קורות חיים</string>
+    <string name="alreadyregistered">כבר רשום?</string>
+    <string name="firstname">שם פרטי </string>
+    <string name="lastname">שם משפחה</string>
+    <string name="sendcvshort">שלח קו\&quot;ח</string>
+    <string name="morefromcompany">משרות נוספות</string>
+    <string name="logoutsuccese">נותקת בהצלחה!</string>
+    <string name="cvnotloaded">קובץ קורות חיים לא נטען</string>
+    <string name="noinputcv">עליך למלא 150 מילים על עצמך או לצרף קובץ קורות חיים</string>
+    <string name="jobsmap">מפת משרות</string>
+    <string name="findcity">חיפוש עיר</string>
+    <string name="smartagents">סוכנים חכמים</string>
+    <string name="jobsin">משרות ב</string>
+    <string name="favorites">מועדפים</string>
+    <string name="title_activity_web_view">WebViewActivity</string>
+
+    <string-array name="webviewtitles">
+        <item>אודות</item>
+        <item>הסבר</item>
+        <item>הסבר פקודות קוליות</item>
+        <item>תקנון</item>
+    </string-array>
+
+    <string name="sort">מיון</string>
+    <string name="mapview">תצוגת מפה</string>
+    <string name="more">עוד</string>
+    <string name="wordwasntfind">לא נמצאה הפקודה</string>
+    <string name="cvdoesntexist">קורות חיים לא קיימים במערכת</string>
+    <string name="searchwiththisrole">חפש משרות בתחום זה</string>
+    <string name="google">גוגל</string>
+    <string name="tocompanysite">לאתר החברה</string>
+    <string name="wrongphone">מספר טלפון שגוי</string>
+    <string name="message">הודעה</string>
+
+    <string-array name="showalltabs">
+        <item>לפי תאריך</item>
+        <item>לפי מרחק</item>
+    </string-array>
+
+    <string name="title_activity_test">TestActivity</string>
+    <string name="title_activity_main">MainActivity</string>
+    <string name="title_activity_main2">MainActivity</string>
+    <string-array name="tabstrings">
+        <item >תצוגת מפה</item>
+        <item >לפי תאריך</item>
+        <item >לפי מרחק</item>
+    </string-array>
+    <string name="continuestr">המשך</string>
+    <string name="selectedfile">הקובץ שנבחר:</string>
+    <string name="useralreadyexist">מייל כבר קים במערכת. האם תרצה להתחבר למשתמש הקיים או ליצור משתמש חדש?</string>
+    <string name="updatedscussefully">פרטיך עודכנו בהצלחה</string>
+    <string name="newuser">צור משתמש חדש</string>
+    <string name="newversionexist">גירסה חדשה של האפליקציה זמינה כעת. </string>
+    <string name="upgrade">שדרג כעת</string>
+    <string name="approvetermsofuse1">קראתי את</string>
+    <string name="approvetermsofuse2"> <u>התקנון</u> </string>
+    <string name="approvetermsofuse3">ואני מאשר את תוכנו</string>
+    <string name="pleaseapproveterms">יש לאשר את התקנון</string>
+    <string name="acceptmail">אני מאשר/ת קבלת דיוור</string>
+
+</resources>

@@ -1,0 +1,43 @@
+{
+  "project_info": {
+    "project_number": "959131861493",
+    "project_id": "optimum-courier-92822"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:959131861493:android:4ec5669a5b950039",
+        "android_client_info": {
+          "package_name": "karov.shemi.oz"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "959131861493-lj7d6n4tg4n7fnp8lajutqjhbrlnstu1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAL2-jBzCXY2pJ84vlBqSv4awPUqBkwP64"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 2,
+          "analytics_property": {
+            "tracking_id": "UA-46492192-1"
+          }
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 1
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

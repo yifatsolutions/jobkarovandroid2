@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@android:color/white" >
+ 
+    <!-- ListView to be shown on widget -->
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/white"
+        android:padding="10dp" >
+
+        <Button
+            android:id="@+id/refreshbutton"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="15dp"
+            android:background="@drawable/refreshicon" />
+
+        <Button
+        android:id="@+id/configurationbutton"
+        android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="15dp"
+            android:background="@drawable/settingwidgeticon"       
+        android:text="" />
+
+        <ImageView
+            android:id="@+id/imageView1"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:src="@drawable/jobkarov" android:contentDescription="@string/app_name"/>
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/empty_view2"
+        android:background="@android:color/black"        
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+         />
+
+    <ListView
+        android:id="@+id/listViewWidget"
+        android:layout_width="match_parent"
+        android:background="@android:color/transparent"
+        android:layout_height="match_parent" />
+ 
+    <!-- Empty view is show if list items are empty -->
+    <TextView
+        android:id="@+id/empty_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:text="@string/noresults"
+        android:textColor="#ffffff"
+        android:textSize="20sp"
+        android:visibility="gone" />
+ 
+</LinearLayout>

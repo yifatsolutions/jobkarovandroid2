@@ -1,0 +1,83 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bgreg"
+    android:padding="20dp"
+    android:orientation="vertical">
+ <TextView
+                android:id="@+id/textusername"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:shadowColor="@color/TransparentGrey"
+                android:shadowDx="2"
+                android:shadowDy="2"
+                android:shadowRadius="2"
+                android:text=""
+                android:textColor="@android:color/black"
+                android:textSize="20sp"
+                
+                android:typeface="serif" />
+    <com.facebook.login.widget.LoginButton
+        android:id="@+id/authButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="30dp"
+        android:layout_marginBottom="30dp" />
+    <Button
+            android:id="@+id/usingmail"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+             style="@style/FacebookLoginButton"
+            android:background="@color/blackregisterbutton"
+            android:drawableRight="@drawable/keyicon"
+            android:gravity="center"
+            android:shadowColor="@color/TransparentGrey"
+            android:shadowDx="2"
+            android:shadowDy="2"
+            android:shadowRadius="2"
+            android:text="@string/signinusingmail"
+            android:textColor="@android:color/white"
+            android:textSize="20sp"
+            android:layout_margin="20dp"
+             />
+     <Button
+            android:id="@+id/logout"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+             style="@style/FacebookLoginButton"
+           android:background="@color/blackregisterbutton"
+            android:drawableRight="@drawable/keyicon"
+            android:gravity="center"
+            android:shadowColor="@color/TransparentGrey"
+            android:shadowDx="2"
+            android:shadowDy="2"
+            android:shadowRadius="2"
+            android:text="@string/logout"
+            android:textColor="@android:color/white"
+            android:textSize="20sp"
+            android:layout_margin="20dp"
+            
+            android:visibility="gone" />
+    
+     <Button
+            android:id="@+id/register"
+            android:layout_width="fill_parent"
+            android:layout_height="50dp"
+            android:background="@drawable/search"
+            android:gravity="center"
+            android:shadowColor="@color/TransparentGrey"
+            android:shadowDx="2"
+            android:shadowDy="2"
+            android:shadowRadius="2"
+            android:text="@string/register"
+            android:textColor="@android:color/white"
+            android:textSize="20sp"
+            android:layout_marginBottom="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginLeft="20dp"            
+            android:layout_marginTop="70dp"
+             />
+
+</LinearLayout>

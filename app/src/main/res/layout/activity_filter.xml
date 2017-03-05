@@ -1,0 +1,138 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".FilterActivity" >
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/llchange2">
+               <Button
+            android:id="@+id/change2"                
+            android:layout_weight="0.5" 
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/transparent"
+            android:gravity="center"
+            android:shadowColor="@color/TransparentGrey"
+            android:shadowDx="2"
+            android:shadowDy="2"
+            android:shadowRadius="2"
+            android:text="@string/select"
+            android:textColor="@android:color/black"
+            android:textSize="18sp"
+             />
+            <TextView
+                android:id="@+id/textspin2"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5"
+                android:gravity="center"
+                android:shadowColor="@color/TransparentGrey"
+                android:shadowDx="2"
+                android:shadowDy="2"
+                android:shadowRadius="2"
+                android:text="@string/bycompany"
+                android:textColor="@android:color/black"
+                android:textSize="20sp"
+                android:typeface="serif" />
+            </LinearLayout>
+        <karov.shemi.oz.MultiSelectionSpinner  
+        android:id="@+id/multSpinner2"
+        android:visibility="gone"  
+        android:layout_width="match_parent"  
+        android:layout_height="wrap_content" />    
+   
+    <View 	android:layout_width="fill_parent" android:layout_height="1dp" android:background="@color/seperatorgray"/>
+        
+ <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/llchange3">
+               <Button
+            android:id="@+id/change3"                
+            android:layout_weight="0.5" 
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/transparent"
+            android:gravity="center"
+            android:shadowColor="@color/TransparentGrey"
+            android:shadowDx="2"
+            android:shadowDy="2"
+            android:shadowRadius="2"
+            android:text="@string/select"
+            android:textColor="@android:color/black"
+            android:textSize="18sp"
+             />
+            <TextView
+                android:id="@+id/textspin3"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5"
+                android:gravity="center"
+                android:shadowColor="@color/TransparentGrey"
+                android:shadowDx="2"
+                android:shadowDy="2"
+                android:shadowRadius="2"
+                android:text="@string/bycity"
+                android:textColor="@android:color/black"
+                android:textSize="20sp"
+                android:typeface="serif" />
+            </LinearLayout>   
+ <karov.shemi.oz.MultiSelectionSpinner  
+        android:id="@+id/multSpinner3"
+        android:visibility="gone"  
+        android:layout_width="match_parent"  
+        android:layout_height="wrap_content" />  
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.2" />
+<LinearLayout 
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content" 
+    android:layout_marginBottom="20dp">
+         <Button
+             android:id="@+id/calculate"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:layout_gravity="center"
+             android:background="@drawable/simplebutton"
+             android:gravity="center"
+             android:shadowColor="@color/TransparentGrey"
+             android:shadowDx="2"
+             android:shadowDy="2"
+             android:shadowRadius="2"
+             android:text="@string/filter"
+             android:textColor="@android:color/white"
+             android:textSize="20sp"
+             android:layout_weight="0.5"
+             android:layout_marginLeft="20dp"
+             android:layout_marginRight="20dp"
+             android:textStyle="bold" />
+         <Button
+             android:id="@+id/cancel"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:layout_gravity="center"
+             android:background="@drawable/simplebutton"
+             android:gravity="center"
+             android:shadowColor="@color/TransparentGrey"
+             android:shadowDx="2"
+             android:shadowDy="2"
+             android:shadowRadius="2"
+             android:text="@string/cancel"
+             android:textColor="@android:color/white"
+             android:textSize="20sp"
+             android:layout_weight="0.5"
+             android:layout_marginLeft="20dp"
+             android:layout_marginRight="20dp"
+             android:textStyle="bold" />
+  </LinearLayout>
+    </LinearLayout>
+   
+

@@ -1,0 +1,7 @@
+#Sun Mar 05 07:14:37 IST 2017
+base.0=/Users/shemi/Documents/jobkarovandroid2/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_0974fcdb6513df683fa7eff0cc8d493c64f97c66
+renamed.1=classes2.dex
+renamed.0=classes.dex
+file.1=/Users/shemi/Documents/jobkarovandroid2/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_cbbe2879117395e5af8d7fe7b1015d3750244ca0/classes.dex
+base.1=/Users/shemi/Documents/jobkarovandroid2/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_cbbe2879117395e5af8d7fe7b1015d3750244ca0
+file.0=/Users/shemi/Documents/jobkarovandroid2/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_0974fcdb6513df683fa7eff0cc8d493c64f97c66/classes.dex

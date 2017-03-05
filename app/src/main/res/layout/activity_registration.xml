@@ -1,0 +1,370 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView  xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="fill_parent" android:layout_alignTop="@+id/relativeLayout1"
+  android:layout_height="fill_parent"    android:paddingTop="15dip"
+  android:paddingLeft="13dp"
+  android:id="@+id/scrollregistration"
+         android:paddingRight="13dp">
+
+<LinearLayout
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp" >
+
+        <TextView
+            android:id="@+id/dialogtitle2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:layout_gravity="right"
+            android:text="@string/firstname"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="@android:color/black" />
+
+        <TextView
+            android:id="@+id/dialogtitleastrix2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_gravity="right"
+            android:layout_toLeftOf="@+id/dialogtitle2"
+            android:text="@string/astrix"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="@color/red" />
+    </RelativeLayout>
+
+    <EditText
+        android:id="@+id/editText2"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right"
+        android:layout_marginTop="5dp"
+        android:background="@drawable/rectangle_border"
+        android:inputType="textPersonName"
+        android:paddingLeft="10dp" >
+    </EditText>
+
+     <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp" >
+
+        <TextView
+            android:id="@+id/dialogtitle22"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:layout_gravity="right"
+            android:text="@string/lastname"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="@android:color/black" />
+
+        <TextView
+            android:id="@+id/dialogtitleastrix22"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_gravity="right"
+            android:layout_toLeftOf="@+id/dialogtitle22"
+            android:text="@string/astrix"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="@color/red" />
+    </RelativeLayout>
+
+    <EditText
+        android:id="@+id/editTextLastName2"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right"
+        android:layout_marginTop="5dp"
+        android:background="@drawable/rectangle_border"
+        android:inputType="textPersonName"
+        android:paddingLeft="10dp" >
+    </EditText>
+    
+    
+    
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/linearlayoutmail"
+        android:layout_marginTop="10dp" >
+
+        <TextView
+            android:id="@+id/dialogtitle4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:layout_gravity="right"
+            android:text="@string/emailaddress"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="@android:color/black" />
+
+        <TextView
+            android:id="@+id/dialogtitleastrix4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_gravity="right"
+            android:layout_toLeftOf="@+id/dialogtitle4"
+            android:text="@string/astrix"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="@color/red" />
+    </RelativeLayout>
+
+    <EditText
+        android:id="@+id/editText1"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:background="@drawable/rectangle_border"
+        android:ems="10"
+        android:inputType="textEmailAddress"
+        android:paddingLeft="10dp" >
+
+        <requestFocus />
+    </EditText>
+     <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/linearlayoutpassword"
+        android:layout_marginTop="10dp" >
+
+        <TextView
+            android:id="@+id/dialogtitleastrix6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_gravity="right"
+            android:layout_toLeftOf="@+id/dialogtitle6"
+            android:text="@string/astrix"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="@color/red" />
+
+        <TextView
+            android:id="@+id/dialogtitle6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:text="@string/password"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="@android:color/black" />
+
+    </RelativeLayout>
+
+    <EditText
+        android:id="@+id/editTextPassword"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:background="@drawable/rectangle_border"
+        android:ems="10"
+        android:inputType="textPassword"
+        android:paddingLeft="10dp" >
+
+        <requestFocus />
+    </EditText>
+    
+    
+ <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp" >
+
+    
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:layout_gravity="right"
+        android:text="@string/phonenumber"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textColor="@android:color/black" >
+    </TextView>
+
+        <TextView
+            android:id="@+id/dialogtitleastrix5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_gravity="right"
+            android:layout_toLeftOf="@+id/textView3"
+            android:text="@string/astrix"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="@color/red" />
+    </RelativeLayout>
+    
+    <EditText
+        android:id="@+id/editText3"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right"
+        android:layout_marginTop="5dp"
+        android:background="@drawable/rectangle_border"
+        android:inputType="phone"
+        android:paddingLeft="10dp" >
+    </EditText>
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp" >
+
+  <Button
+      android:id="@+id/pickcvbutton"
+      android:layout_width="wrap_content"
+      android:layout_height="40dp"
+      android:layout_alignParentLeft="true"
+      android:layout_alignParentTop="true"
+      android:layout_gravity="center"
+      android:background="@drawable/simplebutton"
+      android:gravity="center"
+      android:shadowColor="@color/TransparentGrey"
+      android:shadowDx="2"
+      android:shadowDy="2"
+      android:shadowRadius="2"
+      android:text="@string/addcv"
+      android:textColor="@android:color/white"
+      android:paddingLeft="10dp"
+      android:paddingRight="10dp"
+      android:textSize="15sp"/>
+        <TextView
+            android:id="@+id/registrationfilename"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:layout_gravity="right"
+            android:text="@string/aboutme"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="@android:color/black" />
+    </RelativeLayout>
+
+    <EditText
+        android:id="@+id/editTextinput"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:background="@drawable/rectangle_border"
+        android:ems="10"
+        android:gravity="top|right"
+        android:inputType="textMultiLine"
+        android:lines="8"
+        android:maxLines="10"
+        android:minLines="6"
+        android:hint="@string/aboutme"
+        android:scrollbars="vertical"
+        android:singleLine="false" />
+ <RelativeLayout
+          android:id="@+id/checkboxtermsofuseall"
+     
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp" >
+ <CheckBox
+     android:id="@+id/checkboxtermsofuse"
+     android:layout_width="wrap_content"
+     android:layout_height="wrap_content"
+     android:layout_gravity="right"
+     android:layout_alignParentRight="true"
+      android:layout_alignParentTop="true"
+     android:button="@null"
+     android:drawableRight="?android:attr/listChoiceIndicatorMultiple"
+     android:text="" />
+<TextView
+ 	    android:id="@+id/checkboxtermsofusetext1"
+ 	    android:layout_width="wrap_content"
+ 	    android:layout_height="wrap_content"
+ 	    android:layout_toLeftOf="@+id/checkboxtermsofuse"
+ 	    android:layout_alignBaseline="@+id/checkboxtermsofuse" 	    
+ 	    android:gravity="center"
+ 	    android:text="@string/approvetermsofuse1"
+ 	    android:textAppearance="?android:attr/textAppearanceSmall"
+ 	    android:textColor="@android:color/black" />
+ 	<TextView
+ 	    android:id="@+id/checkboxtermsofusetext2"
+ 	    android:layout_width="wrap_content"
+ 	    android:layout_height="wrap_content"
+ 	    android:layout_toLeftOf="@+id/checkboxtermsofusetext1"
+ 	    android:layout_alignBaseline="@+id/checkboxtermsofuse" 	    
+ 	    android:gravity="center"
+ 	    android:text="@string/approvetermsofuse2"
+ 	    android:textAppearance="?android:attr/textAppearanceSmall"
+ 	    android:textColor="@color/blue1" />
+<TextView
+ 	    android:id="@+id/checkboxtermsofusetext3"
+ 	    android:layout_width="wrap_content"
+ 	    android:layout_height="wrap_content"
+ 	    android:layout_toLeftOf="@+id/checkboxtermsofusetext2"
+ 	    android:layout_alignBaseline="@+id/checkboxtermsofuse" 	    
+ 	    android:gravity="center"
+ 	    android:text="@string/approvetermsofuse3"
+ 	    android:textAppearance="?android:attr/textAppearanceSmall"
+ 	    android:textColor="@android:color/black" />
+ 	
+</RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/acceptmailrelativelayout"
+
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp" >
+        <CheckBox
+            android:id="@+id/checkboxacceptmail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:button="@null"
+            android:drawableRight="?android:attr/listChoiceIndicatorMultiple"
+            android:text="" />
+        <TextView
+            android:id="@+id/acceptmailtext1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toLeftOf="@+id/checkboxacceptmail"
+            android:layout_alignBaseline="@+id/checkboxacceptmail"
+            android:gravity="center"
+            android:text="@string/acceptmail"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textColor="@android:color/black" />
+
+
+    </RelativeLayout>
+
+
+    <Button
+        android:id="@+id/insertbutton"
+        android:layout_width="159dp"
+        android:layout_height="40dp"
+        android:layout_alignParentBottom="true"
+        android:layout_gravity="center"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/simplebutton"
+        android:gravity="center"
+        android:shadowColor="@color/TransparentGrey"
+        android:shadowDx="2"
+        android:shadowDy="2"
+        android:shadowRadius="2"
+        android:text="@string/done"
+        android:textColor="@android:color/white"
+        android:textSize="25sp"
+        android:textStyle="bold" >
+    </Button>
+</LinearLayout>
+
+</ScrollView>

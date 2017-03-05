@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  android:orientation="horizontal"
+  android:layout_width="fill_parent"
+  android:layout_height="fill_parent">
+    <Button android:textColor="@android:color/white" android:layout_width="wrap_content" android:id="@+id/insertbutton" android:layout_height="wrap_content" android:text="@string/done" android:background="@drawable/custom_button"></Button>
+    <EditText android:layout_weight="1" android:layout_width="wrap_content" android:layout_height="wrap_content" android:id="@+id/editTextinput" android:inputType="textEmailAddress"></EditText>
+    
+</LinearLayout>

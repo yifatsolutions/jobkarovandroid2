@@ -1,0 +1,343 @@
+<android.support.v4.widget.DrawerLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/drawer_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <!-- The main content view -->
+    <FrameLayout
+        android:id="@+id/content_frame"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <ImageView
+            android:id="@+id/bgm"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="fitXY"
+            android:src="@drawable/bgmain"
+            />
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"         android:paddingTop="1dip"
+            >
+
+
+
+            <LinearLayout
+                android:id="@+id/firstLL"
+
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.14" >
+                <TextView
+                    android:id="@+id/answer"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:gravity="right"
+                    android:text="--\nן"
+                    android:textColor="@android:color/white"
+                    android:textSize="40sp"
+                    android:typeface="serif"
+                    >
+                </TextView>
+
+            </LinearLayout>
+            <Button
+                android:id="@+id/addressButton"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                android:gravity="center"
+                android:shadowColor="@color/TransparentGrey"
+                android:layout_weight="0.05"
+                android:shadowDx="2"
+                android:shadowDy="2"
+                android:shadowRadius="2"
+                android:text="@string/unknownlocation"
+                android:textColor="@color/blue"
+                android:textSize="25sp"
+                android:layout_margin="1dp"
+                android:padding="1dp"
+                />
+            <SearchView
+                android:id="@+id/searchView"
+                android:layout_marginBottom="10dp"
+                android:layout_marginRight="25dp"
+                android:layout_marginLeft="25dp"
+                android:layout_marginTop="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="36dp"
+                android:hint="@string/search_hint"
+                android:background="@drawable/freesearch2"
+                >
+            </SearchView>
+            <ScrollView
+                android:id="@+id/scrollView0"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="0.9"
+                android:fillViewport="true"
+                android:paddingBottom="10dp">
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="0dp"
+                    android:orientation="vertical"         android:paddingTop="1dip"
+                    >
+
+                    <View 	android:layout_width="fill_parent" android:layout_height="1dp" android:background="@color/seperatorgray"/>
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="0.5"
+                        android:id="@+id/llchange1">
+                        <Button
+                            android:id="@+id/change1"
+                            android:layout_weight="0.5"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@android:color/transparent"
+                            android:gravity="center"
+                            android:shadowColor="@color/TransparentGrey"
+                            android:shadowDx="2"
+                            android:shadowDy="2"
+                            android:shadowRadius="2"
+                            android:text="@string/select1"
+                            android:textColor="@android:color/black"
+                            android:textSize="18sp"
+                            />
+                        <TextView
+                            android:id="@+id/textspin1"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0.5"
+                            android:gravity="center"
+                            android:shadowColor="@color/TransparentGrey"
+                            android:shadowDx="2"
+                            android:shadowDy="2"
+                            android:shadowRadius="2"
+                            android:text="@string/selectrange"
+                            android:textColor="@android:color/black"
+                            android:textSize="20sp"
+                            android:textStyle="bold"
+                            android:typeface="serif" />
+                    </LinearLayout>
+                    <Spinner android:id="@+id/spin1"
+                        android:visibility="gone"
+                        android:layout_width="fill_parent" android:layout_weight="0.5" android:layout_height="0dp"></Spinner>
+
+                    <View 	android:layout_width="fill_parent" android:layout_height="1dp" android:background="@color/seperatorgray"/>
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="0.5"
+                        android:id="@+id/llchange2">
+                        <Button
+                            android:id="@+id/change2"
+                            android:layout_weight="0.5"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@android:color/transparent"
+                            android:gravity="center"
+                            android:shadowColor="@color/TransparentGrey"
+                            android:shadowDx="2"
+                            android:shadowDy="2"
+                            android:shadowRadius="2"
+                            android:text="@string/select2"
+                            android:textColor="@android:color/black"
+                            android:textSize="18sp"
+                            />
+                        <TextView
+                            android:id="@+id/textspin2"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0.5"
+                            android:gravity="center"
+                            android:shadowColor="@color/TransparentGrey"
+                            android:shadowDx="2"
+                            android:shadowDy="2"
+                            android:shadowRadius="2"
+                            android:text="@string/selectrole"
+                            android:textColor="@android:color/black"
+                            android:textSize="20sp"
+                            android:textStyle="bold"
+                            android:typeface="serif" />
+                    </LinearLayout>
+                    <karov.shemi.oz.MultiSelectionSpinner
+                        android:id="@+id/multSpinner2"
+                        android:visibility="gone"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp" android:layout_weight="0.5"/>
+                    <View 	android:layout_width="fill_parent" android:layout_height="1dp" android:background="@color/seperatorgray"/>
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="0.5"
+                        android:id="@+id/llchange3">
+                        <Button
+                            android:id="@+id/change3"
+                            android:layout_weight="0.5"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@android:color/transparent"
+                            android:gravity="center"
+                            android:shadowColor="@color/TransparentGrey"
+                            android:shadowDx="2"
+                            android:shadowDy="2"
+                            android:shadowRadius="2"
+                            android:text="@string/select3"
+                            android:textColor="@android:color/black"
+                            android:textSize="18sp"
+                            />
+                        <TextView
+                            android:id="@+id/textspin3"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0.5"
+                            android:gravity="center"
+                            android:shadowColor="@color/TransparentGrey"
+                            android:shadowDx="2"
+                            android:shadowDy="2"
+                            android:shadowRadius="2"
+                            android:text="@string/selecttype"
+                            android:textColor="@android:color/black"
+                            android:textSize="20sp"
+                            android:textStyle="bold"
+                            android:typeface="serif" />
+                    </LinearLayout>
+                    <karov.shemi.oz.MultiSelectionSpinner
+                        android:id="@+id/multSpinner3"
+                        android:visibility="gone"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp" android:layout_weight="0.5"/>
+                    <View 	android:layout_width="fill_parent" android:layout_height="1dp" android:background="@color/seperatorgray"/>
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="0.5"
+                        android:id="@+id/llchange4">
+                        <Button
+                            android:id="@+id/change4"
+                            android:layout_weight="0.5"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@android:color/transparent"
+                            android:gravity="center"
+                            android:shadowColor="@color/TransparentGrey"
+                            android:shadowDx="2"
+                            android:shadowDy="2"
+                            android:shadowRadius="2"
+                            android:text="@string/select4"
+                            android:textColor="@android:color/black"
+                            android:textSize="18sp"
+                            />
+                        <TextView
+                            android:id="@+id/textspin4"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0.5"
+                            android:gravity="center"
+                            android:shadowColor="@color/TransparentGrey"
+                            android:shadowDx="2"
+                            android:shadowDy="2"
+                            android:shadowRadius="2"
+                            android:text="@string/selectarea"
+                            android:textColor="@android:color/black"
+                            android:textSize="20sp"
+                            android:textStyle="bold"
+                            android:typeface="serif" />
+                    </LinearLayout>
+
+                    <Spinner android:id="@+id/spin4"
+                        android:visibility="visible"
+                        android:layout_width="fill_parent" android:layout_weight="0.5" android:layout_height="0dp"></Spinner>
+                    <View 	android:layout_width="fill_parent" android:layout_height="1dp" android:background="@color/seperatorgray"/>
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="0.5"
+                        android:id="@+id/llchange5">
+                        <Button
+                            android:id="@+id/change5"
+                            android:layout_weight="0.5"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@android:color/transparent"
+                            android:gravity="center"
+                            android:shadowColor="@color/TransparentGrey"
+                            android:shadowDx="2"
+                            android:shadowDy="2"
+                            android:shadowRadius="2"
+                            android:text="@string/select5"
+                            android:textColor="@android:color/black"
+                            android:textSize="18sp"
+                            />
+                        <TextView
+                            android:id="@+id/textspin5"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0.5"
+                            android:gravity="center"
+                            android:shadowColor="@color/TransparentGrey"
+                            android:shadowDx="2"
+                            android:shadowDy="2"
+                            android:shadowRadius="2"
+                            android:text="@string/selectradius"
+                            android:textColor="@android:color/black"
+                            android:textSize="20sp"
+                            android:textStyle="bold"
+                            android:typeface="serif" />
+                    </LinearLayout>
+                    <Spinner android:id="@+id/spin5"
+                        android:visibility="visible"
+                        android:layout_width="fill_parent" android:layout_weight="0.5" android:layout_height="0dp"></Spinner>
+                    <View 	android:layout_width="fill_parent" android:layout_height="1dp" android:background="@color/seperatorgray"/>
+                </LinearLayout>
+            </ScrollView>
+            <RelativeLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_weight="0.05" >
+
+                <Button
+                    android:id="@+id/calculate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_centerHorizontal="true"
+                    android:background="@drawable/search"
+                    android:gravity="center"
+                    android:shadowColor="@color/TransparentGrey"
+                    android:shadowDx="2"
+                    android:shadowDy="2"
+                    android:shadowRadius="2"
+                    android:text="@string/findnow"
+                    android:textColor="@android:color/white"
+                    android:textSize="30sp"
+                    android:textStyle="bold" />
+
+            </RelativeLayout>
+
+        </LinearLayout>
+    </FrameLayout>
+    <!-- The navigation drawer -->
+    <ExpandableListView android:id="@+id/left_drawer"
+        android:groupIndicator="@null"
+        android:layout_width="240dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="left"
+        android:choiceMode="singleChoice"
+        android:divider="@android:color/transparent"
+        android:dividerHeight="0dp"
+        android:background="@android:color/white"/>
+
+</android.support.v4.widget.DrawerLayout>

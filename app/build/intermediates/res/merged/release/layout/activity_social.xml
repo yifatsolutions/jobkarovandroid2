@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"         android:paddingTop="30dip"
+   >
+
+      <Button
+          android:id="@+id/buttonsendtofriend"
+          android:layout_width="fill_parent"
+          android:layout_height="50dp"
+          android:background="@android:color/darker_gray"
+          android:paddingLeft="20dp"
+          android:text="@string/sendtofriend"
+          android:textColor="@android:color/white"
+          android:textSize="25sp" />
+          
+
+<Button
+    android:id="@+id/buttonrateus"
+    android:layout_width="fill_parent"
+    android:layout_height="50dp"
+    android:background="@android:color/darker_gray"
+    android:paddingLeft="20dp"
+    android:text="@string/rateus"
+    android:textColor="@android:color/white"
+    android:textSize="25sp" />
+      
+
+   <Button
+       android:id="@+id/buttonlike"
+       android:layout_width="fill_parent"
+       android:layout_height="50dp"
+       android:background="@android:color/darker_gray"
+       android:paddingLeft="20dp"
+       android:text="@string/like"
+       android:textColor="@android:color/white"
+       android:textSize="25sp" />
+      
+ <Button
+         android:id="@+id/buttongoogle"
+         android:layout_width="fill_parent"
+         android:layout_height="50dp"
+         android:background="@android:color/darker_gray"
+          android:paddingLeft="20dp"
+         android:text="@string/googlePlus"
+         android:textColor="@android:color/white"
+         android:textSize="25sp" />
+      
+    
+     <Button
+         android:id="@+id/buttontothesite"
+         android:layout_width="fill_parent"
+         android:layout_height="50dp"
+         android:background="@android:color/darker_gray"
+         android:paddingLeft="20dp"
+         android:text="@string/tothesite2"
+         android:textColor="@android:color/white"
+         android:textSize="25sp" />
+      
+     
+  
+    
+
+</LinearLayout>

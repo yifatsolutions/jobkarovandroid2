@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView  xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="fill_parent" android:layout_alignTop="@+id/relativeLayout1"
+  android:layout_height="fill_parent"    android:paddingTop="15dip"
+  android:paddingLeft="13dp"
+         android:paddingRight="13dp">
+
+<LinearLayout 
+  android:orientation="vertical"
+  android:layout_width="fill_parent"
+  android:layout_height="wrap_content">
+
+   
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:layout_gravity="right"
+              android:layout_marginTop="10dp"
+        android:text="@string/contacttype"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textColor="@android:color/black" />
+
+    <Spinner
+        android:id="@+id/spincontact1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="35dp" />
+        <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_marginTop="10dp"
+        android:layout_height="wrap_content" >
+    
+          <TextView
+              android:id="@+id/dialogtitle"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:layout_gravity="right"
+              android:layout_alignParentTop="true"
+              android:layout_alignParentRight="true"
+              android:text="@string/context"
+              android:textAppearance="?android:attr/textAppearanceMedium"
+              android:textColor="@android:color/black" />
+
+          <TextView
+              android:id="@+id/dialogtitleastrix"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:layout_alignParentTop="true"
+              android:layout_gravity="right"
+              android:layout_toLeftOf="@+id/dialogtitle"
+              android:text="@string/astrix"
+              android:textAppearance="?android:attr/textAppearanceMedium"
+              android:textColor="@color/red" />
+
+</RelativeLayout>   
+    <EditText
+        android:id="@+id/editTextinput"
+       android:inputType="textMultiLine" 
+    android:lines="8" 
+    android:minLines="6" 
+    android:gravity="top|right" 
+    android:maxLines="10" 
+    android:layout_height="wrap_content" 
+    android:layout_width="fill_parent" 
+    android:scrollbars="vertical" 
+        android:layout_marginTop="5dp"
+        android:background="@drawable/rectangle_border"
+
+        android:singleLine="false" >
+
+        <requestFocus></requestFocus>
+    </EditText>
+ <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_marginTop="10dp"
+        android:layout_height="wrap_content" >
+    
+          <TextView
+              android:id="@+id/dialogtitle2"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:layout_gravity="right"
+              android:layout_alignParentTop="true"
+              android:layout_alignParentRight="true"
+              android:text="@string/name"
+              android:textAppearance="?android:attr/textAppearanceMedium"
+              android:textColor="@android:color/black" />
+
+          <TextView
+              android:id="@+id/dialogtitleastrix2"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:layout_alignParentTop="true"
+              android:layout_gravity="right"
+              android:layout_toLeftOf="@+id/dialogtitle2"
+              android:text="@string/astrix"
+              android:textAppearance="?android:attr/textAppearanceMedium"
+              android:textColor="@color/red" />
+
+</RelativeLayout>   
+   
+
+    <EditText
+        android:id="@+id/editText2"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right"
+        android:layout_marginTop="5dp"
+        android:background="@drawable/rectangle_border"
+        android:inputType="textPersonName"
+        android:paddingLeft="10dp" >
+
+</EditText>
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_marginTop="10dp"
+        android:layout_height="wrap_content" >
+    
+          
+    
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"      
+        android:text="@string/phonenumber"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textColor="@android:color/black" >
+</TextView>
+
+          <TextView
+              android:id="@+id/dialogtitleastrix20"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:layout_alignParentTop="true"
+              android:layout_gravity="right"
+              android:layout_toLeftOf="@+id/textView3"
+              android:text="@string/astrix"
+              android:textAppearance="?android:attr/textAppearanceMedium"
+              android:textColor="@color/red" />
+
+</RelativeLayout>   
+    
+    
+
+    <EditText
+        android:id="@+id/editText3"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right"
+        android:layout_marginTop="5dp"
+        android:background="@drawable/rectangle_border"
+        android:inputType="phone"
+        android:paddingLeft="10dp" >
+
+</EditText>
+ <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_marginTop="10dp"
+        android:layout_height="wrap_content" >
+    
+          <TextView
+              android:id="@+id/dialogtitle4"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:layout_gravity="right"
+              android:layout_alignParentTop="true"
+              android:layout_alignParentRight="true"
+              android:text="@string/mailback"
+              android:textAppearance="?android:attr/textAppearanceMedium"
+              android:textColor="@android:color/black" />
+
+          <TextView
+              android:id="@+id/dialogtitleastrix4"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:layout_alignParentTop="true"
+              android:layout_gravity="right"
+              android:layout_toLeftOf="@+id/dialogtitle4"
+              android:text="@string/astrix"
+              android:textAppearance="?android:attr/textAppearanceMedium"
+              android:textColor="@color/red" />
+
+</RelativeLayout>   
+    
+
+    <EditText
+        android:id="@+id/editText1"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right"
+        android:layout_marginTop="5dp"
+        android:background="@drawable/rectangle_border"
+        android:inputType="textEmailAddress"
+        android:paddingLeft="10dp" >
+
+    </EditText>
+    
+    <Button
+        android:id="@+id/insertbutton"
+        android:layout_width="159dp"
+        android:layout_height="40dp"
+        android:layout_alignParentBottom="true"
+        android:layout_gravity="center"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/simplebutton"
+        android:gravity="center"
+        android:shadowColor="@color/TransparentGrey"
+        android:shadowDx="2"
+        android:shadowDy="2"
+        android:shadowRadius="2"
+        android:text="@string/done"
+        android:textColor="@android:color/white"
+        android:textSize="25sp"
+        android:textStyle="bold" >
+</Button>
+
+</LinearLayout>
+
+    
+
+</ScrollView>

@@ -1,0 +1,26 @@
+[
+    {
+        "merged": "/Users/shemi/Documents/jobkarovandroid2/app/build/intermediates/res/merged/debug/menu/allresults_activity_menu3.xml",
+        "source": "/Users/shemi/Documents/jobkarovandroid2/app/src/main/res/menu/allresults_activity_menu3.xml"
+    },
+    {
+        "merged": "/Users/shemi/Documents/jobkarovandroid2/app/build/intermediates/res/merged/debug/menu/map_select_actions.xml",
+        "source": "/Users/shemi/Documents/jobkarovandroid2/app/src/main/res/menu/map_select_actions.xml"
+    },
+    {
+        "merged": "/Users/shemi/Documents/jobkarovandroid2/app/build/intermediates/res/merged/debug/menu/allresults_activity_menu.xml",
+        "source": "/Users/shemi/Documents/jobkarovandroid2/app/src/main/res/menu/allresults_activity_menu.xml"
+    },
+    {
+        "merged": "/Users/shemi/Documents/jobkarovandroid2/app/build/intermediates/res/merged/debug/menu/allresults_activity_menu2.xml",
+        "source": "/Users/shemi/Documents/jobkarovandroid2/app/src/main/res/menu/allresults_activity_menu2.xml"
+    },
+    {
+        "merged": "/Users/shemi/Documents/jobkarovandroid2/app/build/intermediates/res/merged/debug/menu/registration.xml",
+        "source": "/Users/shemi/Documents/jobkarovandroid2/app/src/main/res/menu/registration.xml"
+    },
+    {
+        "merged": "/Users/shemi/Documents/jobkarovandroid2/app/build/intermediates/res/merged/debug/menu/main_activity_actions.xml",
+        "source": "/Users/shemi/Documents/jobkarovandroid2/app/src/main/res/menu/main_activity_actions.xml"
+    }
+]
