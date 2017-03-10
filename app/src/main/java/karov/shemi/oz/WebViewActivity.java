@@ -25,7 +25,9 @@ public class WebViewActivity extends MenuActionActivity {
 		Bundle bundle = getIntent().getExtras();
 	    int mode=bundle.getInt(Constants.DESC,-1);
 	    String link=bundle.getString(Constants.LINK, "");
-	    int timeout=bundle.getInt(Constants.TIMEOUT, 0);
+		String customTitle=bundle.getString(Constants.TITLE, "");
+
+		int timeout=bundle.getInt(Constants.TIMEOUT, 0);
 	    if(timeout>0){
 	    	new Handler().postDelayed(new Runnable() {
 	            @Override
@@ -34,7 +36,8 @@ public class WebViewActivity extends MenuActionActivity {
 	            }
 	        }, timeout*1000);
 	    }
-	    if(mode<0) setTitle(getString(R.string.message));
+		if(customTitle.length()>0) setTitle(customTitle);
+	    else if(mode<0) setTitle(getString(R.string.message));
 	    else{
 	    	String[] titles=getResources().getStringArray(R.array.sidemenuitems3);
 	    	setTitle(titles[mode]);

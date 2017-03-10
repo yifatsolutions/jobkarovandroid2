@@ -7,14 +7,17 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.pm.PackageManager;
 import android.location.Address;
 import android.location.Geocoder;
 import android.location.Location;
 import android.location.LocationListener;
 import android.location.LocationManager;
+import android.os.Build;
 import android.os.Bundle;
 import android.provider.Settings;
 import android.support.v4.app.DialogFragment;
+import android.support.v4.content.ContextCompat;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.util.Log;
@@ -36,7 +39,6 @@ import android.widget.Filterable;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.google.analytics.tracking.android.EasyTracker;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.GoogleMap.OnCameraChangeListener;
@@ -81,24 +83,25 @@ public class MapSelectActivity extends MenuActionActivity implements MyDialog.No
 	@Override
 	protected void onPause(){
 		super.onPause();
-		locationManager.removeUpdates(locationListener1);
-		locationManager.removeUpdates(locationListener2);
+		if ( Build.VERSION.SDK_INT < 23 ||(
+				ContextCompat.checkSelfPermission( this, android.Manifest.permission.ACCESS_FINE_LOCATION ) != PackageManager.PERMISSION_GRANTED &&
+						ContextCompat.checkSelfPermission( this, android.Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED)) {
+
+			locationManager.removeUpdates(locationListener1);
+			locationManager.removeUpdates(locationListener2);
+		}
 	}
 	public void onResume(){
         super.onResume();
-        locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 30000,10,locationListener1);  
-        locationManager.requestLocationUpdates(LocationManager.NETWORK_PROVIDER, 30000,10,locationListener2);
+		if ( Build.VERSION.SDK_INT < 23 ||(
+				ContextCompat.checkSelfPermission( this, android.Manifest.permission.ACCESS_FINE_LOCATION ) != PackageManager.PERMISSION_GRANTED &&
+						ContextCompat.checkSelfPermission( this, android.Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED)) {
+
+			locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 30000, 10, locationListener1);
+			locationManager.requestLocationUpdates(LocationManager.NETWORK_PROVIDER, 30000, 10, locationListener2);
+		}
     }
-	  @Override
-		public void onStart() {
-			super.onStart();
-			EasyTracker.getInstance(this).activityStart(this);  // Add this method.
-		}
-		@Override
-		public void onStop() {
-			super.onStop();
-			EasyTracker.getInstance(this).activityStop(this);  // Add this method.
-		}
+
 	  @Override
 	  public void onCreate(Bundle savedInstanceState) {
 	    super.onCreate(savedInstanceState);
@@ -117,35 +120,7 @@ public class MapSelectActivity extends MenuActionActivity implements MyDialog.No
 	    gpsx=getIntent().getDoubleExtra(Constants.MYX,32.078211);
 	    gpsy=getIntent().getDoubleExtra(Constants.MYY,34.830093);
 	   
-	    latlon= new LatLng(32.078211,34.830093);
 	    latlon= new LatLng(Double.valueOf(xxx),Double.valueOf(yyy));
-	    mark = map.addMarker(new MarkerOptions().position(latlon).title("my loc"));
-	    //.icon(BitmapDescriptorFactory//  .fromResource(R.drawable.pin2)));
-		map.setOnMapLongClickListener(new OnMapLongClickListener() {
-			@Override
-			public void onMapLongClick(LatLng newloc) {
-				//map.clear();
-				latlon=newloc;
-				xxx=newloc.latitude;
-				yyy=newloc.longitude;
-				mark.setPosition(newloc);
-				//Marker mark = map.addMarker(new MarkerOptions().position(newloc).title(getString(R.string.mapselect)));
-			    //map.moveCamera(CameraUpdateFactory.newLatLngZoom(newloc, 15));
-			    map.animateCamera(CameraUpdateFactory.newLatLngZoom(newloc, 15));
-
-			}
-		});
-	   
-	    map.setOnMarkerClickListener(new OnMarkerClickListener() {	
-			@Override
-			public boolean onMarkerClick(Marker arg0) {
-				showMyDialog(arg0);
-				return true;
-			}
-		});
-	    map.setTrafficEnabled(true);
-	    
-	    map.animateCamera(CameraUpdateFactory.newLatLngZoom(latlon, 15), 2000, null);
 	    Button done = (Button) findViewById(R.id.buttonDone1);
 	      done.setOnClickListener(new View.OnClickListener() {
 	    	  public void onClick(View arg0) {
@@ -153,14 +128,7 @@ public class MapSelectActivity extends MenuActionActivity implements MyDialog.No
 	    		 
 	    	  } 
 	      });
-	      map.setOnCameraChangeListener(new OnCameraChangeListener() {
-			
-			@Override
-			public void onCameraChange(CameraPosition arg0) {
-				if(firsttime) addressField.showDropDown();
-				firsttime=false;
-			}
-		});
+
 	      settings = getSharedPreferences(Constants.PREFS_NAME, 0);
 	      set = settings.getStringSet(Constants.LAST_ADDRESS, new HashSet<String>());
 	      String[] array = set.toArray(new String[set.size()+1]);
@@ -230,9 +198,13 @@ public class MapSelectActivity extends MenuActionActivity implements MyDialog.No
 		        if (!locationManager.isProviderEnabled(LocationManager.GPS_PROVIDER)){
 		        	showNoticeDialog();  
 		        }
-		        locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 0, 0, locationListener1);   
-		        locationManager.requestLocationUpdates(LocationManager.NETWORK_PROVIDER, 0, 0, locationListener2);
-		     
+		  if ( Build.VERSION.SDK_INT < 23 ||(
+				  ContextCompat.checkSelfPermission( this, android.Manifest.permission.ACCESS_FINE_LOCATION ) != PackageManager.PERMISSION_GRANTED &&
+						  ContextCompat.checkSelfPermission( this, android.Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED)) {
+
+			  locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 0, 0, locationListener1);
+			  locationManager.requestLocationUpdates(LocationManager.NETWORK_PROVIDER, 0, 0, locationListener2);
+		  }
 	  }
 	  private void done(){
 		  Intent returnIntent = new Intent();
@@ -271,8 +243,13 @@ public class MapSelectActivity extends MenuActionActivity implements MyDialog.No
 		  gpsx=32.078211;
 		    gpsy=34.830093;
 		   Location net_loc=null, gps_loc=null;
-		  gps_loc=locationManager.getLastKnownLocation(LocationManager.GPS_PROVIDER);
-		  net_loc=locationManager.getLastKnownLocation(LocationManager.NETWORK_PROVIDER);
+		  if ( Build.VERSION.SDK_INT < 23 ||(
+				  ContextCompat.checkSelfPermission( this, android.Manifest.permission.ACCESS_FINE_LOCATION ) != PackageManager.PERMISSION_GRANTED &&
+						  ContextCompat.checkSelfPermission( this, android.Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED)) {
+
+			  gps_loc = locationManager.getLastKnownLocation(LocationManager.GPS_PROVIDER);
+			  net_loc = locationManager.getLastKnownLocation(LocationManager.NETWORK_PROVIDER);
+		  }
 		  if(gps_loc!=null && net_loc!=null){
 			  if(gps_loc.getTime()>net_loc.getTime()){   	
 				  gpsx=gps_loc.getLatitude();
@@ -415,7 +392,43 @@ public class MapSelectActivity extends MenuActionActivity implements MyDialog.No
 
 	@Override
 	public void onMapReady(GoogleMap googleMap) {
+
 		map = googleMap;
+		mark = map.addMarker(new MarkerOptions().position(latlon).title("my loc"));
+		//.icon(BitmapDescriptorFactory//  .fromResource(R.drawable.pin2)));
+		map.setOnMapLongClickListener(new OnMapLongClickListener() {
+			@Override
+			public void onMapLongClick(LatLng newloc) {
+				//map.clear();
+				latlon=newloc;
+				xxx=newloc.latitude;
+				yyy=newloc.longitude;
+				mark.setPosition(newloc);
+				//Marker mark = map.addMarker(new MarkerOptions().position(newloc).title(getString(R.string.mapselect)));
+				//map.moveCamera(CameraUpdateFactory.newLatLngZoom(newloc, 15));
+				map.animateCamera(CameraUpdateFactory.newLatLngZoom(newloc, 15));
+
+			}
+		});
+
+		map.setOnMarkerClickListener(new OnMarkerClickListener() {
+			@Override
+			public boolean onMarkerClick(Marker arg0) {
+				showMyDialog(arg0);
+				return true;
+			}
+		});
+		map.setTrafficEnabled(true);
+
+		map.animateCamera(CameraUpdateFactory.newLatLngZoom(latlon, 15), 2000, null);
+		map.setOnCameraChangeListener(new OnCameraChangeListener() {
+
+			@Override
+			public void onCameraChange(CameraPosition arg0) {
+				if(firsttime) addressField.showDropDown();
+				firsttime=false;
+			}
+		});
 	}
 
 

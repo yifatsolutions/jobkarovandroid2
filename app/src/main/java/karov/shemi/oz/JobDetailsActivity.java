@@ -8,13 +8,16 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
+import android.content.pm.PackageManager;
 import android.location.Location;
 import android.location.LocationListener;
 import android.location.LocationManager;
 import android.net.Uri;
 import android.os.AsyncTask;
+import android.os.Build;
 import android.os.Bundle;
 import android.speech.RecognizerIntent;
+import android.support.v4.content.ContextCompat;
 import android.text.InputType;
 import android.util.Log;
 import android.view.Menu;
@@ -32,8 +35,7 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.google.analytics.tracking.android.EasyTracker;
-import com.google.analytics.tracking.android.MapBuilder;
+import com.google.android.gms.analytics.HitBuilders;
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.GooglePlayServicesUtil;
 import com.nostra13.universalimageloader.core.ImageLoader;
@@ -44,6 +46,9 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Locale;
+
+import static android.R.id.edit;
+
 public class JobDetailsActivity extends MenuActionActivity{
 	private String company,name,require,description,phone,mail,companyid,address,imagelink,area,fullTitle,companyDetails,link;
 	private TextView tvname,tvcompany,tvdescription,tvrequire,tvarea,tvemail,tvarrivalTitle1,tvarrivalTitle2,tvarrivalTitle3;
@@ -65,15 +70,24 @@ public class JobDetailsActivity extends MenuActionActivity{
 	
 	@Override
 	protected void onPause(){
-		
-		locationManager.removeUpdates(locationListener1);
-		locationManager.removeUpdates(locationListener2);
+		if ( Build.VERSION.SDK_INT < 23 ||
+				(ContextCompat.checkSelfPermission( this, android.Manifest.permission.ACCESS_FINE_LOCATION ) == PackageManager.PERMISSION_GRANTED &&
+				ContextCompat.checkSelfPermission( this, android.Manifest.permission.ACCESS_COARSE_LOCATION) == PackageManager.PERMISSION_GRANTED)) {
+
+			locationManager.removeUpdates(locationListener1);
+			locationManager.removeUpdates(locationListener2);
+		}
 		super.onPause();
 	}
 	public void onResume(){
         super.onResume();
-        locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 30000,10,locationListener1);  
-        locationManager.requestLocationUpdates(LocationManager.NETWORK_PROVIDER, 30000,10,locationListener2);
+		if ( Build.VERSION.SDK_INT < 23 ||
+				(ContextCompat.checkSelfPermission( this, android.Manifest.permission.ACCESS_FINE_LOCATION ) == PackageManager.PERMISSION_GRANTED &&
+						ContextCompat.checkSelfPermission( this, android.Manifest.permission.ACCESS_COARSE_LOCATION) == PackageManager.PERMISSION_GRANTED)) {
+
+			locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 30000, 10, locationListener1);
+			locationManager.requestLocationUpdates(LocationManager.NETWORK_PROVIDER, 30000, 10, locationListener2);
+		}
     }
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
@@ -109,9 +123,15 @@ public class JobDetailsActivity extends MenuActionActivity{
 	      locationListener1 = new locLis();
 	      locationListener2 = new locLis();
 	      locationManager = (LocationManager) this.getSystemService(Context.LOCATION_SERVICE);
-	      locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 0, 0, locationListener1);   
-	      locationManager.requestLocationUpdates(LocationManager.NETWORK_PROVIDER, 0, 0, locationListener2);
-	      calcXY();
+		if ( Build.VERSION.SDK_INT < 23 ||(
+				ContextCompat.checkSelfPermission( this, android.Manifest.permission.ACCESS_FINE_LOCATION ) != PackageManager.PERMISSION_GRANTED &&
+						ContextCompat.checkSelfPermission( this, android.Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED)) {
+
+
+			locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 0, 0, locationListener1);
+			locationManager.requestLocationUpdates(LocationManager.NETWORK_PROVIDER, 0, 0, locationListener2);
+		}
+		calcXY();
 	      company=bundle.getString(Constants.COMPANY,"");
 	      name=bundle.getString(Constants.NAME,"");
 	      imagelink=bundle.getString(Constants.PHOTO,"");
@@ -183,9 +203,10 @@ public class JobDetailsActivity extends MenuActionActivity{
 	        Button buttonmorefromcompany = (Button) findViewById(R.id.buttonmorefromcompany);
 	        buttonmorefromcompany.setOnClickListener(new View.OnClickListener() {
 		    	  public void onClick(View arg0) {
-		    		  EasyTracker easyTracker = EasyTracker.getInstance(JobDetailsActivity.this);
-		    		  easyTracker.send(MapBuilder.createEvent("ui_action","button_press","button more from company",(long)index).build());
-	    		        
+					  mTracker.send(new HitBuilders.EventBuilder()
+							  .setCategory("ui_action" )
+							  .setAction("button more from company")
+							  .build());
 		    		  Intent inten = new Intent(JobDetailsActivity.this, ResultsListActivity.class);
 		    		  int[] selections={0,0,0,0,0};
 		    		  inten.putExtra(Constants.VAR,selections);
@@ -225,7 +246,7 @@ public class JobDetailsActivity extends MenuActionActivity{
 	    
 	      mapab = (Button) findViewById(R.id.buttonmap);
 	      if (address.equalsIgnoreCase("0")|| address.equalsIgnoreCase("")){
-	    	  mapab.setVisibility(4);
+	    	  mapab.setVisibility(View.INVISIBLE);
 	      }
 	      mapab.setOnClickListener(new View.OnClickListener() {
 	    	  public void onClick(View arg0) {
@@ -239,7 +260,7 @@ public class JobDetailsActivity extends MenuActionActivity{
 			AlertDialog.Builder alert = new AlertDialog.Builder(this); 
 			alert.setTitle(R.string.commandinfo);
 			alert.setMessage(companyDetails);
-			alert.setNegativeButton(R.string.close, new DialogInterface.OnClickListener() {
+			alert.setNegativeButton(R.string.backtojob, new DialogInterface.OnClickListener() {
 				@Override
 				public void onClick(DialogInterface dialog, int id) {
 					dialog.dismiss();
@@ -249,7 +270,12 @@ public class JobDetailsActivity extends MenuActionActivity{
 				@Override
 				public void onClick(DialogInterface dialog, int id) {
 					dialog.dismiss();
-					openWeb("http://www.google.com/search?q="+company,R.string.commandinfo,1000,true);
+
+					Intent inten = new Intent(JobDetailsActivity.this,WebViewActivity.class);
+					inten.putExtra(Constants.LINK, "http://www.google.com/search?q="+company);
+					inten.putExtra(Constants.TITLE,getString(R.string.commandinfo));
+					startActivity(inten);
+					//openWeb("http://www.google.com/search?q="+company,R.string.commandinfo,1000,true);
 				}
 			});
 			if(link!=null && link.length()>3){
@@ -259,7 +285,8 @@ public class JobDetailsActivity extends MenuActionActivity{
 						dialog.dismiss();
 						Intent inten = new Intent(JobDetailsActivity.this,WebViewActivity.class);  
 						 inten.putExtra(Constants.LINK, link);
-						 startActivity(inten);
+						inten.putExtra(Constants.TITLE,getString(R.string.tocompanysite));
+						startActivity(inten);
 //						openWeb(link,R.string.commandinfo,1000,true);
 					}
 				});
@@ -304,9 +331,11 @@ public class JobDetailsActivity extends MenuActionActivity{
 		
 		String tmp="normal";
 		if(mode==1)tmp="video";
-		EasyTracker easyTracker = EasyTracker.getInstance(this);
-		easyTracker.send(MapBuilder.createEvent("ui_action","button_press",tmp+" call",null).build());
-		String url = "tel:"+phone; 
+		mTracker.send(new HitBuilders.EventBuilder()
+				.setCategory("ui_action" )
+				.setAction(tmp+" call")
+				.build());
+		String url = "tel:"+phone;
     	try{
 			  Intent inten;
 			  if(mode==0) inten= new Intent(Intent.ACTION_CALL, Uri.parse(url));
@@ -322,8 +351,12 @@ public class JobDetailsActivity extends MenuActionActivity{
 		    }
 	}
 	private void sendCV(){
-		EasyTracker easyTracker = EasyTracker.getInstance(this);
-		easyTracker.send(MapBuilder.createEvent("ui_action","button_press","sendCV",null).build());
+//		EasyTracker easyTracker = EasyTracker.getInstance(this);
+//		easyTracker.send(MapBuilder.createEvent("ui_action","button_press","sendCV",null).build());
+		mTracker.send(new HitBuilders.EventBuilder()
+				.setCategory("ui_action" )
+				.setAction("sendCV")
+				.build());
 		//String cvexist=settings.getString(Constants.CVEXIST, "");
 		String useremail=settings.getString(Constants.EMAIL, "");
 		if(userid.length()>0 && usercode.length()>0 && emailValidator(useremail)){
@@ -371,14 +404,18 @@ public class JobDetailsActivity extends MenuActionActivity{
 		usercode=settings.getString(Constants.USERCODE, "");
 		userid=settings.getString(Constants.USERID, "");
 		
-		EasyTracker easyTracker = EasyTracker.getInstance(this);
+//		EasyTracker easyTracker = EasyTracker.getInstance(this);
 		NotesDbAdapter mDbHelper=new NotesDbAdapter(JobDetailsActivity.this);
 		SharedPreferences.Editor editor = settings.edit();
 		editor.putInt(Constants.FAV, index);
 		mDbHelper.open();
 		if (favorite) {
 			mDbHelper.deleteNote(index, Constants.SEARCH+1);
-			easyTracker.send(MapBuilder.createEvent("ui_action","button_press","remove favorite",(long)index).build());
+			mTracker.send(new HitBuilders.EventBuilder()
+					.setCategory("ui_action" )
+					.setAction("remove favorite")
+					.build());
+			//easyTracker.send(MapBuilder.createEvent("ui_action","button_press","remove favorite",(long)index).build());
 			String[] strcount={Constants.baseUrl+getVersion()+Constants.FAV,Constants.ID,Integer.toString(index),Constants.USERCODE,usercode,Constants.USERID,userid,Constants.FAV,"0"};
 			GenericDownload sendcount = new GenericDownload(-3,false);
 			sendcount.execute(strcount);
@@ -390,7 +427,11 @@ public class JobDetailsActivity extends MenuActionActivity{
 			  sendcount.execute(strcount);
 			mDbHelper.createNote(index,name,company,x,y,Constants.SEARCH+1,address,imagelink);
 			confirmAutoDismiss(JobDetailsActivity.this,R.string.saved,2);
-			easyTracker.send(MapBuilder.createEvent("ui_action","button_press","add favorite",(long)index).build());
+			//easyTracker.send(MapBuilder.createEvent("ui_action","button_press","add favorite",(long)index).build());
+			mTracker.send(new HitBuilders.EventBuilder()
+					.setCategory("ui_action" )
+					.setAction("add favorite")
+					.build());
 			editor.putString(Constants.FAVMODE, Constants.YES);
 		}
 		mDbHelper.close();
@@ -449,9 +490,12 @@ public class JobDetailsActivity extends MenuActionActivity{
 			return true;
 	    }
 	    else{
-	    	EasyTracker easyTracker = EasyTracker.getInstance(this);
-			easyTracker.send(MapBuilder.createEvent("ui_action","button_press","voice search job",null).build());
-			
+//	    	EasyTracker easyTracker = EasyTracker.getInstance(this);
+//			easyTracker.send(MapBuilder.createEvent("ui_action","button_press","voice search job",null).build());
+			mTracker.send(new HitBuilders.EventBuilder()
+					.setCategory("ui_action" )
+					.setAction("voice search job")
+					.build());
 	    	Intent intent = new Intent(RecognizerIntent.ACTION_RECOGNIZE_SPEECH);
 	    	intent.putExtra(RecognizerIntent.EXTRA_LANGUAGE_MODEL, "he-IL");
 	    	try {
@@ -504,9 +548,12 @@ public class JobDetailsActivity extends MenuActionActivity{
             builderSingle.setAdapter(arrayAdapter,new DialogInterface.OnClickListener() {
             	@Override
             	public void onClick(DialogInterface dialog, int which) {
-            		EasyTracker easyTracker = EasyTracker.getInstance(JobDetailsActivity.this);
-		    		  easyTracker.send(MapBuilder.createEvent("ui_action","button_press","button navigation"+menuitems[which],(long)index).build());
-	    		    
+//            		EasyTracker easyTracker = EasyTracker.getInstance(JobDetailsActivity.this);
+//		    		  easyTracker.send(MapBuilder.createEvent("ui_action","button_press","button navigation"+menuitems[which],(long)index).build());
+					mTracker.send(new HitBuilders.EventBuilder()
+							.setCategory("ui_action" )
+							.setAction("button navigation")
+							.build());
             		//String strName = arrayAdapter.getItem(which);
             		switch (which) {
             		case 0:
@@ -540,9 +587,12 @@ public class JobDetailsActivity extends MenuActionActivity{
                     new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialog, int which) {
-                        	EasyTracker easyTracker = EasyTracker.getInstance(JobDetailsActivity.this);
-      		    		  easyTracker.send(MapBuilder.createEvent("ui_action","button_press","button contact company"+menuitems[which],(long)index).build());
-      	    		    
+//                        	EasyTracker easyTracker = EasyTracker.getInstance(JobDetailsActivity.this);
+//      		    		  easyTracker.send(MapBuilder.createEvent("ui_action","button_press","button contact company"+menuitems[which],(long)index).build());
+							mTracker.send(new HitBuilders.EventBuilder()
+									.setCategory("ui_action" )
+									.setAction("button contact company")
+									.build());
                         	switch (which+offset) {
                     		case 0:
                     			sendCV();
@@ -569,9 +619,12 @@ public class JobDetailsActivity extends MenuActionActivity{
             builderSingle.setAdapter(arrayAdapter,new DialogInterface.OnClickListener() {
             	@Override
             	public void onClick(DialogInterface dialog, int which) {
-            		EasyTracker easyTracker = EasyTracker.getInstance(JobDetailsActivity.this);
-		    		  easyTracker.send(MapBuilder.createEvent("ui_action","button_press","button more"+menuitems[which],(long)index).build());
-	    		      
+//            		EasyTracker easyTracker = EasyTracker.getInstance(JobDetailsActivity.this);
+//		    		  easyTracker.send(MapBuilder.createEvent("ui_action","button_press","button more"+menuitems[which],(long)index).build());
+					mTracker.send(new HitBuilders.EventBuilder()
+							.setCategory("ui_action" )
+							.setAction("button more"+menuitems[which])
+							.build());
             		//String strName = arrayAdapter.getItem(which);
             		switch (which) {
             		case 1:
@@ -619,10 +672,15 @@ public class JobDetailsActivity extends MenuActionActivity{
 		alert.setPositiveButton(R.string.done, new DialogInterface.OnClickListener() {
 			public void onClick(DialogInterface dialog, int whichButton) {
 				mail= input.getText().toString().trim();
-				Editor edit= settings.edit();
-				edit.putString(Constants.MYEMAIL, mail);
-				edit.commit();
-				sendmailnow();
+				if(emailValidator(mail)) {
+					Editor edit = settings.edit();
+					edit.putString(Constants.MYEMAIL, mail);
+					edit.commit();
+					sendmailnow();
+				}
+				else{
+					confirm(JobDetailsActivity.this,R.string.wrongmail);
+				}
 			}
 		});
 
@@ -636,15 +694,11 @@ public class JobDetailsActivity extends MenuActionActivity{
 		dialog.show();
 	}
 	private void sendSMS(){
-		EasyTracker easyTracker = EasyTracker.getInstance(this);
-		  easyTracker.send(MapBuilder
-		      .createEvent("ui_action",     // Event category (required)
-		                   "button_press",  // Event action (required)
-		                   "sendSMS",   // Event label
-		                   null)            // Event value
-		      .build()
-		  );
-		  
+		mTracker.send(new HitBuilders.EventBuilder()
+				.setCategory("ui_action" )
+				.setAction("sendSMS")
+				.build());
+
 		  String[] strcount={Constants.baseUrl+version+Constants.urlCommandCount+"?"+Constants.TYPE+"=1&"+Constants.PLACE+"=3&"+"&"+Constants.ITEM+"="+Integer.toString(index),Constants.USERCODE,usercode,Constants.USERID,userid};
 		  GenericDownload sendcount = new GenericDownload(-3,true);
 		  sendcount.execute(strcount);
@@ -654,14 +708,10 @@ public class JobDetailsActivity extends MenuActionActivity{
 		startActivity( intent ); 
 	}
 	public void sendmailnow(){
-		EasyTracker easyTracker = EasyTracker.getInstance(this);
-		  easyTracker.send(MapBuilder
-		      .createEvent("ui_action",     // Event category (required)
-		                   "button_press",  // Event action (required)
-		                   "sendToMail",   // Event label
-		                   null)            // Event value
-		      .build()
-		  );
+		mTracker.send(new HitBuilders.EventBuilder()
+				.setCategory("ui_action" )
+				.setAction("sendToMail")
+				.build());
 		String[] str1={Constants.baseUrl+version+Constants.urlCommand2+mail+"&"+Constants.ID+"="+index,Constants.USERCODE,usercode,Constants.USERID,userid};
     	 GenericDownload sendmail = new GenericDownload(2,true);
     	 sendmail.execute(str1);
@@ -847,8 +897,10 @@ private boolean calcXY(){
 	  myx=0;
 	  myy=0;
 	  Location net_loc=null, gps_loc=null;
+	try{
 	  gps_loc=locationManager.getLastKnownLocation(LocationManager.GPS_PROVIDER);
 	  net_loc=locationManager.getLastKnownLocation(LocationManager.NETWORK_PROVIDER);
+	} catch (SecurityException e) {}
 	  //if there are both values use the latest one
 	  if(gps_loc!=null && net_loc!=null){
 		  if(gps_loc.getTime()>net_loc.getTime()){   	

@@ -15,6 +15,7 @@ import android.location.Location;
 import android.location.LocationListener;
 import android.location.LocationManager;
 import android.os.AsyncTask;
+import android.os.Build;
 import android.os.Bundle;
 import android.provider.Settings;
 import android.support.v4.app.ActivityCompat;
@@ -40,6 +41,7 @@ import android.widget.Toast;
 
 import com.google.analytics.tracking.android.EasyTracker;
 import com.google.analytics.tracking.android.MapBuilder;
+import com.google.android.gms.analytics.HitBuilders;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -79,8 +81,13 @@ public class SearchActivity extends MenuActionActivity implements MyDialog.Notic
 	@Override
 	protected void onPause(){
 		super.onPause();
-		locationManager.removeUpdates(locationListener1);
-		locationManager.removeUpdates(locationListener2);
+		if ( Build.VERSION.SDK_INT < 23 ||(
+				ContextCompat.checkSelfPermission( context, android.Manifest.permission.ACCESS_FINE_LOCATION ) != PackageManager.PERMISSION_GRANTED &&
+				ContextCompat.checkSelfPermission( context, android.Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED)) {
+
+			locationManager.removeUpdates(locationListener1);
+			locationManager.removeUpdates(locationListener2);
+		}
 	}
 	public void onResume(){
 		//if(context!=null) com.facebook.AppEventsLogger.activateApp(context, Constants.FACEBOOKID);
@@ -99,8 +106,15 @@ public class SearchActivity extends MenuActionActivity implements MyDialog.Notic
             case 1: {
                 // If request is cancelled, the result arrays are empty.
                 if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-                	  if (locationManager.getAllProviders().contains(LocationManager.GPS_PROVIDER)) locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 0, 0, locationListener1);   
-                      if (locationManager.getAllProviders().contains(LocationManager.NETWORK_PROVIDER)) locationManager.requestLocationUpdates(LocationManager.NETWORK_PROVIDER, 0, 0, locationListener2);
+					if ( Build.VERSION.SDK_INT < 23 ||(
+							ContextCompat.checkSelfPermission( context, android.Manifest.permission.ACCESS_FINE_LOCATION ) != PackageManager.PERMISSION_GRANTED &&
+									ContextCompat.checkSelfPermission( context, android.Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED)) {
+
+						if (locationManager.getAllProviders().contains(LocationManager.GPS_PROVIDER))
+							locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 0, 0, locationListener1);
+						if (locationManager.getAllProviders().contains(LocationManager.NETWORK_PROVIDER))
+							locationManager.requestLocationUpdates(LocationManager.NETWORK_PROVIDER, 0, 0, locationListener2);
+					}
                       calcXY(); 
                 } else {
                     // permission denied
@@ -132,15 +146,14 @@ public class SearchActivity extends MenuActionActivity implements MyDialog.Notic
 		    	return false;
 		    }
 		});
-		searchView.setOnClickListener(new OnClickListener() {
+		/*searchView.setOnClickListener(new OnClickListener() {
 			
 			@Override
 			public void onClick(View v) {
 				
 				searchView.setIconified(false);
 				searchView.setBackgroundResource(R.drawable.rectangle_border);
-				
-				
+
 			}
 		});
 		searchView.setOnSearchClickListener(new OnClickListener() {
@@ -159,7 +172,7 @@ public class SearchActivity extends MenuActionActivity implements MyDialog.Notic
 				searchView.setBackgroundResource(R.drawable.freesearch2);
 				return false;
 			}
-		});
+		});*/
 			
 		addnumbers=false;
 				       // mDrawerList.setOnItemClickListener(new DrawerItemClickListener());
@@ -169,7 +182,13 @@ public class SearchActivity extends MenuActionActivity implements MyDialog.Notic
 		     
 				 
 	}
-	
+
+	@Override
+	public boolean onSearchRequested() {
+		return super.onSearchRequested();
+	}
+
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreateSuper(savedInstanceState);
@@ -356,8 +375,8 @@ public class SearchActivity extends MenuActionActivity implements MyDialog.Notic
        	 }
         });
         tvradius.setOnClickListener(new View.OnClickListener() {
-        	public void onClick(View arg0) {	
-        		searchView.clearFocus(); 
+        	public void onClick(View arg0) {
+        		searchView.clearFocus();
 
         		spinner5.performClick();
         		spinner5.setVisibility(View.VISIBLE);
@@ -460,16 +479,13 @@ public class SearchActivity extends MenuActionActivity implements MyDialog.Notic
      Button calc = (Button) findViewById(R.id.calculate);
      calc.setTypeface(tf);
      calc.setOnClickListener(new View.OnClickListener() {
-    	 public void onClick(View arg0) {	 
-    		 EasyTracker easyTracker = EasyTracker.getInstance(SearchActivity.this);
-    		 easyTracker.send(MapBuilder
-    		      .createEvent("ui_action",     // Event category (required)
-    		                   "button_press",  // Event action (required)
-    		                   "mainSearch",   // Event label
-    		                   null)            // Event value
-    		      .build()
-    		  );	
-    		 calcAction();
+    	 public void onClick(View arg0) {
+			 mTracker.send(new HitBuilders.EventBuilder()
+					 .setCategory("ui_action" )
+					 .setAction("mainSearch")
+					 .build());
+
+			 calcAction();
     	 }
      });
      String[] str1={Constants.baseUrl+version+Constants.urlCommandTitles,Constants.USERCODE,usercode,Constants.USERID,userid};
@@ -481,8 +497,13 @@ public class SearchActivity extends MenuActionActivity implements MyDialog.Notic
 	    myy=34.830093;
 	   
 		  Location net_loc=null, gps_loc=null;
-		  gps_loc=locationManager.getLastKnownLocation(LocationManager.GPS_PROVIDER);
-		  net_loc=locationManager.getLastKnownLocation(LocationManager.NETWORK_PROVIDER);
+		if ( Build.VERSION.SDK_INT < 23 ||(
+				ContextCompat.checkSelfPermission( context, android.Manifest.permission.ACCESS_FINE_LOCATION ) != PackageManager.PERMISSION_GRANTED &&
+						ContextCompat.checkSelfPermission( context, android.Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED)) {
+
+			gps_loc = locationManager.getLastKnownLocation(LocationManager.GPS_PROVIDER);
+			net_loc = locationManager.getLastKnownLocation(LocationManager.NETWORK_PROVIDER);
+		}
 		  if(gps_loc!=null && net_loc!=null){
 			  if(gps_loc.getTime()>net_loc.getTime()){   	
 				  myx=gps_loc.getLatitude();
@@ -909,7 +930,10 @@ private class locLis2 implements LocationListener {
         	 				changeAddress.setText(getResources().getString(R.string.unknownlocation));
         	 				addressString="";
         	    		 }
-    		        }		  
+    		        }
+					else{
+						changeAddress.setText(addressString);
+					}
     		    }
 				@Override
 				protected List<Address> doInBackground(Location... params) {
@@ -921,9 +945,10 @@ private class locLis2 implements LocationListener {
     	    		 catch (Exception e) {
     	 				e.printStackTrace();
     	 				try{
-    	 				changeAddress.setText(getResources().getString(R.string.unknownlocation)+" "+ params[0].getLatitude()+" "+params[0].getLongitude());
-    	 				} catch (Exception ee) {}
-    	 				addressString="";
+							addressString=getResources().getString(R.string.unknownlocation)+" "+ params[0].getLatitude()+" "+params[0].getLongitude();
+    	 				} catch (Exception ee) {
+							addressString = getResources().getString(R.string.unknownlocation);
+						}
     	    		 }
 					return addresses;
 				}

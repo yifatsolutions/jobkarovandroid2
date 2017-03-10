@@ -6331,6 +6331,15 @@ bolts.WebViewAppLinkResolver$2$2: void setValue(java.lang.String)
 com.facebook.AccessToken: android.os.Parcelable$Creator CREATOR
 com.facebook.AccessTokenSource: com.facebook.AccessTokenSource[] values()
 com.facebook.AccessTokenSource: com.facebook.AccessTokenSource valueOf(java.lang.String)
+com.facebook.AccessTokenTracker: android.content.BroadcastReceiver receiver
+com.facebook.AccessTokenTracker: android.support.v4.content.LocalBroadcastManager broadcastManager
+com.facebook.AccessTokenTracker: boolean isTracking
+com.facebook.AccessTokenTracker: void onCurrentAccessTokenChanged(com.facebook.AccessToken,com.facebook.AccessToken)
+com.facebook.AccessTokenTracker: AccessTokenTracker()
+com.facebook.AccessTokenTracker: void startTracking()
+com.facebook.AccessTokenTracker: void stopTracking()
+com.facebook.AccessTokenTracker: boolean isTracking()
+com.facebook.AccessTokenTracker: void addBroadcastReceiver()
 com.facebook.CustomTabMainActivity
 com.facebook.CustomTabMainActivity: CustomTabMainActivity()
 com.facebook.FacebookActivity
@@ -10083,7 +10092,9 @@ karov.shemi.oz.BuildConfig: int VERSION_CODE
 karov.shemi.oz.BuildConfig: java.lang.String VERSION_NAME
 karov.shemi.oz.BuildConfig: BuildConfig()
 karov.shemi.oz.Close2Me
+karov.shemi.oz.Close2Me: com.google.android.gms.analytics.Tracker mTracker
 karov.shemi.oz.Close2Me: Close2Me()
+karov.shemi.oz.Close2Me: com.google.android.gms.analytics.Tracker getDefaultTracker()
 karov.shemi.oz.Close2Me: void onCreate()
 karov.shemi.oz.ConfigActivity
 karov.shemi.oz.ConfigActivity: int appWidgetId
@@ -10242,8 +10253,6 @@ karov.shemi.oz.ContactUsActivity: ContactUsActivity()
 karov.shemi.oz.ContactUsActivity: boolean onOptionsItemSelected(android.view.MenuItem)
 karov.shemi.oz.ContactUsActivity: void onCreate(android.os.Bundle)
 karov.shemi.oz.ContactUsActivity: void taskResponse(org.json.JSONObject,int)
-karov.shemi.oz.ContactUsActivity: void onStart()
-karov.shemi.oz.ContactUsActivity: void onStop()
 karov.shemi.oz.ContactUsActivity: int access$002(karov.shemi.oz.ContactUsActivity,int)
 karov.shemi.oz.ContactUsActivity: android.widget.EditText access$100(karov.shemi.oz.ContactUsActivity)
 karov.shemi.oz.ContactUsActivity: android.widget.EditText access$200(karov.shemi.oz.ContactUsActivity)
@@ -10574,13 +10583,13 @@ karov.shemi.oz.JobDetailsActivity: java.lang.String access$1000(karov.shemi.oz.J
 karov.shemi.oz.JobDetailsActivity: java.lang.String access$1100(karov.shemi.oz.JobDetailsActivity)
 karov.shemi.oz.JobDetailsActivity: boolean access$1200(karov.shemi.oz.JobDetailsActivity,boolean)
 karov.shemi.oz.JobDetailsActivity: java.lang.String access$1300(karov.shemi.oz.JobDetailsActivity)
-karov.shemi.oz.JobDetailsActivity: java.lang.String[] access$1400(karov.shemi.oz.JobDetailsActivity)
+karov.shemi.oz.JobDetailsActivity: void access$1400(karov.shemi.oz.JobDetailsActivity)
 karov.shemi.oz.JobDetailsActivity: void access$1500(karov.shemi.oz.JobDetailsActivity)
 karov.shemi.oz.JobDetailsActivity: void access$1600(karov.shemi.oz.JobDetailsActivity)
-karov.shemi.oz.JobDetailsActivity: void access$1700(karov.shemi.oz.JobDetailsActivity)
-karov.shemi.oz.JobDetailsActivity: int access$1800(karov.shemi.oz.JobDetailsActivity)
+karov.shemi.oz.JobDetailsActivity: int access$1700(karov.shemi.oz.JobDetailsActivity)
+karov.shemi.oz.JobDetailsActivity: void access$1800(karov.shemi.oz.JobDetailsActivity)
 karov.shemi.oz.JobDetailsActivity: void access$1900(karov.shemi.oz.JobDetailsActivity)
-karov.shemi.oz.JobDetailsActivity: void access$2000(karov.shemi.oz.JobDetailsActivity)
+karov.shemi.oz.JobDetailsActivity: java.lang.String[] access$2000(karov.shemi.oz.JobDetailsActivity)
 karov.shemi.oz.JobDetailsActivity: void access$2100(karov.shemi.oz.JobDetailsActivity)
 karov.shemi.oz.JobDetailsActivity: java.lang.String access$2202(karov.shemi.oz.JobDetailsActivity,java.lang.String)
 karov.shemi.oz.JobDetailsActivity: java.lang.String access$2200(karov.shemi.oz.JobDetailsActivity)
@@ -10885,8 +10894,6 @@ karov.shemi.oz.MapSelectActivity: java.text.DecimalFormat fourDForm
 karov.shemi.oz.MapSelectActivity: MapSelectActivity()
 karov.shemi.oz.MapSelectActivity: void onPause()
 karov.shemi.oz.MapSelectActivity: void onResume()
-karov.shemi.oz.MapSelectActivity: void onStart()
-karov.shemi.oz.MapSelectActivity: void onStop()
 karov.shemi.oz.MapSelectActivity: void onCreate(android.os.Bundle)
 karov.shemi.oz.MapSelectActivity: void done()
 karov.shemi.oz.MapSelectActivity: void showNoticeDialog()
@@ -10899,66 +10906,66 @@ karov.shemi.oz.MapSelectActivity: java.util.ArrayList autocomplete(java.lang.Str
 karov.shemi.oz.MapSelectActivity: void onMapReady(com.google.android.gms.maps.GoogleMap)
 karov.shemi.oz.MapSelectActivity: void onDialogPositiveClick(android.support.v4.app.DialogFragment)
 karov.shemi.oz.MapSelectActivity: void onDialogNegativeClick(android.support.v4.app.DialogFragment)
-karov.shemi.oz.MapSelectActivity: com.google.android.gms.maps.model.LatLng access$002(karov.shemi.oz.MapSelectActivity,com.google.android.gms.maps.model.LatLng)
-karov.shemi.oz.MapSelectActivity: double access$102(karov.shemi.oz.MapSelectActivity,double)
+karov.shemi.oz.MapSelectActivity: void access$000(karov.shemi.oz.MapSelectActivity)
+karov.shemi.oz.MapSelectActivity: boolean access$100(karov.shemi.oz.MapSelectActivity)
 karov.shemi.oz.MapSelectActivity: double access$202(karov.shemi.oz.MapSelectActivity,double)
-karov.shemi.oz.MapSelectActivity: com.google.android.gms.maps.model.Marker access$300(karov.shemi.oz.MapSelectActivity)
-karov.shemi.oz.MapSelectActivity: com.google.android.gms.maps.GoogleMap access$400(karov.shemi.oz.MapSelectActivity)
-karov.shemi.oz.MapSelectActivity: void access$500(karov.shemi.oz.MapSelectActivity,com.google.android.gms.maps.model.Marker)
-karov.shemi.oz.MapSelectActivity: void access$600(karov.shemi.oz.MapSelectActivity)
-karov.shemi.oz.MapSelectActivity: boolean access$700(karov.shemi.oz.MapSelectActivity)
-karov.shemi.oz.MapSelectActivity: boolean access$702(karov.shemi.oz.MapSelectActivity,boolean)
-karov.shemi.oz.MapSelectActivity: boolean access$800(karov.shemi.oz.MapSelectActivity)
-karov.shemi.oz.MapSelectActivity: double access$900(karov.shemi.oz.MapSelectActivity)
-karov.shemi.oz.MapSelectActivity: double access$1000(karov.shemi.oz.MapSelectActivity)
-karov.shemi.oz.MapSelectActivity: double access$100(karov.shemi.oz.MapSelectActivity)
+karov.shemi.oz.MapSelectActivity: double access$300(karov.shemi.oz.MapSelectActivity)
+karov.shemi.oz.MapSelectActivity: double access$402(karov.shemi.oz.MapSelectActivity,double)
+karov.shemi.oz.MapSelectActivity: double access$500(karov.shemi.oz.MapSelectActivity)
+karov.shemi.oz.MapSelectActivity: com.google.android.gms.maps.model.LatLng access$602(karov.shemi.oz.MapSelectActivity,com.google.android.gms.maps.model.LatLng)
 karov.shemi.oz.MapSelectActivity: double access$200(karov.shemi.oz.MapSelectActivity)
-karov.shemi.oz.MapSelectActivity: com.google.android.gms.maps.model.LatLng access$000(karov.shemi.oz.MapSelectActivity)
-karov.shemi.oz.MapSelectActivity: karov.shemi.oz.MapSelectActivity$PlacesAutoCompleteAdapter access$1100(karov.shemi.oz.MapSelectActivity)
+karov.shemi.oz.MapSelectActivity: double access$400(karov.shemi.oz.MapSelectActivity)
+karov.shemi.oz.MapSelectActivity: com.google.android.gms.maps.model.LatLng access$600(karov.shemi.oz.MapSelectActivity)
+karov.shemi.oz.MapSelectActivity: com.google.android.gms.maps.model.Marker access$700(karov.shemi.oz.MapSelectActivity)
+karov.shemi.oz.MapSelectActivity: com.google.android.gms.maps.GoogleMap access$800(karov.shemi.oz.MapSelectActivity)
+karov.shemi.oz.MapSelectActivity: karov.shemi.oz.MapSelectActivity$PlacesAutoCompleteAdapter access$900(karov.shemi.oz.MapSelectActivity)
+karov.shemi.oz.MapSelectActivity: void access$1000(karov.shemi.oz.MapSelectActivity,com.google.android.gms.maps.model.Marker)
+karov.shemi.oz.MapSelectActivity: boolean access$1100(karov.shemi.oz.MapSelectActivity)
+karov.shemi.oz.MapSelectActivity: boolean access$1102(karov.shemi.oz.MapSelectActivity,boolean)
 karov.shemi.oz.MapSelectActivity: java.util.ArrayList access$1300(karov.shemi.oz.MapSelectActivity,java.lang.String)
 karov.shemi.oz.MapSelectActivity: void <clinit>()
 karov.shemi.oz.MapSelectActivity$1
 karov.shemi.oz.MapSelectActivity$1: karov.shemi.oz.MapSelectActivity this$0
 karov.shemi.oz.MapSelectActivity$1: MapSelectActivity$1(karov.shemi.oz.MapSelectActivity)
-karov.shemi.oz.MapSelectActivity$1: void onMapLongClick(com.google.android.gms.maps.model.LatLng)
+karov.shemi.oz.MapSelectActivity$1: void onClick(android.view.View)
 karov.shemi.oz.MapSelectActivity$10
 karov.shemi.oz.MapSelectActivity$10: karov.shemi.oz.MapSelectActivity this$0
 karov.shemi.oz.MapSelectActivity$10: MapSelectActivity$10(karov.shemi.oz.MapSelectActivity)
-karov.shemi.oz.MapSelectActivity$10: void onClick(android.content.DialogInterface,int)
+karov.shemi.oz.MapSelectActivity$10: void onCameraChange(com.google.android.gms.maps.model.CameraPosition)
 karov.shemi.oz.MapSelectActivity$2
 karov.shemi.oz.MapSelectActivity$2: karov.shemi.oz.MapSelectActivity this$0
 karov.shemi.oz.MapSelectActivity$2: MapSelectActivity$2(karov.shemi.oz.MapSelectActivity)
-karov.shemi.oz.MapSelectActivity$2: boolean onMarkerClick(com.google.android.gms.maps.model.Marker)
+karov.shemi.oz.MapSelectActivity$2: void onItemClick(android.widget.AdapterView,android.view.View,int,long)
 karov.shemi.oz.MapSelectActivity$3
 karov.shemi.oz.MapSelectActivity$3: karov.shemi.oz.MapSelectActivity this$0
 karov.shemi.oz.MapSelectActivity$3: MapSelectActivity$3(karov.shemi.oz.MapSelectActivity)
-karov.shemi.oz.MapSelectActivity$3: void onClick(android.view.View)
+karov.shemi.oz.MapSelectActivity$3: void onTextChanged(java.lang.CharSequence,int,int,int)
+karov.shemi.oz.MapSelectActivity$3: void beforeTextChanged(java.lang.CharSequence,int,int,int)
+karov.shemi.oz.MapSelectActivity$3: void afterTextChanged(android.text.Editable)
 karov.shemi.oz.MapSelectActivity$4
 karov.shemi.oz.MapSelectActivity$4: karov.shemi.oz.MapSelectActivity this$0
 karov.shemi.oz.MapSelectActivity$4: MapSelectActivity$4(karov.shemi.oz.MapSelectActivity)
-karov.shemi.oz.MapSelectActivity$4: void onCameraChange(com.google.android.gms.maps.model.CameraPosition)
+karov.shemi.oz.MapSelectActivity$4: boolean onEditorAction(android.widget.TextView,int,android.view.KeyEvent)
 karov.shemi.oz.MapSelectActivity$5
 karov.shemi.oz.MapSelectActivity$5: karov.shemi.oz.MapSelectActivity this$0
 karov.shemi.oz.MapSelectActivity$5: MapSelectActivity$5(karov.shemi.oz.MapSelectActivity)
-karov.shemi.oz.MapSelectActivity$5: void onItemClick(android.widget.AdapterView,android.view.View,int,long)
+karov.shemi.oz.MapSelectActivity$5: boolean onTouch(android.view.View,android.view.MotionEvent)
 karov.shemi.oz.MapSelectActivity$6
 karov.shemi.oz.MapSelectActivity$6: karov.shemi.oz.MapSelectActivity this$0
 karov.shemi.oz.MapSelectActivity$6: MapSelectActivity$6(karov.shemi.oz.MapSelectActivity)
-karov.shemi.oz.MapSelectActivity$6: void onTextChanged(java.lang.CharSequence,int,int,int)
-karov.shemi.oz.MapSelectActivity$6: void beforeTextChanged(java.lang.CharSequence,int,int,int)
-karov.shemi.oz.MapSelectActivity$6: void afterTextChanged(android.text.Editable)
+karov.shemi.oz.MapSelectActivity$6: void onClick(android.content.DialogInterface,int)
 karov.shemi.oz.MapSelectActivity$7
 karov.shemi.oz.MapSelectActivity$7: karov.shemi.oz.MapSelectActivity this$0
 karov.shemi.oz.MapSelectActivity$7: MapSelectActivity$7(karov.shemi.oz.MapSelectActivity)
-karov.shemi.oz.MapSelectActivity$7: boolean onEditorAction(android.widget.TextView,int,android.view.KeyEvent)
+karov.shemi.oz.MapSelectActivity$7: void onClick(android.content.DialogInterface,int)
 karov.shemi.oz.MapSelectActivity$8
 karov.shemi.oz.MapSelectActivity$8: karov.shemi.oz.MapSelectActivity this$0
 karov.shemi.oz.MapSelectActivity$8: MapSelectActivity$8(karov.shemi.oz.MapSelectActivity)
-karov.shemi.oz.MapSelectActivity$8: boolean onTouch(android.view.View,android.view.MotionEvent)
+karov.shemi.oz.MapSelectActivity$8: void onMapLongClick(com.google.android.gms.maps.model.LatLng)
 karov.shemi.oz.MapSelectActivity$9
 karov.shemi.oz.MapSelectActivity$9: karov.shemi.oz.MapSelectActivity this$0
 karov.shemi.oz.MapSelectActivity$9: MapSelectActivity$9(karov.shemi.oz.MapSelectActivity)
-karov.shemi.oz.MapSelectActivity$9: void onClick(android.content.DialogInterface,int)
+karov.shemi.oz.MapSelectActivity$9: boolean onMarkerClick(com.google.android.gms.maps.model.Marker)
 karov.shemi.oz.MapSelectActivity$PlacesAutoCompleteAdapter
 karov.shemi.oz.MapSelectActivity$PlacesAutoCompleteAdapter: java.util.ArrayList resultList
 karov.shemi.oz.MapSelectActivity$PlacesAutoCompleteAdapter: karov.shemi.oz.MapSelectActivity this$0
@@ -10983,10 +10990,10 @@ karov.shemi.oz.MenuActionActivity: java.lang.String[] multiSelected
 karov.shemi.oz.MenuActionActivity: android.support.v4.widget.DrawerLayout mDrawerLayout
 karov.shemi.oz.MenuActionActivity: android.widget.ExpandableListView mDrawerList
 karov.shemi.oz.MenuActionActivity: int index
-karov.shemi.oz.MenuActionActivity: java.lang.String WelcomeMsg
 karov.shemi.oz.MenuActionActivity: java.lang.String version
 karov.shemi.oz.MenuActionActivity: java.lang.String usercode
 karov.shemi.oz.MenuActionActivity: java.lang.String userid
+karov.shemi.oz.MenuActionActivity: com.google.android.gms.analytics.Tracker mTracker
 karov.shemi.oz.MenuActionActivity: MenuActionActivity()
 karov.shemi.oz.MenuActionActivity: void taskResponse(org.json.JSONObject,int)
 karov.shemi.oz.MenuActionActivity: void defineSideList()
@@ -11807,8 +11814,6 @@ karov.shemi.oz.R$bool: int abc_allow_stacked_button_bar
 karov.shemi.oz.R$bool: int abc_config_actionMenuItemAllCaps
 karov.shemi.oz.R$bool: int abc_config_closeDialogWhenTouchOutside
 karov.shemi.oz.R$bool: int abc_config_showMenuShortcutsWhenKeyboardPresent
-karov.shemi.oz.R$bool: int ga_autoActivityTracking
-karov.shemi.oz.R$bool: int ga_reportUncaughtExceptions
 karov.shemi.oz.R$bool: R$bool()
 karov.shemi.oz.R$color
 karov.shemi.oz.R$color: int TransparentGrey
@@ -13494,6 +13499,7 @@ karov.shemi.oz.R$string: int arrivaltitle
 karov.shemi.oz.R$string: int askdetailsaboutjob
 karov.shemi.oz.R$string: int askdetailsaboutjob2
 karov.shemi.oz.R$string: int astrix
+karov.shemi.oz.R$string: int backtojob
 karov.shemi.oz.R$string: int badmail
 karov.shemi.oz.R$string: int bottom_sheet_behavior
 karov.shemi.oz.R$string: int bycity
@@ -13625,6 +13631,7 @@ karov.shemi.oz.R$string: int debug_menu_creative_preview
 karov.shemi.oz.R$string: int debug_menu_title
 karov.shemi.oz.R$string: int debug_menu_troubleshooting
 karov.shemi.oz.R$string: int decline
+karov.shemi.oz.R$string: int default_web_client_id
 karov.shemi.oz.R$string: int delete
 karov.shemi.oz.R$string: int deleteagent
 karov.shemi.oz.R$string: int deleteyes
@@ -13653,8 +13660,12 @@ karov.shemi.oz.R$string: int forgotpassword
 karov.shemi.oz.R$string: int foundat
 karov.shemi.oz.R$string: int fullname
 karov.shemi.oz.R$string: int ga_trackingId
+karov.shemi.oz.R$string: int gcm_defaultSenderId
 karov.shemi.oz.R$string: int google
 karov.shemi.oz.R$string: int googlePlus
+karov.shemi.oz.R$string: int google_api_key
+karov.shemi.oz.R$string: int google_app_id
+karov.shemi.oz.R$string: int google_crash_reporting_api_key
 karov.shemi.oz.R$string: int googleplay
 karov.shemi.oz.R$string: int googleplay2
 karov.shemi.oz.R$string: int gpsproblem
@@ -15003,6 +15014,7 @@ karov.shemi.oz.R$styleable: int com_facebook_profile_picture_view_com_facebook_p
 karov.shemi.oz.R$styleable: R$styleable()
 karov.shemi.oz.R$styleable: void <clinit>()
 karov.shemi.oz.R$xml
+karov.shemi.oz.R$xml: int global_tracker
 karov.shemi.oz.R$xml: int searchable
 karov.shemi.oz.R$xml: int widgetinfo
 karov.shemi.oz.R$xml: R$xml()
@@ -15043,8 +15055,8 @@ karov.shemi.oz.RegistrationActivity: android.widget.EditText access$200(karov.sh
 karov.shemi.oz.RegistrationActivity: android.widget.ScrollView access$300(karov.shemi.oz.RegistrationActivity)
 karov.shemi.oz.RegistrationActivity: android.widget.EditText access$400(karov.shemi.oz.RegistrationActivity)
 karov.shemi.oz.RegistrationActivity: android.widget.EditText access$500(karov.shemi.oz.RegistrationActivity)
-karov.shemi.oz.RegistrationActivity: boolean access$600(karov.shemi.oz.RegistrationActivity)
-karov.shemi.oz.RegistrationActivity: android.widget.EditText access$700(karov.shemi.oz.RegistrationActivity)
+karov.shemi.oz.RegistrationActivity: android.widget.EditText access$600(karov.shemi.oz.RegistrationActivity)
+karov.shemi.oz.RegistrationActivity: boolean access$700(karov.shemi.oz.RegistrationActivity)
 karov.shemi.oz.RegistrationActivity: android.widget.EditText access$800(karov.shemi.oz.RegistrationActivity)
 karov.shemi.oz.RegistrationActivity: boolean access$900(karov.shemi.oz.RegistrationActivity)
 karov.shemi.oz.RegistrationActivity: java.lang.String access$1000(karov.shemi.oz.RegistrationActivity)
@@ -15138,6 +15150,7 @@ karov.shemi.oz.ResultsListActivity: android.content.SharedPreferences settings
 karov.shemi.oz.ResultsListActivity: karov.shemi.oz.SecondFragment bydate
 karov.shemi.oz.ResultsListActivity: karov.shemi.oz.SecondFragment bydistance
 karov.shemi.oz.ResultsListActivity: karov.shemi.oz.MapFragment mapfragment
+karov.shemi.oz.ResultsListActivity: com.google.android.gms.analytics.Tracker mTracker
 karov.shemi.oz.ResultsListActivity: android.support.v4.widget.DrawerLayout mDrawerLayout
 karov.shemi.oz.ResultsListActivity: android.widget.ExpandableListView mDrawerList
 karov.shemi.oz.ResultsListActivity: android.support.v7.app.ActionBarDrawerToggle mDrawerToggle
@@ -15158,7 +15171,6 @@ karov.shemi.oz.ResultsListActivity: void onPause()
 karov.shemi.oz.ResultsListActivity: void onResume()
 karov.shemi.oz.ResultsListActivity: boolean calcXY()
 karov.shemi.oz.ResultsListActivity: void onStart()
-karov.shemi.oz.ResultsListActivity: void onStop()
 karov.shemi.oz.ResultsListActivity: void taskResponse(org.json.JSONObject,int)
 karov.shemi.oz.ResultsListActivity: void selectItem(int,int)
 karov.shemi.oz.ResultsListActivity: void toGooglePlus()
@@ -15178,11 +15190,12 @@ karov.shemi.oz.ResultsListActivity: void access$300(karov.shemi.oz.ResultsListAc
 karov.shemi.oz.ResultsListActivity: java.lang.String access$400(karov.shemi.oz.ResultsListActivity)
 karov.shemi.oz.ResultsListActivity: android.widget.ExpandableListView access$500(karov.shemi.oz.ResultsListActivity)
 karov.shemi.oz.ResultsListActivity: android.support.v4.widget.DrawerLayout access$600(karov.shemi.oz.ResultsListActivity)
-karov.shemi.oz.ResultsListActivity: java.util.ArrayList access$700(karov.shemi.oz.ResultsListActivity)
-karov.shemi.oz.ResultsListActivity: karov.shemi.oz.SecondFragment access$800(karov.shemi.oz.ResultsListActivity)
-karov.shemi.oz.ResultsListActivity: java.util.ArrayList access$900(karov.shemi.oz.ResultsListActivity)
-karov.shemi.oz.ResultsListActivity: karov.shemi.oz.MapFragment access$1000(karov.shemi.oz.ResultsListActivity)
-karov.shemi.oz.ResultsListActivity: karov.shemi.oz.SecondFragment access$1100(karov.shemi.oz.ResultsListActivity)
+karov.shemi.oz.ResultsListActivity: com.google.android.gms.analytics.Tracker access$700(karov.shemi.oz.ResultsListActivity)
+karov.shemi.oz.ResultsListActivity: java.util.ArrayList access$800(karov.shemi.oz.ResultsListActivity)
+karov.shemi.oz.ResultsListActivity: karov.shemi.oz.SecondFragment access$900(karov.shemi.oz.ResultsListActivity)
+karov.shemi.oz.ResultsListActivity: java.util.ArrayList access$1000(karov.shemi.oz.ResultsListActivity)
+karov.shemi.oz.ResultsListActivity: karov.shemi.oz.MapFragment access$1100(karov.shemi.oz.ResultsListActivity)
+karov.shemi.oz.ResultsListActivity: karov.shemi.oz.SecondFragment access$1200(karov.shemi.oz.ResultsListActivity)
 karov.shemi.oz.ResultsListActivity$1
 karov.shemi.oz.ResultsListActivity$1: karov.shemi.oz.ResultsListActivity this$0
 karov.shemi.oz.ResultsListActivity$1: ResultsListActivity$1(karov.shemi.oz.ResultsListActivity)
@@ -15319,6 +15332,7 @@ karov.shemi.oz.SearchActivity: void onResume()
 karov.shemi.oz.SearchActivity: void onRequestPermissionsResult(int,java.lang.String[],int[])
 karov.shemi.oz.SearchActivity: void readSaved()
 karov.shemi.oz.SearchActivity: void config()
+karov.shemi.oz.SearchActivity: boolean onSearchRequested()
 karov.shemi.oz.SearchActivity: void onCreate(android.os.Bundle)
 karov.shemi.oz.SearchActivity: boolean calcXY()
 karov.shemi.oz.SearchActivity: void calcAction()
@@ -15363,11 +15377,12 @@ karov.shemi.oz.SearchActivity$12: void onClick(android.view.View)
 karov.shemi.oz.SearchActivity$13
 karov.shemi.oz.SearchActivity$13: karov.shemi.oz.SearchActivity this$0
 karov.shemi.oz.SearchActivity$13: SearchActivity$13(karov.shemi.oz.SearchActivity)
-karov.shemi.oz.SearchActivity$13: void onClick(android.view.View)
+karov.shemi.oz.SearchActivity$13: void onItemSelected(android.widget.AdapterView,android.view.View,int,long)
+karov.shemi.oz.SearchActivity$13: void onNothingSelected(android.widget.AdapterView)
 karov.shemi.oz.SearchActivity$14
 karov.shemi.oz.SearchActivity$14: karov.shemi.oz.SearchActivity this$0
 karov.shemi.oz.SearchActivity$14: SearchActivity$14(karov.shemi.oz.SearchActivity)
-karov.shemi.oz.SearchActivity$14: void onClick(android.view.View)
+karov.shemi.oz.SearchActivity$14: boolean onTouch(android.view.View,android.view.MotionEvent)
 karov.shemi.oz.SearchActivity$15
 karov.shemi.oz.SearchActivity$15: karov.shemi.oz.SearchActivity this$0
 karov.shemi.oz.SearchActivity$15: SearchActivity$15(karov.shemi.oz.SearchActivity)
@@ -15375,32 +15390,19 @@ karov.shemi.oz.SearchActivity$15: void onClick(android.view.View)
 karov.shemi.oz.SearchActivity$16
 karov.shemi.oz.SearchActivity$16: karov.shemi.oz.SearchActivity this$0
 karov.shemi.oz.SearchActivity$16: SearchActivity$16(karov.shemi.oz.SearchActivity)
-karov.shemi.oz.SearchActivity$16: void onItemSelected(android.widget.AdapterView,android.view.View,int,long)
-karov.shemi.oz.SearchActivity$16: void onNothingSelected(android.widget.AdapterView)
+karov.shemi.oz.SearchActivity$16: void onClick(android.content.DialogInterface,int)
 karov.shemi.oz.SearchActivity$17
 karov.shemi.oz.SearchActivity$17: karov.shemi.oz.SearchActivity this$0
 karov.shemi.oz.SearchActivity$17: SearchActivity$17(karov.shemi.oz.SearchActivity)
-karov.shemi.oz.SearchActivity$17: boolean onTouch(android.view.View,android.view.MotionEvent)
+karov.shemi.oz.SearchActivity$17: void onClick(android.content.DialogInterface,int)
 karov.shemi.oz.SearchActivity$18
 karov.shemi.oz.SearchActivity$18: karov.shemi.oz.SearchActivity this$0
 karov.shemi.oz.SearchActivity$18: SearchActivity$18(karov.shemi.oz.SearchActivity)
-karov.shemi.oz.SearchActivity$18: void onClick(android.view.View)
-karov.shemi.oz.SearchActivity$19
-karov.shemi.oz.SearchActivity$19: karov.shemi.oz.SearchActivity this$0
-karov.shemi.oz.SearchActivity$19: SearchActivity$19(karov.shemi.oz.SearchActivity)
-karov.shemi.oz.SearchActivity$19: void onClick(android.content.DialogInterface,int)
+karov.shemi.oz.SearchActivity$18: void onClick(android.content.DialogInterface,int)
 karov.shemi.oz.SearchActivity$2
 karov.shemi.oz.SearchActivity$2: karov.shemi.oz.SearchActivity this$0
 karov.shemi.oz.SearchActivity$2: SearchActivity$2(karov.shemi.oz.SearchActivity)
 karov.shemi.oz.SearchActivity$2: void onClick(android.view.View)
-karov.shemi.oz.SearchActivity$20
-karov.shemi.oz.SearchActivity$20: karov.shemi.oz.SearchActivity this$0
-karov.shemi.oz.SearchActivity$20: SearchActivity$20(karov.shemi.oz.SearchActivity)
-karov.shemi.oz.SearchActivity$20: void onClick(android.content.DialogInterface,int)
-karov.shemi.oz.SearchActivity$21
-karov.shemi.oz.SearchActivity$21: karov.shemi.oz.SearchActivity this$0
-karov.shemi.oz.SearchActivity$21: SearchActivity$21(karov.shemi.oz.SearchActivity)
-karov.shemi.oz.SearchActivity$21: void onClick(android.content.DialogInterface,int)
 karov.shemi.oz.SearchActivity$3
 karov.shemi.oz.SearchActivity$3: karov.shemi.oz.SearchActivity this$0
 karov.shemi.oz.SearchActivity$3: SearchActivity$3(karov.shemi.oz.SearchActivity)
@@ -15408,7 +15410,7 @@ karov.shemi.oz.SearchActivity$3: void onClick(android.view.View)
 karov.shemi.oz.SearchActivity$4
 karov.shemi.oz.SearchActivity$4: karov.shemi.oz.SearchActivity this$0
 karov.shemi.oz.SearchActivity$4: SearchActivity$4(karov.shemi.oz.SearchActivity)
-karov.shemi.oz.SearchActivity$4: boolean onClose()
+karov.shemi.oz.SearchActivity$4: void onClick(android.view.View)
 karov.shemi.oz.SearchActivity$5
 karov.shemi.oz.SearchActivity$5: karov.shemi.oz.SearchActivity this$0
 karov.shemi.oz.SearchActivity$5: SearchActivity$5(karov.shemi.oz.SearchActivity)
@@ -15674,10 +15676,9 @@ karov.shemi.oz.SigninActivity: void onCreate(android.os.Bundle)
 karov.shemi.oz.SigninActivity: void onResume()
 karov.shemi.oz.SigninActivity: void onActivityResult(int,int,android.content.Intent)
 karov.shemi.oz.SigninActivity: boolean onCreateOptionsMenu(android.view.Menu)
-karov.shemi.oz.SigninActivity: boolean access$000(karov.shemi.oz.SigninActivity)
-karov.shemi.oz.SigninActivity: java.lang.String access$100(karov.shemi.oz.SigninActivity)
-karov.shemi.oz.SigninActivity: void access$200(karov.shemi.oz.SigninActivity,java.lang.String)
-karov.shemi.oz.SigninActivity: java.lang.String access$300(karov.shemi.oz.SigninActivity)
+karov.shemi.oz.SigninActivity: java.lang.String access$000(karov.shemi.oz.SigninActivity)
+karov.shemi.oz.SigninActivity: void access$100(karov.shemi.oz.SigninActivity,java.lang.String)
+karov.shemi.oz.SigninActivity: boolean access$200(karov.shemi.oz.SigninActivity)
 karov.shemi.oz.SigninActivity$1
 karov.shemi.oz.SigninActivity$1: karov.shemi.oz.SigninActivity this$0
 karov.shemi.oz.SigninActivity$1: SigninActivity$1(karov.shemi.oz.SigninActivity)
@@ -15699,33 +15700,33 @@ karov.shemi.oz.SigninActivity$2: karov.shemi.oz.SigninActivity this$0
 karov.shemi.oz.SigninActivity$2: SigninActivity$2(karov.shemi.oz.SigninActivity)
 karov.shemi.oz.SigninActivity$2: void onClick(android.content.DialogInterface,int)
 karov.shemi.oz.SigninActivity$3
+karov.shemi.oz.SigninActivity$3: android.widget.EditText val$input1
+karov.shemi.oz.SigninActivity$3: android.widget.EditText val$input2
 karov.shemi.oz.SigninActivity$3: karov.shemi.oz.SigninActivity this$0
-karov.shemi.oz.SigninActivity$3: SigninActivity$3(karov.shemi.oz.SigninActivity)
+karov.shemi.oz.SigninActivity$3: SigninActivity$3(karov.shemi.oz.SigninActivity,android.widget.EditText,android.widget.EditText)
 karov.shemi.oz.SigninActivity$3: void onClick(android.content.DialogInterface,int)
 karov.shemi.oz.SigninActivity$4
-karov.shemi.oz.SigninActivity$4: android.widget.EditText val$input1
-karov.shemi.oz.SigninActivity$4: android.widget.EditText val$input2
 karov.shemi.oz.SigninActivity$4: karov.shemi.oz.SigninActivity this$0
-karov.shemi.oz.SigninActivity$4: SigninActivity$4(karov.shemi.oz.SigninActivity,android.widget.EditText,android.widget.EditText)
+karov.shemi.oz.SigninActivity$4: SigninActivity$4(karov.shemi.oz.SigninActivity)
 karov.shemi.oz.SigninActivity$4: void onClick(android.content.DialogInterface,int)
 karov.shemi.oz.SigninActivity$5
+karov.shemi.oz.SigninActivity$5: android.widget.EditText val$input1
 karov.shemi.oz.SigninActivity$5: karov.shemi.oz.SigninActivity this$0
-karov.shemi.oz.SigninActivity$5: SigninActivity$5(karov.shemi.oz.SigninActivity)
+karov.shemi.oz.SigninActivity$5: SigninActivity$5(karov.shemi.oz.SigninActivity,android.widget.EditText)
 karov.shemi.oz.SigninActivity$5: void onClick(android.content.DialogInterface,int)
 karov.shemi.oz.SigninActivity$6
-karov.shemi.oz.SigninActivity$6: android.widget.EditText val$input1
+karov.shemi.oz.SigninActivity$6: android.widget.EditText val$input
 karov.shemi.oz.SigninActivity$6: karov.shemi.oz.SigninActivity this$0
 karov.shemi.oz.SigninActivity$6: SigninActivity$6(karov.shemi.oz.SigninActivity,android.widget.EditText)
 karov.shemi.oz.SigninActivity$6: void onClick(android.content.DialogInterface,int)
 karov.shemi.oz.SigninActivity$7
-karov.shemi.oz.SigninActivity$7: android.widget.EditText val$input
 karov.shemi.oz.SigninActivity$7: karov.shemi.oz.SigninActivity this$0
-karov.shemi.oz.SigninActivity$7: SigninActivity$7(karov.shemi.oz.SigninActivity,android.widget.EditText)
+karov.shemi.oz.SigninActivity$7: SigninActivity$7(karov.shemi.oz.SigninActivity)
 karov.shemi.oz.SigninActivity$7: void onClick(android.content.DialogInterface,int)
 karov.shemi.oz.SigninActivity$8
 karov.shemi.oz.SigninActivity$8: karov.shemi.oz.SigninActivity this$0
 karov.shemi.oz.SigninActivity$8: SigninActivity$8(karov.shemi.oz.SigninActivity)
-karov.shemi.oz.SigninActivity$8: void onClick(android.content.DialogInterface,int)
+karov.shemi.oz.SigninActivity$8: void onCurrentAccessTokenChanged(com.facebook.AccessToken,com.facebook.AccessToken)
 karov.shemi.oz.SigninActivity$9
 karov.shemi.oz.SigninActivity$9: karov.shemi.oz.SigninActivity this$0
 karov.shemi.oz.SigninActivity$9: SigninActivity$9(karov.shemi.oz.SigninActivity)
@@ -15734,19 +15735,20 @@ karov.shemi.oz.SigninActivity$9: void onCancel()
 karov.shemi.oz.SigninActivity$9: void onError(com.facebook.FacebookException)
 karov.shemi.oz.SigninActivity$9: void onSuccess(java.lang.Object)
 karov.shemi.oz.SigninActivity$9$1
+karov.shemi.oz.SigninActivity$9$1: com.facebook.AccessToken val$accessToken
 karov.shemi.oz.SigninActivity$9$1: karov.shemi.oz.SigninActivity$9 this$1
-karov.shemi.oz.SigninActivity$9$1: SigninActivity$9$1(karov.shemi.oz.SigninActivity$9)
+karov.shemi.oz.SigninActivity$9$1: SigninActivity$9$1(karov.shemi.oz.SigninActivity$9,com.facebook.AccessToken)
 karov.shemi.oz.SigninActivity$9$1: void onCompleted(org.json.JSONObject,com.facebook.GraphResponse)
 karov.shemi.oz.SigninActivity$LogOutTask
 karov.shemi.oz.SigninActivity$LogOutTask: android.app.ProgressDialog mProgressDialog
+karov.shemi.oz.SigninActivity$LogOutTask: boolean showProgressBar
 karov.shemi.oz.SigninActivity$LogOutTask: karov.shemi.oz.SigninActivity this$0
-karov.shemi.oz.SigninActivity$LogOutTask: SigninActivity$LogOutTask(karov.shemi.oz.SigninActivity)
+karov.shemi.oz.SigninActivity$LogOutTask: SigninActivity$LogOutTask(karov.shemi.oz.SigninActivity,boolean)
 karov.shemi.oz.SigninActivity$LogOutTask: void onPreExecute()
 karov.shemi.oz.SigninActivity$LogOutTask: org.json.JSONObject doInBackground(java.lang.String[])
 karov.shemi.oz.SigninActivity$LogOutTask: void onPostExecute(org.json.JSONObject)
 karov.shemi.oz.SigninActivity$LogOutTask: void onPostExecute(java.lang.Object)
 karov.shemi.oz.SigninActivity$LogOutTask: java.lang.Object doInBackground(java.lang.Object[])
-karov.shemi.oz.SigninActivity$LogOutTask: SigninActivity$LogOutTask(karov.shemi.oz.SigninActivity,karov.shemi.oz.SigninActivity$1)
 karov.shemi.oz.SmartAgent
 karov.shemi.oz.SmartAgent: android.widget.ListView lv1
 karov.shemi.oz.SmartAgent: android.widget.TextView tv1

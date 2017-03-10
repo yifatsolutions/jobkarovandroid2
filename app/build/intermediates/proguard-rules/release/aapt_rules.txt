@@ -123,13 +123,13 @@
 # view res/layout/abc_screen_simple_overlay_action_mode.xml #generated:32
 -keep class android.support.v7.widget.ViewStubCompat { <init>(...); }
 
-# view AndroidManifest.xml #generated:408
+# view AndroidManifest.xml #generated:352
 -keep class com.facebook.CustomTabMainActivity { <init>(...); }
 
-# view AndroidManifest.xml #generated:404
+# view AndroidManifest.xml #generated:348
 -keep class com.facebook.FacebookActivity { <init>(...); }
 
-# view AndroidManifest.xml #generated:418
+# view AndroidManifest.xml #generated:362
 -keep class com.facebook.internal.FacebookInitProvider { <init>(...); }
 
 # view res/layout/activity_first_login.xml #generated:21
@@ -163,7 +163,7 @@
 # view AndroidManifest.xml #generated:314
 -keep class com.google.android.gms.cast.framework.media.MediaNotificationService { <init>(...); }
 
-# view AndroidManifest.xml #generated:400
+# view AndroidManifest.xml #generated:344
 -keep class com.google.android.gms.common.api.GoogleApiActivity { <init>(...); }
 
 # view res/layout/activity_map.xml #generated:76
@@ -173,13 +173,13 @@
 # view res/layout/fragment_location_info.xml #generated:2
 -keep class com.google.android.gms.maps.MapView { <init>(...); }
 
-# view AndroidManifest.xml #generated:350
+# view AndroidManifest.xml #generated:372
 -keep class com.google.android.gms.measurement.AppMeasurementInstallReferrerReceiver { <init>(...); }
 
-# view AndroidManifest.xml #generated:345
+# view AndroidManifest.xml #generated:367
 -keep class com.google.android.gms.measurement.AppMeasurementReceiver { <init>(...); }
 
-# view AndroidManifest.xml #generated:359
+# view AndroidManifest.xml #generated:381
 -keep class com.google.android.gms.measurement.AppMeasurementService { <init>(...); }
 
 # view AndroidManifest.xml #generated:332
@@ -188,19 +188,19 @@
 # view AndroidManifest.xml #generated:327
 -keep class com.google.android.gms.tagmanager.TagManagerService { <init>(...); }
 
-# view AndroidManifest.xml #generated:379
+# view AndroidManifest.xml #generated:401
 -keep class com.google.firebase.iid.FirebaseInstanceIdInternalReceiver { <init>(...); }
 
-# view AndroidManifest.xml #generated:364
+# view AndroidManifest.xml #generated:386
 -keep class com.google.firebase.iid.FirebaseInstanceIdReceiver { <init>(...); }
 
-# view AndroidManifest.xml #generated:386
+# view AndroidManifest.xml #generated:408
 -keep class com.google.firebase.iid.FirebaseInstanceIdService { <init>(...); }
 
 # view AndroidManifest.xml #generated:320
 -keep class com.google.firebase.messaging.FirebaseMessagingService { <init>(...); }
 
-# view AndroidManifest.xml #generated:394
+# view AndroidManifest.xml #generated:416
 -keep class com.google.firebase.provider.FirebaseInitProvider { <init>(...); }
 
 # view AndroidManifest.xml #generated:107

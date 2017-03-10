@@ -6,5 +6,9 @@
     {
         "merged": "/Users/shemi/Documents/jobkarovandroid2/app/build/intermediates/res/merged/debug/xml/widgetinfo.xml",
         "source": "/Users/shemi/Documents/jobkarovandroid2/app/src/main/res/xml/widgetinfo.xml"
+    },
+    {
+        "merged": "/Users/shemi/Documents/jobkarovandroid2/app/build/intermediates/res/merged/debug/xml/global_tracker.xml",
+        "source": "/Users/shemi/Documents/jobkarovandroid2/app/build/generated/res/google-services/debug/xml/global_tracker.xml"
     }
 ]

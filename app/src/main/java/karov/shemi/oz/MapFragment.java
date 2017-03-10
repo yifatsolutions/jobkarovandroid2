@@ -53,7 +53,9 @@ public class MapFragment extends Fragment implements OnMapReadyCallback {
 
 	 public void setList(ArrayList<HashMap<String, String>> models,Context context){
 		 mylist = models;
-		 if(googleMap!=null) setupMap();  	
+		 if(mylist!=null && mylist.size()>0 && googleMap!=null) {
+			 setupMap();
+		 }
 	 }
 
 	 @Override
@@ -270,7 +272,9 @@ public class MapFragment extends Fragment implements OnMapReadyCallback {
 	@Override
 	public void onMapReady(GoogleMap googleMap2) {
 		googleMap=googleMap2;
-		setupMap();
+		if(mylist!=null && mylist.size()>0 && googleMap!=null) {
+			setupMap();
+		}
 	}
 
 	private class PopupAdapter implements InfoWindowAdapter {

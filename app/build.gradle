@@ -31,6 +31,10 @@ dependencies {
     compile 'com.google.android.gms:play-services-maps:10.0.1'
     compile 'com.android.support:appcompat-v7:25.1.0'
     compile 'com.google.android.gms:play-services:10.0.1'
+    compile 'com.google.android.gms:play-services-analytics:10.0.1'
     compile 'com.android.support:design:25.1.0'
-    compile 'com.facebook.android:facebook-android-sdk:4.+'
+    compile 'com.facebook.android:facebook-android-sdk:[4,5)'
+    compile 'com.android.support:support-v4:25.0.1'
+
 }
+apply plugin: 'com.google.gms.google-services'

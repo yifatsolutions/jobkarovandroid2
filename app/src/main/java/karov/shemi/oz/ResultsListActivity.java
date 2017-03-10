@@ -16,9 +16,9 @@ import android.location.LocationListener;
 import android.location.LocationManager;
 import android.net.Uri;
 import android.os.AsyncTask;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
-import android.os.StrictMode;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.Fragment;
@@ -41,13 +41,11 @@ import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.ExpandableListView;
 import android.widget.TextView;
-
-import com.google.analytics.tracking.android.EasyTracker;
-import com.google.analytics.tracking.android.Fields;
-import com.google.analytics.tracking.android.MapBuilder;
+import com.google.android.gms.analytics.HitBuilders;
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.GooglePlayServicesUtil;
 import com.google.android.gms.gcm.GoogleCloudMessaging;
+import com.google.android.gms.analytics.Tracker;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -60,6 +58,10 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+
+import static karov.shemi.oz.R.array.areas;
+import static karov.shemi.oz.R.array.specialities;
+
 
 public class ResultsListActivity extends AppCompatActivity {
 //	public static FragmentManager fragmentManager;
@@ -81,9 +83,10 @@ public class ResultsListActivity extends AppCompatActivity {
 	protected SharedPreferences settings;
 	private SecondFragment bydate,bydistance;
 	private MapFragment mapfragment;
-private DrawerLayout mDrawerLayout;
-private ExpandableListView mDrawerList;
-private ActionBarDrawerToggle mDrawerToggle;
+	private Tracker mTracker;
+	private DrawerLayout mDrawerLayout;
+	private ExpandableListView mDrawerList;
+	private ActionBarDrawerToggle mDrawerToggle;
 
 @Override
 protected void onPostCreate(Bundle savedInstanceState) {
@@ -250,9 +253,17 @@ protected void onPostCreate(Bundle savedInstanceState) {
 	            case 1: {
 	                // If request is cancelled, the result arrays are empty.
 	                if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED && grantResults[1] == PackageManager.PERMISSION_GRANTED && grantResults[2] == PackageManager.PERMISSION_GRANTED) {
-	                	  if (locationManager.getAllProviders().contains(LocationManager.GPS_PROVIDER)) locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 0, 0, locationListener1);   
-	                      if (locationManager.getAllProviders().contains(LocationManager.NETWORK_PROVIDER)) locationManager.requestLocationUpdates(LocationManager.NETWORK_PROVIDER, 0, 0, locationListener2);
-	                      calcXY(); 
+						if ( Build.VERSION.SDK_INT < 23 ||(
+								ContextCompat.checkSelfPermission( this, android.Manifest.permission.ACCESS_FINE_LOCATION ) != PackageManager.PERMISSION_GRANTED &&
+										ContextCompat.checkSelfPermission( this, android.Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED)) {
+
+
+							if (locationManager.getAllProviders().contains(LocationManager.GPS_PROVIDER))
+								locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 0, 0, locationListener1);
+							if (locationManager.getAllProviders().contains(LocationManager.NETWORK_PROVIDER))
+								locationManager.requestLocationUpdates(LocationManager.NETWORK_PROVIDER, 0, 0, locationListener2);
+						}
+						calcXY();
 	                } else {
 	                    // permission denied
 	                }
@@ -264,11 +275,14 @@ protected void onPostCreate(Bundle savedInstanceState) {
    @Override
    public void onCreate(Bundle savedInstanceState) {
        super.onCreate(savedInstanceState);
-       setContentView(R.layout.activity_main2);
+	   Close2Me application = (Close2Me) getApplication();
+	   mTracker = application.getDefaultTracker();
+
+	   setContentView(R.layout.activity_main2);
        settings = getSharedPreferences(Constants.PREFS_NAME, 0);
        String usercode=settings.getString(Constants.USERCODE, "");
        String userid=settings.getString(Constants.USERID, "");
-		    
+
        mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
        mDrawerList = (ExpandableListView) findViewById(R.id.left_drawer);
        toolbar = (Toolbar) findViewById(R.id.toolbar);
@@ -281,9 +295,14 @@ protected void onPostCreate(Bundle savedInstanceState) {
     		   mDrawerList.setItemChecked(childPosition, true);
     		   mDrawerLayout.closeDrawer(mDrawerList);
     		   selectItem(groupPosition,childPosition);
-    		   EasyTracker easyTracker = EasyTracker.getInstance(ResultsListActivity.this);
-    		   easyTracker.send(MapBuilder.createEvent("ui_action","button_press","results screen left drawer"+v.toString(),(long)(groupPosition*100+childPosition)).build());
-   			
+			   mTracker.send(new HitBuilders.EventBuilder()
+					   .setCategory("ui_action" )
+					   .setAction("results screen left drawer"+v.toString())
+					   .build());
+
+//			   EasyTracker easyTracker = EasyTracker.getInstance(ResultsListActivity.this);
+//    		   easyTracker.send(MapBuilder.createEvent("ui_action","button_press","results screen left drawer"+v.toString(),(long)(groupPosition*100+childPosition)).build());
+
     		   return true;
     	   }
        });
@@ -325,7 +344,7 @@ protected void onPostCreate(Bundle savedInstanceState) {
        newTab2.setText(tabstrings[2]); //tab label txt
        newTab2.setCompoundDrawablesWithIntrinsicBounds(0,0,R.drawable.tab_selector_directions, 0);
        tabLayout.getTabAt(2).setCustomView(newTab2);
-       
+
        int tabindex=settings.getInt(Constants.TAB, -3);
        if(tabindex==-3){
        	if((selections[3]>-1 && selections[4]>0) || selections[4]>10000) tabindex=2;
@@ -338,10 +357,14 @@ protected void onPostCreate(Bundle savedInstanceState) {
     		     public void onTabSelected(TabLayout.Tab tab) {
     		         super.onTabSelected(tab);
     		         int numTab = tab.getPosition();
-    		 		EasyTracker easyTracker = EasyTracker.getInstance(ResultsListActivity.this);
-    				easyTracker.send(MapBuilder.createEvent("ui_action","button_press","tab pressed "+tab.getText(),(long)numTab).build());
-    		         
-    		         SharedPreferences.Editor editor = settings.edit();
+//    		 		EasyTracker easyTracker = EasyTracker.getInstance(ResultsListActivity.this);
+//    				easyTracker.send(MapBuilder.createEvent("ui_action","button_press","tab pressed "+tab.getText(),(long)numTab).build());
+					 mTracker.send(new HitBuilders.EventBuilder()
+							 .setCategory("ui_action" )
+							 .setAction("tab pressed "+tab.getText())
+							 .build());
+
+					 SharedPreferences.Editor editor = settings.edit();
     		         editor.putInt(Constants.TAB,numTab);
     		         editor.commit();
     		     }
@@ -363,7 +386,7 @@ protected void onPostCreate(Bundle savedInstanceState) {
        if (ContextCompat.checkSelfPermission(this, android.Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED &&
     	        ContextCompat.checkSelfPermission(this, android.Manifest.permission.ACCESS_COARSE_LOCATION) ==PackageManager.PERMISSION_GRANTED &&
     	        ContextCompat.checkSelfPermission(this, android.Manifest.permission.READ_PHONE_STATE) ==PackageManager.PERMISSION_GRANTED) {
-    	   if (locationManager.getAllProviders().contains(LocationManager.GPS_PROVIDER)) locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 0, 0, locationListener1);          
+    	   if (locationManager.getAllProviders().contains(LocationManager.GPS_PROVIDER)) locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 0, 0, locationListener1);
     	   if (locationManager.getAllProviders().contains(LocationManager.NETWORK_PROVIDER)) locationManager.requestLocationUpdates(LocationManager.NETWORK_PROVIDER, 0, 0, locationListener2);
     	   calcXY();
        }
@@ -380,16 +403,19 @@ protected void onPostCreate(Bundle savedInstanceState) {
 	    loc = new Location("");
 	    loc.setLatitude(x);
 	    loc.setLongitude(y);
-	    mylist1=new ArrayList<HashMap<String, String>>();	
-	    mylist2=new ArrayList<HashMap<String, String>>();	
+	    mylist1=new ArrayList<HashMap<String, String>>();
+	    mylist2=new ArrayList<HashMap<String, String>>();
+	   String[] str3={Constants.baseUrl+version+Constants.urlCommandTitles,Constants.USERCODE,usercode,Constants.USERID,userid};
+	   GenericDownload downloadFile3 = new GenericDownload(7,false);
+	   downloadFile3.execute(str3);
 	    if(extras!=null){
 	    	type =extras.getInt(Constants.TYPE,Constants.SEARCH);
 	    }
 	    else type=Constants.SEARCH;
 	    if (Intent.ACTION_SEARCH.equals(getIntent().getAction())){// || (extras!=null && extras.getString(Constants.MSG, "").toString().length()>1)) {
 	    	String query =extras.getString(Constants.MSG, "");
-	    	if (Intent.ACTION_SEARCH.equals(getIntent().getAction())) query= getIntent().getStringExtra(SearchManager.QUERY);	
-	    	type=Constants.SEARCH;  
+	    	if (Intent.ACTION_SEARCH.equals(getIntent().getAction())) query= getIntent().getStringExtra(SearchManager.QUERY);
+	    	type=Constants.SEARCH;
 	    	/*String forSave=selections[0]+";"+extras.getString(Constants.ROLE,"0")+";"+extras.getString(Constants.SIZE,"0")+";"+selections[3]+";"+selections[4]+";"+""+";"+query;
 	    	int ind=0;
 	    	boolean alreadyexist=false;
@@ -403,7 +429,7 @@ protected void onPostCreate(Bundle savedInstanceState) {
 	    		ind=ind%Constants.MAX_LAST_SEARCHES;
 	    		SharedPreferences.Editor editor = settings.edit();
 	    		editor.putString(Constants.LASTSEARCHES+ind, forSave);
-	    		editor.commit();	
+	    		editor.commit();
 	    	}*/
 	    	String[] str1={Constants.baseUrl+version+Constants.urlCommand3,Constants.QUERY,query,Constants.X,xStr,Constants.Y,yStr,Constants.ORDER,"0",Constants.USERCODE,usercode,Constants.USERID,userid};
 	    	String[] str2={Constants.baseUrl+version+Constants.urlCommand3,Constants.QUERY,query,Constants.X,xStr,Constants.Y,yStr,Constants.ORDER,"4",Constants.USERCODE,usercode,Constants.USERID,userid};
@@ -411,6 +437,7 @@ protected void onPostCreate(Bundle savedInstanceState) {
 	    	GenericDownload downloadFile2 = new GenericDownload(2,false);
 	    	downloadFile.execute(str1);
 	    	downloadFile2.executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR,str2);
+
 
 	    }
 	    else if(Intent.ACTION_VIEW.equals(getIntent().getAction())){
@@ -458,7 +485,7 @@ protected void onPostCreate(Bundle savedInstanceState) {
 	    	if(selections[3]<=-1) {
         			str1[9]="radius";
         			str2[9]="radius";
-	    	}					
+	    	}
 	    	GenericDownload downloadFile = new GenericDownload(1,true);
 	    	GenericDownload downloadFile2 = new GenericDownload(2,true);
 	    	downloadFile.execute(str1);
@@ -469,7 +496,7 @@ protected void onPostCreate(Bundle savedInstanceState) {
         }
        
         
-       
+
        
    
 
@@ -488,9 +515,11 @@ protected void onPostCreate(Bundle savedInstanceState) {
 	    }
    	 switch (item.getItemId()) {
 		 case R.id.item_search:
-			 EasyTracker easyTracker = EasyTracker.getInstance(this);
-			 easyTracker.send(MapBuilder.createEvent("ui_action","button_press","main search job",null).build());
-				
+			 mTracker.send(new HitBuilders.EventBuilder()
+					 .setCategory("ui_action" )
+					 .setAction("main search job")
+					 .build());
+
 			 Intent inten =new Intent(this,SearchActivity.class);
 			 inten.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);   
 			 startActivity(inten);
@@ -504,10 +533,15 @@ protected void onPostCreate(Bundle savedInstanceState) {
   
    @Override
 	protected void onPause(){
-		
-		locationManager.removeUpdates(locationListener1);
-		locationManager.removeUpdates(locationListener2);
-		super.onPause();
+	   if ( Build.VERSION.SDK_INT < 23 ||(
+			   ContextCompat.checkSelfPermission( this, android.Manifest.permission.ACCESS_FINE_LOCATION ) != PackageManager.PERMISSION_GRANTED &&
+					   ContextCompat.checkSelfPermission( this, android.Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED)) {
+
+
+		   locationManager.removeUpdates(locationListener1);
+		   locationManager.removeUpdates(locationListener2);
+	   }
+	   super.onPause();
 	}
    public void onResume(){
 	   super.onResume();
@@ -538,6 +572,21 @@ protected void onPostCreate(Bundle savedInstanceState) {
 		   editor.putInt(Constants.FAV, -1);
 		   editor.commit();
 	   }
+	   else if(mylist1!=null && mylist2!=null && lastFavChanged==-2){
+
+
+		   for(int ind=0;ind<mylist1.size();ind++){
+				HashMap<String, String> o = (HashMap) mylist1.get(ind);
+			   o.put(Constants.FAV, lastFavChangedMode);
+		   }
+		   for(int ind=0;ind<mylist2.size();ind++){
+			   HashMap<String, String> o = (HashMap) mylist2.get(ind);
+			   o.put(Constants.FAV, lastFavChangedMode);
+		   }
+		   SharedPreferences.Editor editor = settings.edit();
+		   editor.putInt(Constants.FAV, -1);
+		   editor.commit();
+	   }
 
    }
 	
@@ -545,9 +594,15 @@ protected void onPostCreate(Bundle savedInstanceState) {
 		  x=0;
 		  y=0;
 		  Location net_loc=null, gps_loc=null;
-		  gps_loc=locationManager.getLastKnownLocation(LocationManager.GPS_PROVIDER);
-		  net_loc=locationManager.getLastKnownLocation(LocationManager.NETWORK_PROVIDER);
-		  //if there are both values use the latest one
+		if ( Build.VERSION.SDK_INT < 23 ||(
+				ContextCompat.checkSelfPermission( this, android.Manifest.permission.ACCESS_FINE_LOCATION ) != PackageManager.PERMISSION_GRANTED &&
+						ContextCompat.checkSelfPermission( this, android.Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED)) {
+
+
+			gps_loc = locationManager.getLastKnownLocation(LocationManager.GPS_PROVIDER);
+			net_loc = locationManager.getLastKnownLocation(LocationManager.NETWORK_PROVIDER);
+		}
+		//if there are both values use the latest one
 		  if(gps_loc!=null && net_loc!=null){
 			  if(gps_loc.getTime()>net_loc.getTime()){   	
 				  x=gps_loc.getLatitude();
@@ -577,96 +632,131 @@ protected void onPostCreate(Bundle savedInstanceState) {
 	public void onStart() {
 		super.onStart();
     	settings = getSharedPreferences(Constants.PREFS_NAME, 0);
-		EasyTracker easyTracker = EasyTracker.getInstance(this);
+//		EasyTracker easyTracker = EasyTracker.getInstance(this);
 //		easyTracker.activityStop(this);
-		easyTracker.set(Fields.SCREEN_NAME, this.getClass().getSimpleName());
-		easyTracker.send(MapBuilder.createAppView().build());
+//		easyTracker.set(Fields.SCREEN_NAME, this.getClass().getSimpleName());
+//		easyTracker.send(MapBuilder.createAppView().build());
+		mTracker.setScreenName(this.getClass().getSimpleName());
+		mTracker.send(new HitBuilders.ScreenViewBuilder().build());
+
 	}
-	@Override
-	public void onStop() {
-		super.onStop();
-		EasyTracker.getInstance(this).activityStop(this);  // Add this method.
-	}
+
 
 	protected void taskResponse(JSONObject json,int responseMode) {
-		JSONArray allJobs=json.optJSONArray("list");
-		if(allJobs==null  || allJobs.length()==0) {
-			final AlertDialog.Builder builder = new AlertDialog.Builder(ResultsListActivity.this);
-			builder.setTitle(R.string.noresults);
-			builder.setNegativeButton(R.string.tryagain, new DialogInterface.OnClickListener() {
-		        public void onClick(DialogInterface dialog, int id) {
-		             finish();
-		        }
-		    });
+		if(responseMode==7){
 			try{
-			builder.show();
-			}finally{}
-		}
-		else{		  					
-			try{
-				if(mDbHelper==null) {
-					mDbHelper=new NotesDbAdapter(ResultsListActivity.this);
-					
-				}   
-				mDbHelper.open();
-				String meter = getResources().getString(R.string.meter);
-				String km = getResources().getString(R.string.km);
-    	  		
-				for(int i=0;i<allJobs.length();i++){            	  
-					HashMap<String, String> map = new HashMap<String, String>();
-					JSONObject ja = allJobs.optJSONObject(i);
-					Iterator<String> iter = ja.keys();
-					while (iter.hasNext()) {
-					    String key = iter.next();
-					    try {
-					        String value = ja.getString(key);
-					        map.put(key,value);
-					    } catch (JSONException e) {
-					    }
-					}
-					if (mDbHelper.Exists(Integer.valueOf(ja.optString(Constants.ID)),Constants.SEARCH+1)) {
-						map.put(Constants.FAV, "1");
-					}
-					else map.put(Constants.FAV, "0");
-					float[] distance =new float[3];
-					double jobx=Double.parseDouble(map.get(Constants.X));
-					double joby=Double.parseDouble(ja.optString(Constants.Y));
-					Location.distanceBetween(x, y, jobx,joby , distance); 	
-					if (distance[0] <1000) {
-						map.put(Constants.DISTANCE, String.format("%.0f", distance[0]));
-						map.put(Constants.METER, meter);
-					}
-					else if (distance[0] <1000000) {
-						map.put(Constants.DISTANCE, String.format("%.1f", distance[0]/1000));
-						map.put(Constants.METER, km);
-					}
-					else{
-						map.put(Constants.DISTANCE, "0");
-						map.put(Constants.METER, "0");
-					}
-					String path=Constants.IMAGE_URL+(ja.getInt(Constants.LOGO)/1000)+"/"+ja.getInt(Constants.LOGO)+Constants.IMAGE_SURRFIX;
-					map.put(Constants.PHOTO,path);
-					if(responseMode==2) {
-						mylist1.add(map);
-					}
-					else if(responseMode==1) {
-						mylist2.add(map);
-					}
-				}
-			}
-			catch(JSONException e)        {	     }
-			mDbHelper.close();
-		}
-			if(responseMode==2) {
-				bydate.setList(mylist1,ResultsListActivity.this);
-			}
-			else if(responseMode==1) {
-				mapfragment.setList(mylist2,ResultsListActivity.this);
-				bydistance.setList(mylist2,ResultsListActivity.this);
-			}
-			
-		       
+				String allString=getResources().getString(R.string.all);
+				SharedPreferences.Editor editor = settings.edit();
 
+				JSONArray jsonArr= json.getJSONArray(Constants.TYPE);
+
+				editor.putString(Constants.TYPE, jsonArr.toString());
+
+				jsonArr= json.getJSONArray(Constants.ROLE);
+				for (int i = 0; i < jsonArr.length(); i++) {
+					JSONObject innerJObject = jsonArr.getJSONObject(i);
+					JSONArray roleJson=innerJObject.getJSONArray(Constants.ROWS);
+
+					editor.putString(Constants.ROLE+Integer.toString(i), roleJson.toString());
+
+
+				}
+
+
+				editor.putString(Constants.SPECIALITY, jsonArr.toString());
+
+				jsonArr= json.getJSONArray(Constants.AREA);
+				for (int i = 0; i < jsonArr.length(); i++) {
+					JSONObject innerJObject = jsonArr.getJSONObject(i);
+					JSONArray roleJson=innerJObject.getJSONArray(Constants.ROWS);
+					editor.putString(Constants.CITIES+Integer.toString(i),  roleJson.toString());
+
+				}
+
+				editor.putString(Constants.AREA,  jsonArr.toString());
+				editor.commit();
+
+
+
+			}catch(JSONException e)        {
+
+			}
+
+		}
+		else {
+			JSONArray allJobs = json.optJSONArray("list");
+			if (allJobs == null || allJobs.length() == 0) {
+				final AlertDialog.Builder builder = new AlertDialog.Builder(ResultsListActivity.this);
+				builder.setTitle(R.string.noresults);
+				builder.setNegativeButton(R.string.tryagain, new DialogInterface.OnClickListener() {
+					public void onClick(DialogInterface dialog, int id) {
+						finish();
+					}
+				});
+				try {
+					builder.show();
+				} finally {
+				}
+			} else {
+				try {
+					if (mDbHelper == null) {
+						mDbHelper = new NotesDbAdapter(ResultsListActivity.this);
+
+					}
+					mDbHelper.open();
+					String meter = getResources().getString(R.string.meter);
+					String km = getResources().getString(R.string.km);
+
+					for (int i = 0; i < allJobs.length(); i++) {
+						HashMap<String, String> map = new HashMap<String, String>();
+						JSONObject ja = allJobs.optJSONObject(i);
+						Iterator<String> iter = ja.keys();
+						while (iter.hasNext()) {
+							String key = iter.next();
+							try {
+								String value = ja.getString(key);
+								map.put(key, value);
+							} catch (JSONException e) {
+							}
+						}
+						if (mDbHelper.Exists(Integer.valueOf(ja.optString(Constants.ID)), Constants.SEARCH + 1)) {
+							map.put(Constants.FAV, "1");
+						} else map.put(Constants.FAV, "0");
+						float[] distance = new float[3];
+						double jobx = Double.parseDouble(map.get(Constants.X));
+						double joby = Double.parseDouble(ja.optString(Constants.Y));
+						Location.distanceBetween(x, y, jobx, joby, distance);
+						if (distance[0] < 1000) {
+							map.put(Constants.DISTANCE, String.format("%.0f", distance[0]));
+							map.put(Constants.METER, meter);
+						} else if (distance[0] < 1000000) {
+							map.put(Constants.DISTANCE, String.format("%.1f", distance[0] / 1000));
+							map.put(Constants.METER, km);
+						} else {
+							map.put(Constants.DISTANCE, "0");
+							map.put(Constants.METER, "0");
+						}
+						String path = Constants.IMAGE_URL + (ja.getInt(Constants.LOGO) / 1000) + "/" + ja.getInt(Constants.LOGO) + Constants.IMAGE_SURRFIX;
+						map.put(Constants.PHOTO, path);
+						if (responseMode == 2) {
+							mylist1.add(map);
+						} else if (responseMode == 1) {
+							mylist2.add(map);
+						}
+					}
+				} catch (JSONException e) {
+				}
+				mDbHelper.close();
+			}
+			if (responseMode == 2) {
+				bydate.setList(mylist1, ResultsListActivity.this);
+			} else if (responseMode == 1) {
+				mapfragment.setList(mylist2, ResultsListActivity.this);
+				bydistance.setList(mylist2, ResultsListActivity.this);
+			}
+
+
+		}
 		  
 		
 	}

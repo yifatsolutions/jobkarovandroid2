@@ -68,12 +68,12 @@
         "source": "/Users/shemi/Documents/jobkarovandroid2/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.1.0/res/layout/notification_template_lines_media.xml"
     },
     {
-        "merged": "/Users/shemi/Documents/jobkarovandroid2/app/build/intermediates/res/merged/release/layout/fragment_page.xml",
-        "source": "/Users/shemi/Documents/jobkarovandroid2/app/src/main/res/layout/fragment_page.xml"
-    },
-    {
         "merged": "/Users/shemi/Documents/jobkarovandroid2/app/build/intermediates/res/merged/release/layout/login.xml",
         "source": "/Users/shemi/Documents/jobkarovandroid2/app/src/main/res/layout/login.xml"
+    },
+    {
+        "merged": "/Users/shemi/Documents/jobkarovandroid2/app/build/intermediates/res/merged/release/layout/fragment_page.xml",
+        "source": "/Users/shemi/Documents/jobkarovandroid2/app/src/main/res/layout/fragment_page.xml"
     },
     {
         "merged": "/Users/shemi/Documents/jobkarovandroid2/app/build/intermediates/res/merged/release/layout/place_autocomplete_item_prediction.xml",

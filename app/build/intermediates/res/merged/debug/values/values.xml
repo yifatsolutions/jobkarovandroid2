@@ -1270,8 +1270,6 @@
     <bool name="abc_config_actionMenuItemAllCaps">true</bool>
     <bool name="abc_config_closeDialogWhenTouchOutside">true</bool>
     <bool name="abc_config_showMenuShortcutsWhenKeyboardPresent">false</bool>
-    <bool name="ga_autoActivityTracking">true</bool>
-    <bool name="ga_reportUncaughtExceptions">true</bool>
     <color name="TransparentGrey">#c4c4c4</color>
     <color name="abc_input_method_navigation_guard">@android:color/black</color>
     <color name="abc_search_url_text_normal">#7fa87f</color>
@@ -2250,6 +2248,7 @@ JOBKAROV הינו אתר ייחודי בחיפוש עבודה סביבך ונו�
     <string name="askdetailsaboutjob">אבקש פרטים לגבי המשרה</string>
     <string name="askdetailsaboutjob2">בהמשך להצעת העבודה שפורסמה ב-jobkarov :\n</string>
     <string name="astrix">*</string>
+    <string name="backtojob">חזור למשרה</string>
     <string name="badmail">כתובת לא תקינה</string>
     <string name="bottom_sheet_behavior" translatable="false">android.support.design.widget.BottomSheetBehavior</string>
     <string name="bycity">לפי עיר</string>
@@ -2381,6 +2380,7 @@ JOBKAROV הינו אתר ייחודי בחיפוש עבודה סביבך ונו�
     <string name="debug_menu_title">Select a Debug Mode</string>
     <string name="debug_menu_troubleshooting">Troubleshooting</string>
     <string name="decline">Decline</string>
+    <string name="default_web_client_id" translatable="false">959131861493-lj7d6n4tg4n7fnp8lajutqjhbrlnstu1.apps.googleusercontent.com</string>
     <string name="delete">מחק משרה</string>
     <string name="deleteagent">מחיקת סוכן חכם</string>
     <string name="deleteyes">מחק </string>
@@ -2419,9 +2419,13 @@ JOBKAROV הינו אתר ייחודי בחיפוש עבודה סביבך ונו�
     <string name="forgotpassword">שכחתי סיסמה</string>
     <string name="foundat">נמצא ב \n </string>
     <string name="fullname">שם פרטי ומשפחה</string>
-    <string name="ga_trackingId">UA-46492192-1</string>
-    <string name="google">גוגל</string>
+    <string name="ga_trackingId" translatable="false">UA-46492192-1</string>
+    <string name="gcm_defaultSenderId" translatable="false">959131861493</string>
+    <string name="google">חיפוש בגוגל</string>
     <string name="googlePlus">עשו לנו +1 בגוגל</string>
+    <string name="google_api_key" translatable="false">AIzaSyAL2-jBzCXY2pJ84vlBqSv4awPUqBkwP64</string>
+    <string name="google_app_id" translatable="false">1:959131861493:android:4ec5669a5b950039</string>
+    <string name="google_crash_reporting_api_key" translatable="false">AIzaSyAL2-jBzCXY2pJ84vlBqSv4awPUqBkwP64</string>
     <string name="googleplay">Job Karov:חיפוש עבודה סביבך. להגיע רחוק ולעבוד קרוב \n http://www.jobkarov.com/shared</string>
     <string name="googleplay2">http://www.jobkarov.com</string>
     <string name="gpsproblem">אין קליטת GPS. לא ניתן לקבוע מיקום</string>
@@ -2565,7 +2569,7 @@ JOBKAROV הינו אתר ייחודי בחיפוש עבודה סביבך ונו�
     <string name="sendto">שולח משרה במייל ל:</string>
     <string name="sendtofriend">שתף את האפליקציה</string>
     <string name="sendtomail">שלח את המשרה למייל שלך</string>
-    <string name="sentsuccesfull"> :נשלח בהצלחה למייל</string>
+    <string name="sentsuccesfull"> נשלח בהצלחה למייל:</string>
     <string name="serverproblem">בעיה בשרת, נסה שוב מאוחר יותר</string>
     <string name="share">שתף</string>
     <string name="shareby">שתף באמצעות</string>
@@ -2730,7 +2734,7 @@ JOBKAROV הינו אתר ייחודי בחיפוש עבודה סביבך ונו�
     <string name="title_activity_test">TestActivity</string>
     <string name="title_activity_web_view">WebViewActivity</string>
     <string name="titleshowresult">פקודות קוליות</string>
-    <string name="tocompanysite">לאתר החברה</string>
+    <string name="tocompanysite">אתר החברה</string>
     <string name="tothesite">אפשרויות נוספות</string>
     <string name="tothesite2">מעבר לאתר</string>
     <string name="tryagain">נסה שוב</string>

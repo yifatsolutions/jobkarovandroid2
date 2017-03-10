@@ -7666,156 +7666,74 @@ com.google.analytics.midtier.proto.containertag.TypeSystem$Value$Escaping$1
 com.google.analytics.midtier.proto.containertag.TypeSystem$Value$Type
 com.google.analytics.midtier.proto.containertag.TypeSystem$Value$Type$1
 com.google.analytics.midtier.proto.containertag.TypeSystem$ValueOrBuilder
+com.google.analytics.tracking.android.AnalyticsClient
 com.google.analytics.tracking.android.AnalyticsConstants
-com.google.analytics.tracking.android.AnalyticsGmsCoreClient:
-    public static final int BIND_FAILED
-    public static final int REMOTE_EXECUTION_FAILED
-    private static final java.lang.String SERVICE_DESCRIPTOR
-    static final java.lang.String SERVICE_ACTION
-    private static final int BIND_ADJUST_WITH_ACTIVITY
-    public static final java.lang.String KEY_APP_PACKAGE_NAME
-com.google.analytics.tracking.android.AnalyticsStore:
-    public abstract void setDispatch(boolean)
-    public abstract void close()
-com.google.analytics.tracking.android.AnalyticsThread:
-    public abstract void clearHits()
-com.google.analytics.tracking.android.AppFieldsDefaultProvider:
-    36:39:static void dropInstance()
-    72:72:public boolean providesField(java.lang.String)
+com.google.analytics.tracking.android.AnalyticsGmsCoreClient
+com.google.analytics.tracking.android.AnalyticsGmsCoreClient$AnalyticsServiceConnection
+com.google.analytics.tracking.android.AnalyticsGmsCoreClient$OnConnectedListener
+com.google.analytics.tracking.android.AnalyticsGmsCoreClient$OnConnectionFailedListener
+com.google.analytics.tracking.android.AnalyticsStore
+com.google.analytics.tracking.android.AnalyticsStoreStateListener
+com.google.analytics.tracking.android.AnalyticsThread
+com.google.analytics.tracking.android.AppFieldsDefaultProvider
 com.google.analytics.tracking.android.CampaignTrackingReceiver
 com.google.analytics.tracking.android.CampaignTrackingService
-com.google.analytics.tracking.android.ClientIdDefaultProvider:
-    40:43:static void dropInstance()
-    58:58:public boolean providesField(java.lang.String)
-com.google.analytics.tracking.android.DefaultLoggerImpl:
-    static final java.lang.String LOG_TAG
-    53:56:public void error(java.lang.Exception)
-com.google.analytics.tracking.android.DefaultProvider:
-    public abstract boolean providesField(java.lang.String)
-com.google.analytics.tracking.android.Dispatcher:
-    public abstract void close()
-com.google.analytics.tracking.android.EasyTracker:
-    private static final java.lang.String EASY_TRACKER_NAME
-    private static final int DEFAULT_SAMPLE_RATE
-    static final int NUM_MILLISECONDS_TO_WAIT_FOR_OPEN_ACTIVITY
-    142:143:static com.google.analytics.tracking.android.EasyTracker getNewInstance(android.content.Context,com.google.analytics.tracking.android.ParameterLoader,com.google.analytics.tracking.android.GoogleAnalytics,com.google.analytics.tracking.android.ServiceManager,com.google.analytics.tracking.android.TrackerHandler)
-    297:300:void overrideUncaughtExceptionHandler(java.lang.Thread$UncaughtExceptionHandler)
-    382:383:public void dispatchLocalHits()
-    417:418:void setClock(com.google.analytics.tracking.android.Clock)
-    422:422:int getActivitiesActive()
-    445:446:public static void setResourcePackageName(java.lang.String)
-com.google.analytics.tracking.android.ExceptionReporter:
-    static final java.lang.String DEFAULT_DESCRIPTION
-    64:64:public com.google.analytics.tracking.android.ExceptionParser getExceptionParser()
-    68:69:public void setExceptionParser(com.google.analytics.tracking.android.ExceptionParser)
+com.google.analytics.tracking.android.ClientIdDefaultProvider
+com.google.analytics.tracking.android.ClientIdDefaultProvider$1
+com.google.analytics.tracking.android.Clock
+com.google.analytics.tracking.android.DefaultLoggerImpl
+com.google.analytics.tracking.android.DefaultProvider
+com.google.analytics.tracking.android.Dispatcher
+com.google.analytics.tracking.android.EasyTracker
+com.google.analytics.tracking.android.EasyTracker$1
+com.google.analytics.tracking.android.EasyTracker$NotInForegroundTimerTask
+com.google.analytics.tracking.android.ExceptionParser
+com.google.analytics.tracking.android.ExceptionReporter
 com.google.analytics.tracking.android.Fields
-com.google.analytics.tracking.android.FutureApis:
-    17:18:private FutureApis()
-com.google.analytics.tracking.android.GAServiceManager:
-    private static final int MSG_KEY
-    87:88:static void clearInstance()
-    45:97:GAServiceManager(android.content.Context,com.google.analytics.tracking.android.AnalyticsThread,com.google.analytics.tracking.android.AnalyticsStore,boolean)
-    159:159:com.google.analytics.tracking.android.AnalyticsStoreStateListener getListener()
-    195:200:synchronized void overrideHostUrl(java.lang.String)
-com.google.analytics.tracking.android.GAServiceProxy:
-    private static final int MAX_TRIES
-    private static final long SERVICE_CONNECTION_TIMEOUT
-    private static final long RECONNECT_WAIT_TIME
-    private static final long FAILED_CONNECT_WAIT_TIME
-    97:98:void setClock(com.google.analytics.tracking.android.Clock)
-    217:222:void createService(com.google.analytics.tracking.android.AnalyticsClient)
-    229:230:public void setIdleTimeout(long)
-com.google.analytics.tracking.android.GAThread:
-    private static final java.lang.String CLIENT_VERSION
-    private static final int MAX_SAMPLE_RATE
-    private static final int SAMPLE_RATE_MULTIPLIER
-    private static final int SAMPLE_RATE_MODULO
-    static final java.lang.String API_VERSION
-    45:86:GAThread(android.content.Context,com.google.analytics.tracking.android.ServiceProxy)
-    259:265:public void clearHits()
-    411:413:void close()
-    417:417:boolean isDisabled()
+com.google.analytics.tracking.android.FutureApis
+com.google.analytics.tracking.android.GANetworkReceiver
+com.google.analytics.tracking.android.GAServiceManager
+com.google.analytics.tracking.android.GAServiceManager$1
+com.google.analytics.tracking.android.GAServiceManager$2
+com.google.analytics.tracking.android.GAServiceProxy
+com.google.analytics.tracking.android.GAServiceProxy$1
+com.google.analytics.tracking.android.GAServiceProxy$2
+com.google.analytics.tracking.android.GAServiceProxy$3
+com.google.analytics.tracking.android.GAServiceProxy$ConnectState
+com.google.analytics.tracking.android.GAServiceProxy$DisconnectCheckTask
+com.google.analytics.tracking.android.GAServiceProxy$FailedConnectTask
+com.google.analytics.tracking.android.GAServiceProxy$HitParams
+com.google.analytics.tracking.android.GAServiceProxy$ReconnectTask
+com.google.analytics.tracking.android.GAThread
+com.google.analytics.tracking.android.GAThread$1
+com.google.analytics.tracking.android.GAThread$2
 com.google.analytics.tracking.android.GAThread$3
-com.google.analytics.tracking.android.GAUsage:
-    private static final java.lang.String BASE_64_CHARS
-    111:111:static com.google.analytics.tracking.android.GAUsage getPrivateInstance()
-com.google.analytics.tracking.android.GoogleAnalytics:
-    private com.google.analytics.tracking.android.Tracker mDefaultTracker
-    100:106:static com.google.analytics.tracking.android.GoogleAnalytics getNewInstance(android.content.Context,com.google.analytics.tracking.android.AnalyticsThread)
-    114:118:static void clearInstance()
-    122:125:static void clearDefaultProviders()
-    162:180:public com.google.analytics.tracking.android.Tracker getTracker(java.lang.String,java.lang.String)
-    192:192:public com.google.analytics.tracking.android.Tracker getTracker(java.lang.String)
-    200:203:public com.google.analytics.tracking.android.Tracker getDefaultTracker()
-    210:214:public void setDefaultTracker(com.google.analytics.tracking.android.Tracker)
-    223:230:public void closeTracker(java.lang.String)
-    253:253:void close()
-    263:268:public void setAppOptOut(boolean)
-    292:294:public void setLogger(com.google.analytics.tracking.android.Logger)
-com.google.analytics.tracking.android.HitBuilder:
-    17:17:HitBuilder()
+com.google.analytics.tracking.android.GAThread$4
+com.google.analytics.tracking.android.GAUsage
+com.google.analytics.tracking.android.GAUsage$Field
+com.google.analytics.tracking.android.GoogleAnalytics
+com.google.analytics.tracking.android.Hit
+com.google.analytics.tracking.android.HitBuilder
 com.google.analytics.tracking.android.HitTypes
 com.google.analytics.tracking.android.HttpClientFactory
-com.google.analytics.tracking.android.Log:
-    20:21:private Log()
-    41:45:public static void e(java.lang.Exception)
-    104:105:static void clearGaInstance()
-com.google.analytics.tracking.android.Logger:
-    public abstract void error(java.lang.Exception)
-com.google.analytics.tracking.android.MapBuilder:
-    67:72:public com.google.analytics.tracking.android.MapBuilder setAll(java.util.Map)
-    76:77:public java.lang.String get(java.lang.String)
-    119:133:public static com.google.analytics.tracking.android.MapBuilder createTransaction(java.lang.String,java.lang.String,java.lang.Double,java.lang.Double,java.lang.Double,java.lang.String)
-    147:157:public static com.google.analytics.tracking.android.MapBuilder createItem(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.Double,java.lang.Long,java.lang.String)
-    203:214:public static com.google.analytics.tracking.android.MapBuilder createTiming(java.lang.String,java.lang.Long,java.lang.String,java.lang.String)
-    221:227:public static com.google.analytics.tracking.android.MapBuilder createSocial(java.lang.String,java.lang.String,java.lang.String)
+com.google.analytics.tracking.android.Log
+com.google.analytics.tracking.android.Logger
+com.google.analytics.tracking.android.Logger$LogLevel
+com.google.analytics.tracking.android.MapBuilder
 com.google.analytics.tracking.android.NoopDispatcher
-com.google.analytics.tracking.android.ParameterLoader:
-    public abstract boolean isBooleanKeyPresent(java.lang.String)
-com.google.analytics.tracking.android.ParameterLoaderImpl:
-    87:87:public boolean isBooleanKeyPresent(java.lang.String)
-com.google.analytics.tracking.android.PersistentAnalyticsStore:
-    static final java.lang.String HIT_ID
-    static final java.lang.String HIT_STRING
-    static final java.lang.String HIT_TIME
-    static final java.lang.String HIT_URL
-    static final java.lang.String HIT_APP_ID
-    static final java.lang.String HITS_TABLE
-    private static final java.lang.String DATABASE_FILENAME
-    127:128:public void setClock(com.google.analytics.tracking.android.Clock)
-    132:132:public com.google.analytics.tracking.android.PersistentAnalyticsStore$AnalyticsDatabaseHelper getDbHelper()
-    137:140:public void setDispatch(boolean)
-    144:145:void setDispatcher(com.google.analytics.tracking.android.Dispatcher)
-    414:415:void setLastDeleteStaleHitsTime(long)
-    542:548:public void close()
-    552:552:com.google.analytics.tracking.android.PersistentAnalyticsStore$AnalyticsDatabaseHelper getHelper()
-com.google.analytics.tracking.android.PersistentAnalyticsStore$AnalyticsDatabaseHelper:
-    585:585:boolean isBadDatabase()
-    589:590:void setBadDatabase(boolean)
-com.google.analytics.tracking.android.ScreenResolutionDefaultProvider:
-    38:41:static void dropInstance()
-    50:50:public boolean providesField(java.lang.String)
-com.google.analytics.tracking.android.ServiceManager:
-    public abstract void setForceLocalDispatch()
-com.google.analytics.tracking.android.ServiceProxy:
-    public abstract void clearHits()
-com.google.analytics.tracking.android.SimpleNetworkDispatcher:
-    private static final java.lang.String USER_AGENT_TEMPLATE
-    177:178:public void close()
-com.google.analytics.tracking.android.Tracker:
-    static final long NUM_TOKENS_PER_HIT
-    static final long MAX_TOKENS
-    89:90:public java.lang.String getName()
-    135:156:public java.lang.String get(java.lang.String)
-    175:176:void setLastTrackTime(long)
-    180:181:void setTokens(long)
-com.google.analytics.tracking.android.Utils:
-    18:18:Utils()
-    39:39:public static double safeParseDouble(java.lang.String)
-    56:62:public static long safeParseLong(java.lang.String)
-    178:184:static java.lang.String hexEncode(byte[])
-    188:194:static int fromHexDigit(char)
-    198:203:static byte[] hexDecode(java.lang.String)
+com.google.analytics.tracking.android.ParameterLoader
+com.google.analytics.tracking.android.ParameterLoaderImpl
+com.google.analytics.tracking.android.PersistentAnalyticsStore
+com.google.analytics.tracking.android.PersistentAnalyticsStore$1
+com.google.analytics.tracking.android.PersistentAnalyticsStore$AnalyticsDatabaseHelper
+com.google.analytics.tracking.android.ScreenResolutionDefaultProvider
+com.google.analytics.tracking.android.ServiceManager
+com.google.analytics.tracking.android.ServiceProxy
+com.google.analytics.tracking.android.SimpleNetworkDispatcher
+com.google.analytics.tracking.android.StandardExceptionParser
+com.google.analytics.tracking.android.Tracker
+com.google.analytics.tracking.android.TrackerHandler
+com.google.analytics.tracking.android.Utils
 com.google.android.gms.R:
     9:9:public R()
 com.google.android.gms.R$array
@@ -8082,31 +8000,22 @@ com.google.android.gms.analytics.AnalyticsReceiver
 com.google.android.gms.analytics.AnalyticsService
 com.google.android.gms.analytics.CampaignTrackingReceiver:
     public CampaignTrackingReceiver()
-com.google.android.gms.analytics.ExceptionParser
-com.google.android.gms.analytics.ExceptionReporter
+com.google.android.gms.analytics.ExceptionReporter:
+    public com.google.android.gms.analytics.ExceptionParser getExceptionParser()
+    public void setExceptionParser(com.google.android.gms.analytics.ExceptionParser)
 com.google.android.gms.analytics.GoogleAnalytics:
-    private boolean zzaaH
-    public void enableAutoActivityReports(android.app.Application)
     public void reportActivityStart(android.app.Activity)
-    void zzm(android.app.Activity)
     public void reportActivityStop(android.app.Activity)
-    void zzn(android.app.Activity)
-    public com.google.android.gms.analytics.Tracker newTracker(int)
-    void zza(com.google.android.gms.analytics.GoogleAnalytics$zza)
-    void zzb(com.google.android.gms.analytics.GoogleAnalytics$zza)
     public void setAppOptOut(boolean)
     public com.google.android.gms.analytics.Logger getLogger()
     public void setLocalDispatchPeriod(int)
-    public void dispatchLocalHits()
-    void zzlY()
-    private com.google.android.gms.internal.zzrs zzlZ()
-com.google.android.gms.analytics.GoogleAnalytics$zza
-com.google.android.gms.analytics.GoogleAnalytics$zzb
 com.google.android.gms.analytics.HitBuilders:
     public HitBuilders()
 com.google.android.gms.analytics.HitBuilders$AppViewBuilder
-com.google.android.gms.analytics.HitBuilders$EventBuilder
-com.google.android.gms.analytics.HitBuilders$ExceptionBuilder
+com.google.android.gms.analytics.HitBuilders$EventBuilder:
+    public HitBuilders$EventBuilder(java.lang.String,java.lang.String)
+    public com.google.android.gms.analytics.HitBuilders$EventBuilder setLabel(java.lang.String)
+    public com.google.android.gms.analytics.HitBuilders$EventBuilder setValue(long)
 com.google.android.gms.analytics.HitBuilders$HitBuilder:
     public com.google.android.gms.analytics.HitBuilders$HitBuilder setNewSession()
     public com.google.android.gms.analytics.HitBuilders$HitBuilder setNonInteraction(boolean)
@@ -8122,24 +8031,14 @@ com.google.android.gms.analytics.HitBuilders$SocialBuilder
 com.google.android.gms.analytics.HitBuilders$TimingBuilder
 com.google.android.gms.analytics.HitBuilders$TransactionBuilder
 com.google.android.gms.analytics.Logger:
-    public abstract void verbose(java.lang.String)
     public abstract void info(java.lang.String)
     public abstract void error(java.lang.Exception)
     public abstract void setLogLevel(int)
 com.google.android.gms.analytics.Logger$LogLevel
-com.google.android.gms.analytics.StandardExceptionParser
 com.google.android.gms.analytics.Tracker:
-    private com.google.android.gms.analytics.ExceptionReporter zzabv
-    private com.google.android.gms.internal.zztf zzabw
-    void zza(com.google.android.gms.internal.zztf)
-    private boolean zzms()
-    public void enableExceptionReporting(boolean)
-    public void setSessionTimeout(long)
-    public void enableAutoActivityTracking(boolean)
     public java.lang.String get(java.lang.String)
     public void setSampleRate(double)
     public void setUseSecure(boolean)
-    public void setScreenName(java.lang.String)
     public void setLocation(java.lang.String)
     public void setReferrer(java.lang.String)
     public void setPage(java.lang.String)
@@ -8156,19 +8055,6 @@ com.google.android.gms.analytics.Tracker:
     public void setAppInstallerId(java.lang.String)
     public void setAppVersion(java.lang.String)
     public void setAnonymizeIp(boolean)
-    public void setCampaignParamsOnNextHit(android.net.Uri)
-    static java.lang.String zzq(android.app.Activity)
-    static synthetic com.google.android.gms.internal.zztf zzk(com.google.android.gms.analytics.Tracker)
-com.google.android.gms.analytics.Tracker$zza:
-    private boolean zzabF
-    private int zzabG
-    private long zzabJ
-    public void setSessionTimeout(long)
-    public void enableAutoActivityTracking(boolean)
-    private void zzmv()
-    public void zzo(android.app.Activity)
-    public void zzp(android.app.Activity)
-    boolean zzmw()
 com.google.android.gms.analytics.ecommerce.ProductAction:
     public static final java.lang.String ACTION_DETAIL
     public static final java.lang.String ACTION_CLICK
@@ -8183,19 +8069,11 @@ com.google.android.gms.analytics.ecommerce.ProductAction:
 com.google.android.gms.analytics.ecommerce.Promotion:
     public static final java.lang.String ACTION_CLICK
     public static final java.lang.String ACTION_VIEW
-com.google.android.gms.analytics.internal.Command:
-    public static final java.lang.String APPEND_VERSION
-    public static final java.lang.String APPEND_QUEUE_TIME
-    public static final java.lang.String APPEND_CACHE_BUSTER
-    47:47:public java.lang.String getUrlParam()
-com.google.android.gms.analytics.internal.IAnalyticsService$Stub:
-    private static final java.lang.String DESCRIPTOR
-    static final int TRANSACTION_sendHit
-    static final int TRANSACTION_clearHits
-    17:19:public IAnalyticsService$Stub()
-    37:37:public android.os.IBinder asBinder()
-com.google.android.gms.analytics.internal.IAnalyticsService$Stub$Proxy:
-    87:87:public java.lang.String getInterfaceDescriptor()
+com.google.android.gms.analytics.internal.Command
+com.google.android.gms.analytics.internal.Command$1
+com.google.android.gms.analytics.internal.IAnalyticsService
+com.google.android.gms.analytics.internal.IAnalyticsService$Stub
+com.google.android.gms.analytics.internal.IAnalyticsService$Stub$Proxy
 com.google.android.gms.analytics.zzc:
     public static java.lang.String zzal(int)
     public static java.lang.String zzan(int)
@@ -11668,7 +11546,6 @@ com.google.android.gms.internal.zzaxl$zzd
 com.google.android.gms.internal.zzazq$zza:
     public void error(java.lang.Exception)
     public void info(java.lang.String)
-    public void verbose(java.lang.String)
     public void setLogLevel(int)
 com.google.android.gms.internal.zzbgg
 com.google.android.gms.internal.zzbgg$zza
@@ -12414,10 +12291,8 @@ com.google.android.gms.internal.zzoj:
 com.google.android.gms.internal.zzrs:
     public void setLocalDispatchPeriod(int)
     public void zznj()
-    public boolean zznl()
 com.google.android.gms.internal.zzrs$1
 com.google.android.gms.internal.zzrs$5
-com.google.android.gms.internal.zzrs$7
 com.google.android.gms.internal.zzrz:
     public boolean zznM()
 com.google.android.gms.internal.zzsa:
@@ -12426,15 +12301,11 @@ com.google.android.gms.internal.zzsa:
 com.google.android.gms.internal.zzsc:
     public void zzw(long)
     public void zznj()
-    public void zzof()
 com.google.android.gms.internal.zzsk:
     private boolean zzaaK
-    public void verbose(java.lang.String)
     public void info(java.lang.String)
     public void error(java.lang.Exception)
     public void setLogLevel(int)
-com.google.android.gms.internal.zzsw:
-    public static void v(java.lang.String)
 com.google.android.gms.internal.zztb:
     static com.google.android.gms.internal.zzayd zzaav
     public zztb()
@@ -12453,12 +12324,8 @@ com.google.android.gms.internal.zztc:
 com.google.android.gms.internal.zztc$1
 com.google.android.gms.internal.zztc$1$1
 com.google.android.gms.internal.zztc$zza
-com.google.android.gms.internal.zzte
-com.google.android.gms.internal.zzte$zza
-com.google.android.gms.internal.zztf
 com.google.android.gms.internal.zztg:
     public static java.util.Map zzcd(java.lang.String)
-    public static java.lang.String zzW(boolean)
     public static java.lang.String zzcf(java.lang.String)
 com.google.android.gms.internal.zzti
 com.google.android.gms.internal.zzti$1
@@ -14566,6 +14433,7 @@ com.google.firebase.database.connection.idl.zzj$zza:
 com.google.firebase.database.connection.idl.zzm$zza:
     public zzm$zza()
 com.google.firebase.database.zza
+com.google.firebase.firebase_core.R
 com.google.firebase.iid.FirebaseInstanceId:
     public long getCreationTime()
     public void deleteInstanceId()

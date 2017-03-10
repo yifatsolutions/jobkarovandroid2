@@ -70,7 +70,7 @@
                 android:layout_marginTop="10dp"
                 android:layout_width="match_parent"
                 android:layout_height="36dp"
-                android:hint="@string/search_hint"
+                android:iconifiedByDefault="false"
                 android:background="@drawable/freesearch2"
                 >
             </SearchView>

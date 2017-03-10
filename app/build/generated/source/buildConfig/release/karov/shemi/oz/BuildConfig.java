@@ -9,5 +9,5 @@ public final class BuildConfig {
   public static final String BUILD_TYPE = "release";
   public static final String FLAVOR = "";
   public static final int VERSION_CODE = 114;
-  public static final String VERSION_NAME = "App_9.05_android";
+  public static final String VERSION_NAME = "App_9.06_android";
 }

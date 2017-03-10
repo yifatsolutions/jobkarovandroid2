@@ -31,12 +31,10 @@ import android.webkit.WebViewClient;
 import android.widget.ExpandableListView;
 import android.widget.TextView;
 
-import com.google.analytics.tracking.android.EasyTracker;
-import com.google.analytics.tracking.android.Fields;
-import com.google.analytics.tracking.android.MapBuilder;
+import com.google.android.gms.analytics.HitBuilders;
+import com.google.android.gms.analytics.Tracker;
 
 import org.json.JSONArray;
-import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
@@ -47,7 +45,7 @@ import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import static android.R.attr.data;
+import static android.R.attr.version;
 
 
 public class MenuActionActivity extends Activity {
@@ -59,8 +57,10 @@ public class MenuActionActivity extends Activity {
 		protected DrawerLayout mDrawerLayout;
 		protected ExpandableListView mDrawerList;
 		protected int index;
-		protected String WelcomeMsg,version,usercode,userid;
-		protected void taskResponse(JSONObject json,int responseMode) {
+		protected String version,usercode,userid;
+	protected Tracker mTracker;
+
+	protected void taskResponse(JSONObject json,int responseMode) {
     		optAndSave(json);
 			if(responseMode==-1){
 		    	int res= json.optInt(Constants.STATUS, -1);
@@ -85,9 +85,9 @@ public class MenuActionActivity extends Activity {
 				String first_name=json.optString(Constants.FIRST_NAME, "");
         		String last_name=json.optString(Constants.LAST_NAME, "");
         		String WelcomeMsg=first_name+" "+last_name;
-//        		optAndSave(json);
+        		optAndSave(json);
         		String facebook=settings.getString(Constants.FACEBOOKNAME, "");	
-        		confirm(MenuActionActivity.this,R.string.welcome);
+        		confirm(MenuActionActivity.this,R.string.welcome,getString(R.string.welcome)+ " "+WelcomeMsg);
         		showWelcome(WelcomeMsg,facebook);
 			}
 	    }
@@ -129,6 +129,9 @@ public class MenuActionActivity extends Activity {
 		}
 		public void onCreate(Bundle savedInstanceState) {
 			super.onCreate(savedInstanceState);
+			// Obtain the shared Tracker instance.
+			Close2Me application = (Close2Me) getApplication();
+			mTracker = application.getDefaultTracker();
 			settings = getSharedPreferences(Constants.PREFS_NAME, 0);
 			usercode=settings.getString(Constants.USERCODE, "");
 			userid=settings.getString(Constants.USERID, "");
@@ -156,8 +159,12 @@ public class MenuActionActivity extends Activity {
   		        		mDrawerList.setItemChecked(childPosition, true);
   		        		mDrawerLayout.closeDrawer(mDrawerList);
   		        		selectItem(groupPosition,childPosition);
-  		        		 EasyTracker easyTracker = EasyTracker.getInstance(MenuActionActivity.this);
-  		    		   easyTracker.send(MapBuilder.createEvent("ui_action","button_press","results screen left drawer"+v.toString(),(long)(groupPosition*100+childPosition)).build());
+						mTracker.send(new HitBuilders.EventBuilder()
+								.setCategory("ui_action" )
+								.setAction("results screen left drawer"+v.toString())
+								.build());
+  		        		 //EasyTracker easyTracker = EasyTracker.getInstance(MenuActionActivity.this);
+  		    		   //easyTracker.send(MapBuilder.createEvent("ui_action","button_press","results screen left drawer"+v.toString(),(long)(groupPosition*100+childPosition)).build());
   		   			
   		                return true;
   		            }
@@ -176,15 +183,18 @@ public class MenuActionActivity extends Activity {
 		public void onStart() {
 			super.onStart();
 	    	settings = getSharedPreferences(Constants.PREFS_NAME, 0);
-			EasyTracker easyTracker = EasyTracker.getInstance(this);
+			mTracker.setScreenName(this.getClass().getSimpleName());
+			mTracker.send(new HitBuilders.ScreenViewBuilder().build());
+
+			/*EasyTracker easyTracker = EasyTracker.getInstance(this);
 //			easyTracker.activityStop(this);
 			easyTracker.set(Fields.SCREEN_NAME, this.getClass().getSimpleName());
-			easyTracker.send(MapBuilder.createAppView().build());
+			easyTracker.send(MapBuilder.createAppView().build());*/
 		}
 		@Override
 		public void onStop() {
 			super.onStop();
-			EasyTracker.getInstance(this).activityStop(this);  // Add this method.
+			//EasyTracker.getInstance(this).activityStop(this);  // Add this method.
 		}
 		/*@Override
 		public boolean onPrepareOptionsMenu(Menu menu) {
@@ -378,7 +388,7 @@ public class MenuActionActivity extends Activity {
 			while (temp.hasNext()) {
 				String key = temp.next();
 				String value = json.optString(key,"");
-				if(value.length()>0) editor.putString(key.toLowerCase(), value);
+				if(value.length()>0) editor.putString(key, value);
 			}
 		/*String first_name=json.optString(Constants.FIRST_NAME, "");
  		String last_name=json.optString(Constants.LAST_NAME, "");
@@ -411,7 +421,7 @@ public class MenuActionActivity extends Activity {
  	 		//if(cvexist>-1) editor.putInt(Constants.CVEXIST, cvexist);
 
  		}*/
-		editor.apply();
+		editor.commit();
 	}
 	public boolean phoneValidator(String phone) {
 		Pattern pattern,pattern2;

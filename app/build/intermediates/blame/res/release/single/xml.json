@@ -4,6 +4,10 @@
         "source": "/Users/shemi/Documents/jobkarovandroid2/app/src/main/res/xml/searchable.xml"
     },
     {
+        "merged": "/Users/shemi/Documents/jobkarovandroid2/app/build/intermediates/res/merged/release/xml/global_tracker.xml",
+        "source": "/Users/shemi/Documents/jobkarovandroid2/app/build/generated/res/google-services/release/xml/global_tracker.xml"
+    },
+    {
         "merged": "/Users/shemi/Documents/jobkarovandroid2/app/build/intermediates/res/merged/release/xml/widgetinfo.xml",
         "source": "/Users/shemi/Documents/jobkarovandroid2/app/src/main/res/xml/widgetinfo.xml"
     }

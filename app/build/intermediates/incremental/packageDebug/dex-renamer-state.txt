@@ -1,4 +1,4 @@
-#Sun Mar 05 07:14:37 IST 2017
+#Fri Mar 10 10:29:58 IST 2017
 base.0=/Users/shemi/Documents/jobkarovandroid2/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_0974fcdb6513df683fa7eff0cc8d493c64f97c66
 renamed.1=classes2.dex
 renamed.0=classes.dex

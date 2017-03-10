@@ -1,23 +1,23 @@
 [
     {
-        "merged": "/Users/shemi/Documents/jobkarovandroid2/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/ic_media_route_connecting_04_dark.png",
-        "source": "/Users/shemi/Documents/jobkarovandroid2/app/build/intermediates/exploded-aar/com.android.support/mediarouter-v7/24.0.0/res/drawable-xhdpi-v4/ic_media_route_connecting_04_dark.png"
-    },
-    {
         "merged": "/Users/shemi/Documents/jobkarovandroid2/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/abc_list_longpressed_holo.9.png",
         "source": "/Users/shemi/Documents/jobkarovandroid2/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.1.0/res/drawable-xhdpi-v4/abc_list_longpressed_holo.9.png"
+    },
+    {
+        "merged": "/Users/shemi/Documents/jobkarovandroid2/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/ic_media_route_connecting_04_dark.png",
+        "source": "/Users/shemi/Documents/jobkarovandroid2/app/build/intermediates/exploded-aar/com.android.support/mediarouter-v7/24.0.0/res/drawable-xhdpi-v4/ic_media_route_connecting_04_dark.png"
     },
     {
         "merged": "/Users/shemi/Documents/jobkarovandroid2/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/cast_ic_stop_circle_filled_grey600.png",
         "source": "/Users/shemi/Documents/jobkarovandroid2/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-cast-framework/10.0.1/res/drawable-xhdpi-v4/cast_ic_stop_circle_filled_grey600.png"
     },
     {
-        "merged": "/Users/shemi/Documents/jobkarovandroid2/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/abc_textfield_search_default_mtrl_alpha.9.png",
-        "source": "/Users/shemi/Documents/jobkarovandroid2/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.1.0/res/drawable-xhdpi-v4/abc_textfield_search_default_mtrl_alpha.9.png"
-    },
-    {
         "merged": "/Users/shemi/Documents/jobkarovandroid2/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/cast_ic_notification_2.png",
         "source": "/Users/shemi/Documents/jobkarovandroid2/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-cast/10.0.1/res/drawable-xhdpi-v4/cast_ic_notification_2.png"
+    },
+    {
+        "merged": "/Users/shemi/Documents/jobkarovandroid2/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/abc_textfield_search_default_mtrl_alpha.9.png",
+        "source": "/Users/shemi/Documents/jobkarovandroid2/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.1.0/res/drawable-xhdpi-v4/abc_textfield_search_default_mtrl_alpha.9.png"
     },
     {
         "merged": "/Users/shemi/Documents/jobkarovandroid2/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/com_facebook_button_icon_white.png",
@@ -28,12 +28,12 @@
         "source": "/Users/shemi/Documents/jobkarovandroid2/app/build/intermediates/exploded-aar/com.android.support/mediarouter-v7/24.0.0/res/drawable-xhdpi-v4/ic_media_route_on_18_dark.png"
     },
     {
-        "merged": "/Users/shemi/Documents/jobkarovandroid2/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/abc_ab_share_pack_mtrl_alpha.9.png",
-        "source": "/Users/shemi/Documents/jobkarovandroid2/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.1.0/res/drawable-xhdpi-v4/abc_ab_share_pack_mtrl_alpha.9.png"
-    },
-    {
         "merged": "/Users/shemi/Documents/jobkarovandroid2/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/notification_bg_normal.9.png",
         "source": "/Users/shemi/Documents/jobkarovandroid2/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.1.0/res/drawable-xhdpi-v4/notification_bg_normal.9.png"
+    },
+    {
+        "merged": "/Users/shemi/Documents/jobkarovandroid2/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/abc_ab_share_pack_mtrl_alpha.9.png",
+        "source": "/Users/shemi/Documents/jobkarovandroid2/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.1.0/res/drawable-xhdpi-v4/abc_ab_share_pack_mtrl_alpha.9.png"
     },
     {
         "merged": "/Users/shemi/Documents/jobkarovandroid2/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/abc_list_divider_mtrl_alpha.9.png",
@@ -136,32 +136,32 @@
         "source": "/Users/shemi/Documents/jobkarovandroid2/app/build/intermediates/exploded-aar/com.android.support/mediarouter-v7/24.0.0/res/drawable-xhdpi-v4/ic_speaker_group_light.png"
     },
     {
-        "merged": "/Users/shemi/Documents/jobkarovandroid2/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/ic_media_route_connecting_04_light.png",
-        "source": "/Users/shemi/Documents/jobkarovandroid2/app/build/intermediates/exploded-aar/com.android.support/mediarouter-v7/24.0.0/res/drawable-xhdpi-v4/ic_media_route_connecting_04_light.png"
-    },
-    {
         "merged": "/Users/shemi/Documents/jobkarovandroid2/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/ic_media_route_connecting_10_dark.png",
         "source": "/Users/shemi/Documents/jobkarovandroid2/app/build/intermediates/exploded-aar/com.android.support/mediarouter-v7/24.0.0/res/drawable-xhdpi-v4/ic_media_route_connecting_10_dark.png"
+    },
+    {
+        "merged": "/Users/shemi/Documents/jobkarovandroid2/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/ic_media_route_connecting_04_light.png",
+        "source": "/Users/shemi/Documents/jobkarovandroid2/app/build/intermediates/exploded-aar/com.android.support/mediarouter-v7/24.0.0/res/drawable-xhdpi-v4/ic_media_route_connecting_04_light.png"
     },
     {
         "merged": "/Users/shemi/Documents/jobkarovandroid2/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/quantum_ic_stop_grey600_36.png",
         "source": "/Users/shemi/Documents/jobkarovandroid2/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-cast-framework/10.0.1/res/drawable-xhdpi-v4/quantum_ic_stop_grey600_36.png"
     },
     {
-        "merged": "/Users/shemi/Documents/jobkarovandroid2/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/ic_media_pause.png",
-        "source": "/Users/shemi/Documents/jobkarovandroid2/app/build/intermediates/exploded-aar/com.android.support/mediarouter-v7/24.0.0/res/drawable-xhdpi-v4/ic_media_pause.png"
-    },
-    {
-        "merged": "/Users/shemi/Documents/jobkarovandroid2/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/com_facebook_tooltip_black_xout.png",
-        "source": "/Users/shemi/Documents/jobkarovandroid2/app/build/intermediates/exploded-aar/com.facebook.android/facebook-android-sdk/4.20.0/res/drawable-xhdpi-v4/com_facebook_tooltip_black_xout.png"
+        "merged": "/Users/shemi/Documents/jobkarovandroid2/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/com_facebook_tooltip_blue_bottomnub.png",
+        "source": "/Users/shemi/Documents/jobkarovandroid2/app/build/intermediates/exploded-aar/com.facebook.android/facebook-android-sdk/4.20.0/res/drawable-xhdpi-v4/com_facebook_tooltip_blue_bottomnub.png"
     },
     {
         "merged": "/Users/shemi/Documents/jobkarovandroid2/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/ic_media_route_connecting_06_dark.png",
         "source": "/Users/shemi/Documents/jobkarovandroid2/app/build/intermediates/exploded-aar/com.android.support/mediarouter-v7/24.0.0/res/drawable-xhdpi-v4/ic_media_route_connecting_06_dark.png"
     },
     {
-        "merged": "/Users/shemi/Documents/jobkarovandroid2/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/com_facebook_tooltip_blue_bottomnub.png",
-        "source": "/Users/shemi/Documents/jobkarovandroid2/app/build/intermediates/exploded-aar/com.facebook.android/facebook-android-sdk/4.20.0/res/drawable-xhdpi-v4/com_facebook_tooltip_blue_bottomnub.png"
+        "merged": "/Users/shemi/Documents/jobkarovandroid2/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/com_facebook_tooltip_black_xout.png",
+        "source": "/Users/shemi/Documents/jobkarovandroid2/app/build/intermediates/exploded-aar/com.facebook.android/facebook-android-sdk/4.20.0/res/drawable-xhdpi-v4/com_facebook_tooltip_black_xout.png"
+    },
+    {
+        "merged": "/Users/shemi/Documents/jobkarovandroid2/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/ic_media_pause.png",
+        "source": "/Users/shemi/Documents/jobkarovandroid2/app/build/intermediates/exploded-aar/com.android.support/mediarouter-v7/24.0.0/res/drawable-xhdpi-v4/ic_media_pause.png"
     },
     {
         "merged": "/Users/shemi/Documents/jobkarovandroid2/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/ic_media_route_connecting_02_dark.png",

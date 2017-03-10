@@ -58,9 +58,8 @@
             android:screenOrientation="portrait"
             android:theme="@style/CustomActionBarTheme"
             android:windowSoftInputMode="adjustPan" >
-            <meta-data
-                android:name="android.app.default_searchable"
-                android:value=".Main2Activity" />
+            <meta-data android:name="android.app.default_searchable"
+                android:value=".ResultsListActivity" />
         </activity>
         <activity
             android:name=".ContactUsActivity"

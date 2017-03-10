@@ -1,5 +1,6 @@
 package karov.shemi.oz;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -16,16 +17,14 @@ import android.widget.Filter;
 import android.widget.Filterable;
 import android.widget.ImageView;
 import android.widget.TextView;
-
-import com.facebook.appevents.AppEventsConstants;
-import com.google.analytics.tracking.android.EasyTracker;
-import com.google.analytics.tracking.android.MapBuilder;
 import com.nostra13.universalimageloader.core.ImageLoader;
-import java.util.ArrayList;
-import java.util.HashMap;
+
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
+
+import java.util.ArrayList;
+import java.util.HashMap;
 
 public class ImageAdapter extends BaseAdapter implements Filterable {
 	private String colorStr;
@@ -67,16 +66,16 @@ public class ImageAdapter extends BaseAdapter implements Filterable {
 			HashMap<String, String> o = (HashMap) ImageAdapter.this.items.get(((Integer) v.getTag()).intValue());
 			int index = Integer.valueOf((String) o.get(Constants.ID)).intValue();
 			ImageAdapter.this.mDbHelper.open();
-			EasyTracker easyTracker = EasyTracker.getInstance(ImageAdapter.this.context);
+//			EasyTracker easyTracker = EasyTracker.getInstance(ImageAdapter.this.context);
 			if (ImageAdapter.this.mDbHelper.Exists(index, 1)) {
 				ImageAdapter.this.mDbHelper.deleteNote((long) index, 1);
-				o.put(Constants.FAV, AppEventsConstants.EVENT_PARAM_VALUE_NO);
-				easyTracker.send(MapBuilder.createEvent("ui_action", "button_press", "delete favorite", Long.valueOf((long) index)).build());
-				new GenericDownload().execute(new String[]{new StringBuilder(Constants.baseUrl).append(ImageAdapter.this.getVersion()).append(Constants.FAV).toString(), Constants.ID, Integer.toString(index), Constants.USERCODE, ImageAdapter.this.usercode, Constants.USERID, ImageAdapter.this.userid, Constants.FAV, AppEventsConstants.EVENT_PARAM_VALUE_NO});
+				o.put(Constants.FAV, Constants.NO);
+//				easyTracker.send(MapBuilder.createEvent("ui_action", "button_press", "delete favorite", Long.valueOf((long) index)).build());
+				new GenericDownload().execute(new String[]{new StringBuilder(Constants.baseUrl).append(ImageAdapter.this.getVersion()).append(Constants.FAV).toString(), Constants.ID, Integer.toString(index), Constants.USERCODE, ImageAdapter.this.usercode, Constants.USERID, ImageAdapter.this.userid, Constants.FAV, Constants.NO});
 			} else {
 				ImageAdapter.this.mDbHelper.createNote(index, (String) o.get(NotesDbAdapter.KEY_NAME), (String) o.get(Constants.COMPANY), Double.valueOf((String) o.get(NotesDbAdapter.KEY_X)).doubleValue(), Double.valueOf((String) o.get(NotesDbAdapter.KEY_Y)).doubleValue(), 1, (String) o.get(Constants.ADDRESS), (String) o.get(Constants.PHOTO));
-				o.put(Constants.FAV, AppEventsConstants.EVENT_PARAM_VALUE_YES);
-				easyTracker.send(MapBuilder.createEvent("ui_action", "button_press", "add favorite", Long.valueOf((long) index)).build());
+				o.put(Constants.FAV, Constants.YES);
+//				easyTracker.send(MapBuilder.createEvent("ui_action", "button_press", "add favorite", Long.valueOf((long) index)).build());
 				new GenericDownload().execute(new String[]{new StringBuilder(Constants.baseUrl).append(ImageAdapter.this.getVersion()).append(Constants.FAV).toString(), Constants.ID, Integer.toString(index), Constants.USERCODE, ImageAdapter.this.usercode, Constants.USERID, ImageAdapter.this.userid, Constants.FAV, "2"});
 			}
 			ImageAdapter.this.mDbHelper.close();
@@ -187,7 +186,7 @@ public class ImageAdapter extends BaseAdapter implements Filterable {
 	public View getView(int position, View convertView, ViewGroup parent) {
 		ViewHolder holder;
 		boolean favexist = false;
-		LayoutInflater mInflater = (LayoutInflater) this.context.getSystemService("layout_inflater");
+		LayoutInflater mInflater = (LayoutInflater)context.getSystemService(Activity.LAYOUT_INFLATER_SERVICE);
 		HashMap<String, String> job = (HashMap) this.items.get(position);
 		if (convertView == null) {
 			convertView = mInflater.inflate(R.layout.linefav, parent, false);

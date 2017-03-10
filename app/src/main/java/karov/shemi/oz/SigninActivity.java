@@ -27,18 +27,23 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.facebook.AccessToken;
+import com.facebook.AccessTokenTracker;
 import com.facebook.CallbackManager;
 import com.facebook.FacebookCallback;
 import com.facebook.FacebookException;
 import com.facebook.GraphRequest;
 import com.facebook.GraphRequestAsyncTask;
 import com.facebook.GraphResponse;
+import com.facebook.Profile;
 import com.facebook.login.LoginResult;
 import com.facebook.login.widget.LoginButton;
 
 import org.json.JSONObject;
 
 import java.util.Arrays;
+import java.util.Iterator;
+
+import static karov.shemi.oz.R.string.signin;
 
 
 public class SigninActivity extends MenuActionActivity {
@@ -59,7 +64,7 @@ public class SigninActivity extends MenuActionActivity {
 				final AlertDialog.Builder builder = new AlertDialog.Builder(this);
 				builder.setTitle(R.string.error);
 				builder.setMessage(msg);
-				builder.setNegativeButton(R.string.signin, new DialogInterface.OnClickListener() {
+				builder.setNegativeButton(signin, new DialogInterface.OnClickListener() {
 		        public void onClick(DialogInterface dialog, int id) {
 		        	 	dialog.dismiss();
 		        	 	SignIn();
@@ -70,10 +75,13 @@ public class SigninActivity extends MenuActionActivity {
 			else{
 				optAndSave(json);
 				String facebook=settings.getString(Constants.FACEBOOKNAME, "");
+				String firstname=settings.getString(Constants.FIRST_NAME, "");
+				String lastname=settings.getString(Constants.LAST_NAME, "");
+
 				if(index>0) confirmFinish(this, R.string.cvsent);
 				else{
-					confirm(SigninActivity.this,R.string.welcome,WelcomeMsg);
-					showWelcome(WelcomeMsg,facebook);
+					confirm(SigninActivity.this,R.string.welcome,firstname+" "+lastname);
+					showWelcome(firstname+" "+lastname,facebook);
 				}
 			}
 		}
@@ -89,32 +97,35 @@ public class SigninActivity extends MenuActionActivity {
  			builder.show();
 		}
 		else if(responseMode==5){
+			optAndSave(json);
 			String first_name=json.optString(Constants.FIRST_NAME, "");
     		String last_name=json.optString(Constants.LAST_NAME, "");
     		String WelcomeMsg=first_name+" "+last_name;
-    		optAndSave(json);
-    		String facebook=settings.getString(Constants.FACEBOOKNAME, "");	
+    		String facebook=settings.getString(Constants.FACEBOOKNAME, "");
     		showWelcome(WelcomeMsg,facebook);
 			int res= json.optInt(Constants.STATUS, -1);	
 			if(res==2){
-				String err= json.optString(Constants.ERROR, getString(R.string.serverproblem));
+				/*String err= json.optString(Constants.ERROR, getString(R.string.serverproblem));
 	    		String msg= json.optString(Constants.RESULT, err);
 				final AlertDialog.Builder builder = new AlertDialog.Builder(this);
 				builder.setTitle(R.string.error);
 				builder.setMessage(msg);
-				builder.setNegativeButton(R.string.signin, new DialogInterface.OnClickListener() {
+				builder.setNegativeButton(signin, new DialogInterface.OnClickListener() {
 		        public void onClick(DialogInterface dialog, int id) {
-		        	 	dialog.dismiss();
-		        	 	 Intent intent3=new Intent(SigninActivity.this, RegistrationActivity.class);
-		   	   		  intent3.putExtra(Constants.ID, index);
-		   			  intent3.putExtra(Constants.REQUIRE_CV, cvFileRequired);
-		   			  startActivityForResult(intent3,1);
-			        }
+		        	 	dialog.dismiss();*/
+
+				Intent intent3=new Intent(SigninActivity.this, RegistrationActivity.class);
+				intent3.putExtra(Constants.ID, index);
+				intent3.putExtra(Constants.REQUIRE_CV, cvFileRequired);
+				startActivityForResult(intent3,1);
+			        /*}
 					});
-				builder.show();
+				builder.show();*/
 			}
 			else{
 				if(index>0) confirmFinish(this, R.string.cvsent);
+				else  confirm(this,R.string.welcome,getString(R.string.welcome)+ " "+WelcomeMsg);
+
 			}
 		}
 		else{
@@ -133,7 +144,7 @@ public class SigninActivity extends MenuActionActivity {
 	 	AlertDialog.Builder alert = new AlertDialog.Builder(this);
 	 	alert.setView(layout);
 	 	alert.setTitle(R.string.insertpassword);
-	 	alert.setPositiveButton(R.string.signin, new DialogInterface.OnClickListener() {
+	 	alert.setPositiveButton(signin, new DialogInterface.OnClickListener() {
 	 		public void onClick(DialogInterface dialog, int whichButton) {
 	 			String user= input1.getText().toString();
 	 			String password= input2.getText().toString();
@@ -173,7 +184,7 @@ public class SigninActivity extends MenuActionActivity {
 		String oldname=settings.getString(Constants.MYEMAIL, "");
 		AlertDialog.Builder alert = new AlertDialog.Builder(this);
 		alert.setTitle(R.string.forgotpassword);
-		//alert.setMessage("Message");
+		alert.setMessage(R.string.insertemail);
 		final EditText input = new EditText(this);
 		if(emailValidator(username)) input.setText(username);
 		else input.setText(oldname);
@@ -182,13 +193,13 @@ public class SigninActivity extends MenuActionActivity {
 			public void onClick(DialogInterface dialog, int whichButton) {
 				String user= input.getText().toString();
 				dialog.cancel();
-				if(user.length()>1){
+				if(emailValidator(user)){
 					String[] str1={Constants.baseUrl+version+Constants.urlCommandForgot,Constants.EMAIL,user};
 					GenericDownload sendpassword = new GenericDownload(4,true);
 					sendpassword.execute(str1);
 				}
 				else{
-					confirm(SigninActivity.this,R.string.wrongpass);
+					confirm(SigninActivity.this,R.string.wrongmail);
 				}
 		    }
 		  });
@@ -204,7 +215,6 @@ public class SigninActivity extends MenuActionActivity {
 		
 	
 	}
-	
 	@Override
 	public void showWelcome(String msg,String facbookname){
 		String useremail=settings.getString(Constants.EMAIL, "");
@@ -258,40 +268,80 @@ public class SigninActivity extends MenuActionActivity {
 		alreadySent=false;
 //		settings = getSharedPreferences(Constants.PREFS_NAME, 0);
 		tvwelcome= (TextView)findViewById(R.id.textusername);
-		callbackManager = CallbackManager.Factory.create();
-
+		//Profile fbProfile = Profile.getCurrentProfile();
+		AccessTokenTracker accessTokenTracker = new AccessTokenTracker() {
+			@Override
+			protected void onCurrentAccessTokenChanged(AccessToken oldAccessToken,
+													   AccessToken currentAccessToken) {
+				if (currentAccessToken == null) {
+					LogOutTask logouttask = new LogOutTask(false);
+					logouttask.execute();
+				}
+			}
+		};
+		//if (fbProfile == null) {
 		authButton = (LoginButton) findViewById(R.id.authButton);
 		
-		authButton.setReadPermissions(Arrays.asList("user_location", "user_birthday", "user_education_history", "email","user_work_history","user_interests","user_about_me"));
-        authButton.registerCallback(callbackManager, new FacebookCallback<LoginResult>() {
+		authButton.setReadPermissions(Arrays.asList("public_profile", "email", "user_birthday", "user_friends", "user_education_history"));
+		callbackManager = CallbackManager.Factory.create();
+
+		authButton.registerCallback(callbackManager, new FacebookCallback<LoginResult>() {
             @Override
 			public void onSuccess(LoginResult loginResult) {
                 final AccessToken accessToken = loginResult.getAccessToken();
-                GraphRequestAsyncTask request = GraphRequest.newMeRequest(accessToken, new GraphRequest.GraphJSONObjectCallback() {
+				/*usercode=settings.getString(Constants.USERCODE, "");
+				userid=settings.getString(Constants.USERID, "");
+					String registrationId = settings.getString(Constants.PROPERTY_REG_ID, "");
+					String[] str1={Constants.baseUrl+version+Constants.urlCommandRegisterFacebook,"token",accessToken.getToken(),"facebookuser",accessToken.getUserId(),Constants.MODELTYPE,"1",Constants.MODELNAME,tmDevice,Constants.TOKEN,registrationId,Constants.SiteID,Integer.toString(index)};
+					GenericDownload signin;
+					if(index>0) signin= new GenericDownload(5,true);
+					else signin= new GenericDownload(-2,true);
+					signin.execute(str1);
+					SharedPreferences.Editor editor = settings.edit();
+					editor.putString(Constants.FACEBOOKNAME, accessToken.getToken());
+					editor.commit();
+
+				showWelcome(accessToken.toString(),accessToken.toString());*/
+
+
+				GraphRequest request = GraphRequest.newMeRequest(accessToken, new GraphRequest.GraphJSONObjectCallback() {
                     @Override
                     public void onCompleted(JSONObject user, GraphResponse graphResponse) {
+						SharedPreferences.Editor editor = settings.edit();
+						if(user!=null) {
+							Iterator<String> temp = user.keys();
+
+							while (temp.hasNext()) {
+								String key = temp.next();
+								String value = user.optString(key, "");
+								if (value.length() > 0) editor.putString(key.toLowerCase(), value);
+							}
+						}
                         String email=user.optString("email");
-                        String useremail=settings.getString(Constants.EMAIL, "");
+                    //    String useremail=settings.getString(Constants.EMAIL, "");
                         usercode=settings.getString(Constants.USERCODE, "");
                         userid=settings.getString(Constants.USERID, "");
-                        if(userid.length()==0 || usercode.length()==0 ||!email.equalsIgnoreCase(useremail)){
+                      //  if(userid.length()==0 || usercode.length()==0 ||!email.equalsIgnoreCase(useremail)){
 
                             String registrationId = settings.getString(Constants.PROPERTY_REG_ID, "");
-                            String[] str1={Constants.baseUrl+version+Constants.urlCommandRegisterFacebook,Constants.EMAIL,email,Constants.PASSWORD,Constants.PASSWORD,Constants.FIRST_NAME,user.optString("first_name"),Constants.LAST_NAME,user.optString("last_name"),"token",token,Constants.MODELTYPE,"1",Constants.MODELNAME,tmDevice,Constants.TOKEN,registrationId,Constants.SiteID,Integer.toString(index)};
-                            // String str1=Constants.url1+Constants.urlCommandRegister+"?email="+email+"&password=password&first_name="+user.getFirstName()+"&last_name="+user.getLastName()+"&token="+token+"&token_type=1";
+                            String[] str1={Constants.baseUrl+version+Constants.urlCommandRegisterFacebook,Constants.USERCODE,usercode,Constants.USERID,userid, Constants.EMAIL,email,Constants.PASSWORD,Constants.PASSWORD,Constants.FIRST_NAME,user.optString("first_name"),Constants.LAST_NAME,user.optString("last_name"),"token",accessToken.getToken(),Constants.MODELTYPE,"1",Constants.MODELNAME,tmDevice,Constants.TOKEN,registrationId,Constants.SiteID,Integer.toString(index)};
                             GenericDownload signin;
-                            if(index>0) signin= new GenericDownload(5,true);
-                            else signin= new GenericDownload(-2,true);
+                            //if(index>0)
+							signin= new GenericDownload(5,true);
+                            //else signin= new GenericDownload(-2,true);
                             signin.execute(str1);
-                            SharedPreferences.Editor editor = settings.edit();
                             editor.putString(Constants.FACEBOOKNAME, user.optString("name"));
                             editor.commit();
-                        }
-                        showWelcome(user.optString("first_name"), user.optString("last_name"));
+//                        }
+                        showWelcome(user.optString("first_name",""), user.optString("last_name",""));
 
 
                     }
-                }).executeAsync();
+                });
+				Bundle parameters = new Bundle();
+				parameters.putString("fields", "id,name,email,gender,education,first_name,hometown,last_name,work,birthday");
+				request.setParameters(parameters);
+				request.executeAsync();
 				}
 
 
@@ -308,7 +358,7 @@ public class SigninActivity extends MenuActionActivity {
 		logout = (Button) findViewById(R.id.logout); 
 		logout.setOnClickListener(new View.OnClickListener() {      
 	    	public void onClick(View arg0) {
-	    		LogOutTask logouttask = new LogOutTask();
+	    		LogOutTask logouttask = new LogOutTask(true);
 	    		logouttask.execute();
 	    	}});
 	    
@@ -326,10 +376,10 @@ public class SigninActivity extends MenuActionActivity {
 			  startActivityForResult(intent3,1);
 	    	 }});
 
-	    String name=settings.getString(Constants.NAME, "");
-	    String facebook=settings.getString(Constants.FACEBOOKNAME, "");
+//	    String name=settings.getString(Constants.NAME, "");
+//	    String facebook=settings.getString(Constants.FACEBOOKNAME, "");
 
-		showWelcome(name,facebook);
+//		showWelcome(name,facebook);
 		
 	    if(getIntent().getBooleanExtra(Constants.SECONDTIME, false)){}
 	}
@@ -339,10 +389,12 @@ public class SigninActivity extends MenuActionActivity {
    @Override
 	public void onResume() {
 	    super.onResume();
-	    String name=settings.getString(Constants.NAME, "");
-	    String facebook=settings.getString(Constants.FACEBOOKNAME, "");
+	    String first_name=settings.getString(Constants.FIRST_NAME, "");
+	   String last_name=settings.getString(Constants.LAST_NAME, "");
 
-		showWelcome(name,facebook);
+	   String facebook=settings.getString(Constants.FACEBOOKNAME, "");
+
+		showWelcome(first_name+" "+last_name,facebook);
 
 	}
 	
@@ -368,11 +420,18 @@ public class SigninActivity extends MenuActionActivity {
 	
 	private class LogOutTask extends AsyncTask<String, String, JSONObject> {
 	    private final ProgressDialog mProgressDialog = new ProgressDialog(SigninActivity.this);
+		private boolean showProgressBar;
+		protected   LogOutTask(boolean showProgressBar){
+			super();
+			this.showProgressBar=showProgressBar;
+		}
 	    @Override
 	    protected void onPreExecute() {
 	        super.onPreExecute();
-	        mProgressDialog.setMessage(getResources().getString(R.string.sendingnow));
-	        mProgressDialog.show();
+	        if(showProgressBar) {
+				mProgressDialog.setMessage(getResources().getString(R.string.sendingnow));
+				mProgressDialog.show();
+			}
 	    }
 	    @Override
 	    protected JSONObject doInBackground(String... url) {
@@ -409,17 +468,17 @@ public class SigninActivity extends MenuActionActivity {
 	        			editor.putString(Constants.USERCODE, usercode);
 	        			editor.putString(Constants.USERID, userid);
 	    	    		editor.putString(Constants.PASSWORD, "");
-	    	    		editor.putString(Constants.EMAIL, "");
+						editor.putString(Constants.FACEBOOKNAME, "");
+						editor.putString(Constants.EMAIL, "");
 	        			editor.putString(Constants.NAME, "");
 	        			editor.putString(Constants.FIRST_NAME, "");
 	        			editor.putString(Constants.LAST_NAME, "");
 	        			editor.putString(Constants.MY_DESCRIPTION, "");
 	        			editor.putString(Constants.LIFE_STORY, "");
 	        			editor.putString(Constants.PHONE, "");
-
-
-
-	    	    		editor.commit();
+						editor.putString(Constants.FAVMODE, "0");
+						editor.putInt(Constants.FAV, -2);
+						editor.commit();
 	    	    		showWelcome("", "");
 	        		}
 	        		else confirm(SigninActivity.this, R.string.error,msg);

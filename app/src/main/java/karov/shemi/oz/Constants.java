@@ -14,7 +14,7 @@ public class Constants {
 	public static final String UPGRADE = "upgrade";
 	public static final String TITLE = "title";
 	public static final String TAKANON = "accepted";
-	public static final String TAKANON2 = "accepted2";
+	public static final String TAKANON2 = "spam";
 	public static final String TAKANONSTRING = "takanonstring";
 
 	public static final String COMPANYID = "company_id";
@@ -111,7 +111,7 @@ public class Constants {
 	public static final String YES = "1";
 	public static final String NO = "0";
 
-    public final static String baseUrl="http://www.jobkarov.com";//home.a7.org";///php/";//"http://close2me.co.il/php/";
+    public final static String baseUrl="https://www.jobkarov.com";//home.a7.org";///php/";//"http://close2me.co.il/php/";
     //public final static String url1=baseUrl+"/App_2_android/";//"close2me.home.a7.org/php/";//"http://close2me.co.il/php/";
 	public final static String urlCommand1="GetWorkJ?id=";//"getwork_JoinWeb.php?id=";
 	public final static String urlCommandTitles="GetTitles3";//"gettitles.php";

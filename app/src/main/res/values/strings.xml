@@ -131,7 +131,7 @@ JOBKAROV הינו אתר ייחודי בחיפוש עבודה סביבך ונו�
     <string name="call">התקשר</string>
     <string name="require">דרישות התפקיד</string>
     <string name="noentries">אין נתונים שמורים</string>
-    <string name="sentsuccesfull"> :נשלח בהצלחה למייל</string>
+    <string name="sentsuccesfull"> נשלח בהצלחה למייל:</string>
     <string name="saved">נשמר בהצלחה</string>
     <string name="favour">משרות שמורות</string>
     <string name="mapa">מפה</string>
@@ -1645,8 +1645,10 @@ JOBKAROV הינו אתר ייחודי בחיפוש עבודה סביבך ונו�
     <string name="wordwasntfind">לא נמצאה הפקודה</string>
     <string name="cvdoesntexist">קורות חיים לא קיימים במערכת</string>
     <string name="searchwiththisrole">חפש משרות בתחום זה</string>
-    <string name="google">גוגל</string>
-    <string name="tocompanysite">לאתר החברה</string>
+    <string name="google">חיפוש בגוגל</string>
+    <string name="tocompanysite">אתר החברה</string>
+    <string name="backtojob">חזור למשרה</string>
+
     <string name="wrongphone">מספר טלפון שגוי</string>
     <string name="message">הודעה</string>
 

@@ -10,8 +10,6 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
 
-import com.google.analytics.tracking.android.EasyTracker;
-
 import org.json.JSONObject;
 
 public class ContactUsActivity extends MenuActionActivity {
@@ -84,16 +82,6 @@ public class ContactUsActivity extends MenuActionActivity {
 	protected void taskResponse(JSONObject json,int responseMode) {
 		if(responseMode==1) confirmFinish(this,R.string.succesfullcontact);
 		else super.taskResponse(json, responseMode);
-	}
-	@Override
-	public void onStart() {
-		super.onStart();
-		EasyTracker.getInstance(this).activityStart(this);  // Add this method.
-	}
-	@Override
-	public void onStop() {
-		super.onStop();
-		EasyTracker.getInstance(this).activityStop(this);  // Add this method.
 	}
 
 }

@@ -4,12 +4,12 @@
         "source": "/Users/shemi/Documents/jobkarovandroid2/app/src/main/res/drawable-hdpi/ic_launcher.png"
     },
     {
-        "merged": "/Users/shemi/Documents/jobkarovandroid2/app/build/intermediates/res/merged/debug/drawable-hdpi/iconmain.png",
-        "source": "/Users/shemi/Documents/jobkarovandroid2/app/src/main/res/drawable-hdpi/iconmain.png"
-    },
-    {
         "merged": "/Users/shemi/Documents/jobkarovandroid2/app/build/intermediates/res/merged/debug/drawable-hdpi/ic_map2.png",
         "source": "/Users/shemi/Documents/jobkarovandroid2/app/src/main/res/drawable-hdpi/ic_map2.png"
+    },
+    {
+        "merged": "/Users/shemi/Documents/jobkarovandroid2/app/build/intermediates/res/merged/debug/drawable-hdpi/iconmain.png",
+        "source": "/Users/shemi/Documents/jobkarovandroid2/app/src/main/res/drawable-hdpi/iconmain.png"
     },
     {
         "merged": "/Users/shemi/Documents/jobkarovandroid2/app/build/intermediates/res/merged/debug/drawable-hdpi/starx.png",

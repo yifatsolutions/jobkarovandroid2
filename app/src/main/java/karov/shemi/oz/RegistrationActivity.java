@@ -3,11 +3,9 @@ package karov.shemi.oz;
 import android.annotation.SuppressLint;
 import android.app.AlertDialog;
 import android.app.ProgressDialog;
-import android.content.ContentResolver;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.content.pm.PackageManager;
 import android.content.pm.ResolveInfo;
 import android.database.Cursor;
 import android.net.Uri;
@@ -15,9 +13,6 @@ import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Parcelable;
-import android.provider.DocumentsContract;
-import android.provider.MediaStore;
-import android.provider.OpenableColumns;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -33,8 +28,6 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import org.json.JSONObject;
-
-import java.util.List;
 
 public class RegistrationActivity extends MenuActionActivity {
 	private EditText name,mail,phone,msg,lastname,password;
@@ -251,6 +244,11 @@ public class RegistrationActivity extends MenuActionActivity {
 		    		confirm(RegistrationActivity.this,R.string.wrongmail);
 
 		    	}
+				else if(phone.getText().toString().length()<1) {
+					scroller.fullScroll(ScrollView.FOCUS_DOWN);
+					phone.requestFocus();
+					confirm(RegistrationActivity.this,R.string.noinput3);
+				}
 		    	else if(password.getText().toString().length()<5 && !updateOnly){
 		    		scroller.fullScroll(ScrollView.FOCUS_UP);
 		    		password.requestFocus();
@@ -288,7 +286,9 @@ public class RegistrationActivity extends MenuActionActivity {
 		    		String usercode=settings.getString(Constants.USERCODE, "0");
 		    		String userid=settings.getString(Constants.USERID, "0");
 			        String registrationId = settings.getString(Constants.PROPERTY_REG_ID, "");
-		    		String[] str1={Constants.baseUrl+version+Constants.urlCommandRegisterNative,Constants.SiteID,Integer.toString(index),Constants.MY_DESCRIPTION,msg.getText().toString(),Constants.FIRST_NAME,name.getText().toString(),Constants.LAST_NAME,lastname.getText().toString(),Constants.PHONE,phone.getText().toString(),Constants.EMAIL,mail.getText().toString(),Constants.USERCODE,usercode,Constants.USERID,userid,Constants.PASSWORD,password.getText().toString(),Constants.TOKEN,registrationId,Constants.TAKANON,Boolean.toString(termsofuse.isChecked()),Constants.TAKANON2,Boolean.toString(acceptmail.isChecked())};
+					String termsofuseval = termsofuse.isChecked()? "1" : "0";
+					String acceptmailval = acceptmail.isChecked()? "1" : "0";
+					String[] str1={Constants.baseUrl+version+Constants.urlCommandRegisterNative,Constants.SiteID,Integer.toString(index),Constants.MY_DESCRIPTION,msg.getText().toString(),Constants.FIRST_NAME,name.getText().toString(),Constants.LAST_NAME,lastname.getText().toString(),Constants.PHONE,phone.getText().toString(),Constants.EMAIL,mail.getText().toString(),Constants.USERCODE,usercode,Constants.USERID,userid,Constants.PASSWORD,password.getText().toString(),Constants.TOKEN,registrationId,Constants.TAKANON,termsofuseval,Constants.TAKANON2,acceptmailval};
 		    		RegisterNativeTask RegisterTask = new RegisterNativeTask();
 		    		RegisterTask.execute(str1);
 		    	}
